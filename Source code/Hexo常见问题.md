@@ -2,9 +2,9 @@
 title: Hexo常见问题
 date: 2017-12-12 19:59:21
 tags:
-	- Hexo
+	- notes
 categories: 
-	- Hexo
+	- notes
 	
 ---
 
