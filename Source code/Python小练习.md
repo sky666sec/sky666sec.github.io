@@ -28,7 +28,7 @@ categories:
 
 > 除非对 `input()` 有特别需要，否则一般情况下我们都是推荐使用 `raw_input() `来与用户交互。
 
-> 注意：`python3 `里 `input() `默认接收到的事是` str` 类型。
+> 注意：`python3 `里 `input() `默认接收到的是` str` 类型。
 
 
 
@@ -37,7 +37,8 @@ categories:
 
 #### 练习源码
 
-    #！/usr/bin/env python# -*- coding:utf-8 -*-
+    #!/usr/bin/env python
+	# -*- coding:utf-8 -*-`
     print "by sky666"
     Nickname = str(raw_input("Enter your Nickename:"))
     print (Nickname)
