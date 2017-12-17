@@ -38,7 +38,7 @@ categories:
 #### 练习源码
 
     #!/usr/bin/env python
-	# -*- coding:utf-8 -*-`
+	#-*-coding:utf-8-*-`
     print "by sky666"
     Nickname = str(raw_input("Enter your Nickename:"))
     print (Nickname)

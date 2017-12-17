@@ -31,13 +31,14 @@ categories:
 
 #### `--coding:utf-8--`
  
-#### ` -*-coding:utf-8 -*-`
+#### `-*-coding:utf-8-*-`
 
 ### 总结
 
 1. `#!/usr/bin/ python`相当于写死了`python`路径
 1. `#!/usr/bin/env python`会去环境设置寻找`python`目录,推荐这种写法。
-1. 推荐使用`# -*-coding:utf-8 -*-`
+1. 推荐使用`#-*-coding:utf-8-*-`
+2. `Python`代码一定要顶格写
 
 
 
