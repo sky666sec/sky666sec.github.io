@@ -11,9 +11,7 @@ categories:
 
 
 
-### Python raw_input() 函数
-#### Python 内置函数 
-
+### Python 输入函数
 
 
 <!--more-->
@@ -24,11 +22,27 @@ categories:
 
 
 
->  注意：`input()` 和 `raw_input() `这两个函数均能接收 字符串 ，但` raw_input()` 直接读取控制台的输入（任何类型的输入它都可以接收）。而对于` input()` ，它希望能够读取一个合法的 `python` 表达式，即你输入字符串的时候必须使用引号将它括起来，否则它会引发一个 `SyntaxError` 。
+**注意**：
 
-> 除非对 `input()` 有特别需要，否则一般情况下我们都是推荐使用 `raw_input() `来与用户交互。
+>`input()` 和 `raw_input() `这两个函数均能接收 字符串 ，但` raw_input()` 直接读取控制台的输入（任何类型的输入它都可以接收）。而对于` input()` ，它希望能够读取一个合法的 `python` 表达式，即你输入字符串的时候必须使用引号将它括起来，否则它会引发一个 `SyntaxError` 。
+
+ `raw_input()`的小括号中放入的是，提示信息，用来在获取数据之前给用户的一个简单提示。
+
+ `raw_input()`在从键盘获取了数据以后，会存放到等号右边的变量中。
+
+ `raw_input()`会把用户输入的任何值都作为字符串来对待
+
+ 除非对 `input()` 有特别需要，否则一般情况下我们都是推荐使用 `raw_input() `来与用户交互。
+
+`input()`函数与`raw_input()`类似，但其接受的输入必须是表达式。
+`input()`接受表达式输入，并把表达式的结果赋值给等号左边的变量
+
+并且 `python3`中的`input`与`python2`中的`raw_input()`功能一样
 
 > 注意：`python3 `里 `input() `默认接收到的是` str` 类型。
+
+
+`python3`版本中没有`raw_input()`函数，只有`input()`，并且 `python3`中的`input`与`python2`中的`raw_input()`功能一样
 
 
 
