@@ -10,6 +10,7 @@ categories:
 
 
 人生苦短，我用Python。
+![](https://i.imgur.com/cb92tpU.jpg)
 
 <!--more-->
 

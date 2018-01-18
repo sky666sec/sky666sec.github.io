@@ -8,6 +8,10 @@ categories:
 	
 ---
 
+![](https://i.imgur.com/5RpFOAM.jpg)
+
+<!--more-->
+
 
 > 
 1、先hexo g再执行hexo d布署，也可直接用hexo d -g。

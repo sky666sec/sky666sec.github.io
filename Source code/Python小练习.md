@@ -11,10 +11,11 @@ categories:
 
 
 
-### Python 输入函数
 
+![](https://i.imgur.com/T4ItjBA.jpg)
 
 <!--more-->
+### Python 输入函数
 
 `python raw_input()` 用来获取控制台的输入。
 

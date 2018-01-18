@@ -8,7 +8,8 @@ categories:
 
 ---
 
-
+![](https://i.imgur.com/A1M02XZ.png)
+<!--more-->
 
 #### 基础命令概览：
 

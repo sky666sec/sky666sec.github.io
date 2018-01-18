@@ -9,12 +9,15 @@ categories:
 ---
 
 
+
+![](https://i.imgur.com/hmIDtin.png)
+<!--more-->
+
 #### 实例讲解
 ##### 0x00.
 `demon`之前发了一篇`Ngrok&MSF`(内网穿)的文章，由于没时间，现在正好有时间过来测试下。
 
 感谢`demon`的耐心教导。
-<!--more-->
  
 ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道。ngrok 可捕获和分析所有通道上的流量，便于后期分析和重放。
 
@@ -103,5 +106,10 @@ Ngrok的下载地址:[https://ngrok.com/download](https://ngrok.com/download)
 放入目标机子上得到反弹
 
 ![](https://i.imgur.com/hmIDtin.png)
+
+
+**总结：**
+
+- 利用ngrok,我们可以实现内网穿透。 
 
 
