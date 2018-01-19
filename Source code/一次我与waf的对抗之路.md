@@ -8,7 +8,7 @@ categories:
 
 ---
 
-![](https://i.imgur.com/xpurTyH.png)
+![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnlv0afpidj311y0gzn10.jpg)
 
 <!--more-->
 
@@ -16,18 +16,16 @@ categories:
 
 以后看到这个可以知道一般都是安全狗。
 
-![](https://i.imgur.com/N9W5b6E.png)
-
+![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnlv0x907hj306n00la9v.jpg)
 
 接下来就是我与`waf`的对抗之路
 
 我开始是写进去了
 
-![](https://i.imgur.com/qtGCF1v.png)
-
+![](https://i.imgur.com/qtGCF1v.png)![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnlv1nb1q5j30sb01i0so.jpg)
 不过这死狗他过一会就把我给杀了，好气！  
 
-![](https://i.imgur.com/weamK4f.png)
+![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnlv24yji8j30sn0eaq60.jpg)
 
 换了各种免杀马都不行，我猜他的判断规则是发现有写入文件的行为，就立马删除这个文件
 。因为连`txt`文件都杀了。
@@ -35,15 +33,12 @@ categories:
 
 <font color=red>既然你过一会才杀我的，那我就不断写入小马，然后在写入小马的同时又赶紧用写入的小马上传大马。利用你这个查杀判断规则具有时间延迟的`bug`进行绕过。通俗的讲就是你杀我就新建，你刚杀完我的我又新建了一个新的同样的文件，让你反应不过来。</font>
 
-![](https://i.imgur.com/NbWhpo4.png)
+![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnlv2yk9lfj30qe07675k.jpg)
 
 最后思路是对的，成功拿到`webshell`。
 
-![](https://i.imgur.com/xpurTyH.png)
+![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnlv0afpidj311y0gzn10.jpg)
 
-发现死狗一枚
-
-![](https://i.imgur.com/CwsQnmN.png)
 
 
 </br>

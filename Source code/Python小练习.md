@@ -12,7 +12,7 @@ categories:
 
 
 
-![](https://i.imgur.com/T4ItjBA.jpg)
+![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnlukrm9x5j30c808gab1.jpg)
 
 <!--more-->
 ### Python 输入函数

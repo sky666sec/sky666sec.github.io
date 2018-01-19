@@ -9,10 +9,11 @@ categories:
 ---
 
 
-人生苦短，我用Python。
-![](https://i.imgur.com/cb92tpU.jpg)
+
+![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnlujzqyihj308b07tmxr.jpg)
 
 <!--more-->
+
 
 ### Python头部标注
 

@@ -8,7 +8,7 @@ categories:
 
 ---
 
-![](https://i.imgur.com/gFeHJLI.png)
+![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnluobpl06j30m80cj0vn.jpg)
 
 <!--more-->
 
@@ -21,50 +21,48 @@ categories:
 
 `reGeorg`项目下载地址：[https://github.com/sensepost/reGeorg](https://github.com/sensepost/reGeorg)
 
-
-![](https://i.imgur.com/PIQj7Hn.png)
+![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnlup83701j30m80c1go1.jpg)
 
 首先我们需要将脚本上传到服务器端，这里是`jsp`服务器，所以我们上传`tunnel.tomcat.5.jsp`，访问显示“`Georg says, 'All seems fine`'”，表示脚本运行正常
 
-![](https://i.imgur.com/IUFawry.png)
+![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnluq63vfjj30m8096t8p.jpg)
 
 
 运行`reGeorg`监听`6666`端口，可以看到正常运行 。
 
 `reGeorgSocksProxy.py -p 6666 -u http://xxx.xxx.xxx/tunnel.tomcat.5.jsp`
 
-![](https://i.imgur.com/Z8g73BR.png)
+![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnlurlhm0yj30m80bm0uy.jpg)
 
 
 下面我们配置`Proxifier`，运行`Proxifier`之后设置代理
 
-![](https://i.imgur.com/Q2yQSKO.png)
+![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnlusaekfoj30m80c175m.jpg)
 
 设置代理服务器为`6666`
-
-![](https://i.imgur.com/nmXRI2q.png)
+![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnlustpo6xj30m80c1abw.jpg)
 
 
 代理规则默认即可
 
 
-![](https://i.imgur.com/buRmYMM.png)
+![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnlutgm5wdj30kc0c5weq.jpg)
 
 
 
 右击“`mstsc.exe`”，选择“`proxifier`”-》`proxy socks5 127.0.0.1`进行远程连接
-
-![](https://i.imgur.com/ujDqYrt.png)
+![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnluu235gaj30ik0f2go6.jpg)
 
 
 输入内网ip：`192.168.50.2`
 
-![](https://i.imgur.com/gDDpFno.png)
+![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnluutku4ej30dl0940t6.jpg)
 
 
 登陆成功，成功转发进入内网
 
-![](https://i.imgur.com/gFeHJLI.png)
+
+![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnluobpl06j30m80cj0vn.jpg)
 
 
 **总结：**
