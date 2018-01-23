@@ -8,7 +8,7 @@ categories:
 	
 ---
 
-![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnm5kza761j30a905l0ta.jpg)
+![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnmq4jq021j30a905l0ta.jpg)
 
 <!--more-->
 
