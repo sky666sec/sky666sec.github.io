@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: sky666sec
-subtitle:
-description: 向着白帽子之路前进
+title: Sky666sec's  blog
+subtitle: 用黑客手段对抗黑客
+description: 白帽子,渗透测试,信息安全
 author: sky666
 language: zh-Hans
 timezone:
@@ -17,6 +17,9 @@ root: /
 permalink: :year/:month/:day/:title.html
 permalink_defaults:
 
+# title, chinese available
+
+  
 # Directory
 source_dir: source
 public_dir: public

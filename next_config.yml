@@ -19,15 +19,15 @@ override: false
 # For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename & redefine they on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
-  apple_touch_icon: /images/apple-touch-icon-next.png
-  safari_pinned_tab: /images/logo.svg
+  small: images/favicon.ico
+  medium: images/favicon.ico
+  apple_touch_icon: images/favicon.ico
+  safari_pinned_tab: images/favicon.ico
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
 # Set default keywords (Use a comma to separate)
-keywords: Hexo,NexT,白帽子,渗透测试,kali linux,Python,博客,sky666sec,sky666,www.sky666.top
+keywords: NexT,白帽子,渗透测试,黑客,kali linux,Python,博客,sky666sec,sky666
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -87,13 +87,14 @@ menu:
   home: / || home
   渗透测试: /categories/渗透测试/ || 渗透测试
   Python: /categories/Python/ || Python
-  PHP: /categories/PHP/ || PHP
+  PHP: /categories/php/ || PHP
   kali Linux: /categories/kali/ || kali
   Metasploit: /categories/Metasploit/ || Metasploit
   notes: /categories/notes || notes
-  tags: /tags/ || tags
-  categories: /categories/ || th
+  categories: /categories || 分类
   archives: /archives/ || archive
+  tags: /tags/ || tags
+  #关于: /about/   || 关于
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
@@ -150,13 +151,18 @@ social_icons:
   # Icon Mappings
   GitHub: github
  
-# Blog rolls
-links_icon: link
-links_title: Links
-links_layout: block
-#links_layout: inline
-#links:
-  #Title: http://example.com/
+#Blog rolls 友情链接
+# title
+links_title: 友情链接
+# links
+links:
+   国光: http://www.sqlsec.com/ 
+   墨: https://www.inksec.cn/
+   xz: https://exploit.cn/
+   demon: http://www.ggsec.cn/
+   ChunSource: http://chunsource.top/
+   CE安全网:  https://www.cesafe.com/ 
+   从容: http://www.thinkings.org/
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
@@ -467,15 +473,15 @@ needmoreshare2:
       position: middleRight
       networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
 
-# Google Webmaster tools verification setting
-# See: https://www.google.com/webmasters/
+ #Google Webmaster tools verification setting
+#See: https://www.google.com/webmasters/
 #google_site_verification:
 
-# Google Analytics
+ #Google Analytics
 #google_analytics:
 
-# Bing Webmaster tools verification setting
-# See: https://www.bing.com/webmaster/
+ #Bing Webmaster tools verification setting
+ #See: https://www.bing.com/webmaster/
 #bing_site_verification:
 
 # Yandex Webmaster tools verification setting
