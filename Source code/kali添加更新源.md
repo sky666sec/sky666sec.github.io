@@ -12,7 +12,7 @@ categories:
 
 
 
-![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnluhk27zwj30hv0de422.jpg)
+![](https://github.com/sky666sec/sky666sec.github.io/blob/hexo/Figure%20Bed/006Y6f53gy1fnluhk27zwj30hv0de422.jpg?raw=true)
 
 <!--more-->
 
@@ -68,7 +68,7 @@ categories:
 > `apt dist-upgrade` 将系统升级到新版本。
 
 
-> `apt-get autoremove`   删除为了满足其他软件包的依赖而安装的，但现在不再需要的软件包。
+> `apt autoremove`   删除为了满足其他软件包的依赖而安装的，但现在不再需要的软件包。
 
 
 

@@ -8,7 +8,7 @@ categories:
 	
 ---
 
-![](https://ws1.sinaimg.cn/large/006Y6f53gy1fnmq4jq021j30a905l0ta.jpg)
+![](https://github.com/sky666sec/sky666sec.github.io/blob/hexo/Figure%20Bed/006Y6f53gy1fnmq4jq021j30a905l0ta.jpg?raw=true)
 
 <!--more-->
 
