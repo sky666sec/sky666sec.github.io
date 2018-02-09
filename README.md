@@ -6,6 +6,6 @@
 
 ###  `Source code` :        &emsp;&emsp;&emsp;&emsp;文章源码
 
-### `Figure Bed ` : &emsp;&emsp;&emsp;&emsp;github图床
+### `Figure Bed ` : &emsp;&emsp;&emsp;&emsp;`github`图床
 
 ### `sourece.zip` : &emsp;&emsp;&emsp;&emsp;文章备份
