@@ -85,16 +85,18 @@ index_with_subtitle: false
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
   home: / || home
-  渗透测试: /categories/渗透测试/ || 渗透测试
-  Python: /categories/Python/ || Python
-  PHP: /categories/php/ || PHP
-  kali Linux: /categories/kali/ || kali
-  Metasploit: /categories/Metasploit/ || Metasploit
-  notes: /categories/notes || notes
+  #渗透测试: /categories/渗透测试/ || 渗透测试
+  #Python: /categories/Python/ || Python
+  #PHP: /categories/php/ || PHP
+  #kali Linux: /categories/kali/ || kali
+  #Metasploit: /categories/Metasploit/ || Metasploit
+  #notes: /categories/notes || notes
+  #tools: /categories/tools || tools
   categories: /categories || 分类
   archives: /archives/ || archive
   tags: /tags/ || tags
-  #关于: /about/   || 关于
+  友链: /Links || Links
+  关于: /about/   || 关于
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
@@ -106,12 +108,11 @@ menu_icons:
   enable: false
  # Icon Mapping.
   home: home
-  #about: user
-  categories: th
+  about: user
   tags: tags
   archives: archive
   commonweal: heartbeat
-  渗透测试: 渗透测试 
+  渗透测试: 渗透测试 categories
 # ---------------------------------------------------------------
 # Scheme Settings
 # ---------------------------------------------------------------
@@ -156,14 +157,23 @@ social_icons:
 links_title: 友情链接
 # links
 links:
-   国光: http://www.sqlsec.com/ 
+   国光: http://www.sqlsec.com/
+   泡: https://linux.dog/blog/)   
    墨: https://www.inksec.cn/
    xz: https://exploit.cn/
    demon: http://www.ggsec.cn/
    ChunSource: http://chunsource.top/
+   chabug: https://www.chabug.org/
    CE安全网:  https://www.cesafe.com/ 
    从容: http://www.thinkings.org/
-
+   陌离: http://www.caonm.cn/
+   sodme: http://www.issce.cn/
+   xyz: http://yaoyaomeng.github.io/
+   shiyan: http://sh1yan.top/
+   依云: https://blog.lilydjwg.me/
+   Fire-ant: https://www.luolikong.vip
+   渗透师 网络安全从业者安全导航:  http://shentoushi.top/ 
+   
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
@@ -371,9 +381,9 @@ han: false
 # Duoshuo ShortName
 #duoshuo_shortname:
 
-# Disqus
+ #Disqus
 disqus:
-  enable: false
+  enable: true
   shortname:
   count: true
 
@@ -617,7 +627,7 @@ algolia_search:
 # Local search
 # Dependencies: https://github.com/flashlab/hexo-generator-search
 local_search:
-  enable: false
+  enable: true
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
   trigger: auto
