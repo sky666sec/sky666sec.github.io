@@ -2,9 +2,9 @@
 title: dirtyc0w_Linux提权
 date: 2018-01-28 13:50:05
 tags:
-	- notes
+	- 渗透测试
 categories:
-	- notes
+	- 渗透测试
 	
 ---
 
@@ -58,14 +58,22 @@ gcc -pthread dirty.c -o dirty -lcrypt`
 
      chmod 777 dirty
 
+
     ./dirty yourpassword
+![](https://ws1.sinaimg.cn/large/006Y6f53ly1fnyx5sh1ylj30a0043a9u.jpg)
+
+由于需要竞争，所以执行提权exp之后需要等待一段时间。
 
 
-原来的权限：
+![](https://ws1.sinaimg.cn/large/006Y6f53ly1fnyx6b1duoj30if0cqdgs.jpg)
+
+
+
+####  原来的权限：
 
 ![](https://ws1.sinaimg.cn/large/006Y6f53ly1fnwah1584hj30de04pq2p.jpg)
 
-用脏牛提权后的权限：
+#### 用脏牛提权后的权限：
 
 ![](https://ws1.sinaimg.cn/large/006Y6f53ly1fnwahpjw44j30i006u745.jpg)
 
