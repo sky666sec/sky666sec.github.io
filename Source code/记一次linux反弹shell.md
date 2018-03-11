@@ -8,7 +8,7 @@ categories:
 
 ---
 
-![](https://ws1.sinaimg.cn/large/006Y6f53ly1fnv3p4s7hbj30o80araap.jpg)
+![](https://ws1.sinaimg.cn/large/006Y6f53gy1fp83hz9p8dj30je08rwg2.jpg)
 
 <!--more-->
 
@@ -65,7 +65,7 @@ Linux 反弹shell,一直都有听说过，可惜自己不会。今天受xz指点
 
 反弹`shell`成功
 
-![](https://ws1.sinaimg.cn/large/006Y6f53ly1fnv3p4s7hbj30o80araap.jpg)
+![](https://ws1.sinaimg.cn/large/006Y6f53gy1fp83hz9p8dj30je08rwg2.jpg)
 
 </br>
 **总结**：

