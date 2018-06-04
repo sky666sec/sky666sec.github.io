@@ -27,7 +27,7 @@ favicon:
   #ms_browserconfig: /images/browserconfig.xml
 
 # Set default keywords (Use a comma to separate)
-keywords: NexT,白帽子,渗透测试,黑客,kali linux,Python,博客,sky666sec,sky666
+keywords: NexT,白帽子,渗透测试,黑客,kali linux,Python,博客,sky666sec,sky666,一个修电脑的网络安全爱好者
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -176,6 +176,7 @@ links:
    franktly: http://www.franktly.com/
    x14hack: http://www.x14hack.com/
    小陈: http://www.hackxc.cc
+   2kb: https://2kb.me/
    渗透师 网络安全从业者安全导航:  http://shentoushi.top/ 
    
 # Sidebar Avatar
