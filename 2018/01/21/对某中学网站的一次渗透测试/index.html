@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>对某中学网站的一次渗透测试 | sky666sec&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="keywords" content="渗透测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对某中学网站的一次渗透测试">
+<meta property="og:url" content="http://yoursite.com/2018/01/21/对某中学网站的一次渗透测试/index.html">
+<meta property="og:site_name" content="sky666sec&#39;s blog">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fnomkpfppbj30m90b8n0m.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fnocas88nvj30mg09l3z8.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fnoceg871wj311c0h90vl.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fnoktsd2kwj30fe05pglj.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fnocqiz03nj30ms0i53zk.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fnoct3adunj30p00dcgms.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fnocutheggj311i0hvwgs.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fnocw6cwhyj30ja04pq2v.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fnocwwuun1j30iq0c23ym.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fnppu2pw6wj30um0imn01.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fnppuxhwbij311n0ih0x6.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fnomkpfppbj30m90b8n0m.jpg">
+<meta property="og:updated_time" content="2018-08-05T06:36:17.525Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="对某中学网站的一次渗透测试">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fnomkpfppbj30m90b8n0m.jpg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/24877695?s=460&amp;v=4">
+    <h2 class="author">sky666</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>41</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+          <a href="/atom.xml" title="rss">
+            <li>rss</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-对某中学网站的一次渗透测试" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/21/对某中学网站的一次渗透测试/" class="article-date">
+  <time class="post-time" datetime="2018-01-21T08:43:56.000Z" itemprop="datePublished">
+    <span class="post-month">1月</span><br/>
+    <span class="post-day">21</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      对某中学网站的一次渗透测试
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/渗透测试/">渗透测试</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fnomkpfppbj30m90b8n0m.jpg" alt=""></p>
+<a id="more"></a>
+<font color="red"><strong>首先我犯了一个错误，我不该一开始就盲目对主站用扫描器一通乱扫。应该先做好信息收集工作，这样会起到事半功倍的效果。</strong></font>
+
+<p>开始我使劲的在研究主站，发现然并卵，啥用也没用。主站相对来说安全性要高，这当然是对于我等菜鸟来说的，大佬们肯定有办法直接拿下主站。好了废话不多说，开始进行正题。下面就是我整个渗透测试过程。</p>
+<p>我想了想，既然主站搞不下，那旁站呢。正好，我看到了这个。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fnocas88nvj30mg09l3z8.jpg" alt=""></p>
+<p>正好有一个旁站那我们就测试一下吧</p>
+<p>进入这个网站之后，我先找到了他的后台，发现是弱口令，直接就进入了，安全意识令人堪忧，可能也有为了方便的因素，不过好歹也改了密码，这样会增加入侵者的入侵难度。<br><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fnoceg871wj311c0h90vl.jpg" alt=""></p>
+<p>然后我就各个点的经常测试，文章管理上传漏洞不存在，编辑器漏洞没有，反正就是各种尝试，基本都无果。</p>
+<p>这时候我发现了广告管理那个功能选项，我点击进去，里面也有上传文件的功能，我抱着试一试的态度去上传，提示添加成功。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fnoktsd2kwj30fe05pglj.jpg" alt=""></p>
+<p>这时候我就要找上传路径了，<code>burp</code>抓包没抓到。然后我返回旁站首页一看，有个地方图片显示不正常，于是我就右键打开图片地址一看，果然就成功上<br>传且解析了<code>php</code>脚本</p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fnocqiz03nj30ms0i53zk.jpg" alt=""></p>
+<p>解析<code>php</code>脚本就好办了，直接上传php一句话或者大马。</p>
+<p>成功<code>getshell</code></p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fnoct3adunj30p00dcgms.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fnocutheggj311i0hvwgs.jpg" alt=""></p>
+<p>直接就是系统权限，都不用提权了。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fnocw6cwhyj30ja04pq2v.jpg" alt=""></p>
+<p>还是内网</p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fnocwwuun1j30iq0c23ym.jpg" alt=""></p>
+<p>最后还是拿下了数据库和服务器<br><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fnppu2pw6wj30um0imn01.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fnppuxhwbij311n0ih0x6.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fnomkpfppbj30m90b8n0m.jpg" alt=""></p>
+<p>搞定，收工。</p>
+<p><br><br><strong>总结：</strong></p>
+<ul>
+<li>首先要做好信息收集工作</li>
+<li>其次要攻敌人的弱点，弱小的地方，安全防护做的不好的地方。</li>
+<li>最后注意细节处，因为细节处会有意想不到的收获。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/21/对某中学网站的一次渗透测试/" data-id="cjkgwsaje0033swvkd4q747xe" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/渗透测试/">渗透测试</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/01/21/维权访问-ADS数据流/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          维权访问-ADS数据流
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/19/kali安装docker/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">kali安装docker</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">sky666sec&#39;s blog</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+          <a href="/atom.xml" title="rss">
+            <li>rss</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/24877695?s=460&amp;v=4">
+    <h2 class="author">sky666</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>41</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/sky666sec" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="https://exp10it.cn/about/" target="_blank" title="X1r0Z">
+          X1r0Z
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.sqlsec.com" target="_blank" title="国光">
+          国光
+        </a>
+      
+        <a class="hvr-bounce-in" href="http:www.ggsec.cn" target="_blank" title="Demon">
+          Demon
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.chabug.org" target="_blank" title="chabug">
+          chabug
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.dyboyw.cn" target="_blank" title="小东">
+          小东
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://scholar10.github.io/" target="_blank" title="书呆子">
+          书呆子
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2017 - 2018 sky666<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/about" title="" class="menuItem">关于</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

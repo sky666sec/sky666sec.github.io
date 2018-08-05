@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>PHPWEB重装漏洞+%00截断拿webshell | sky666sec&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="keywords" content="渗透测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHPWEB重装漏洞+%00截断拿webshell">
+<meta property="og:url" content="http://yoursite.com/2018/03/04/PHPWEB重装漏洞+00截断拿webshell/index.html">
+<meta property="og:site_name" content="sky666sec&#39;s blog">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53ly1fp0qgdv9rrj310q0h7t9r.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0pct202uj31180i9js4.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0pe0y0lvj311y0kg3ze.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0pfmxr5cj311b0ie40v.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0pgsaengj310s0i0mxs.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0phw1i3wj311d0i6mxr.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53ly1fp0pjyv5kwj311g0i6gsy.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0qcv8ydsj30a603jq2w.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53ly1fp0qgdv9rrj310q0h7t9r.jpg">
+<meta property="og:updated_time" content="2018-08-05T06:36:17.521Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHPWEB重装漏洞+%00截断拿webshell">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006Y6f53ly1fp0qgdv9rrj310q0h7t9r.jpg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/24877695?s=460&amp;v=4">
+    <h2 class="author">sky666</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>41</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+          <a href="/atom.xml" title="rss">
+            <li>rss</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-PHPWEB重装漏洞+00截断拿webshell" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/04/PHPWEB重装漏洞+00截断拿webshell/" class="article-date">
+  <time class="post-time" datetime="2018-03-04T05:02:19.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">04</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PHPWEB重装漏洞+%00截断拿webshell
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/渗透测试/">渗透测试</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fp0qgdv9rrj310q0h7t9r.jpg" alt=""></p>
+<a id="more"></a>
+<p>首先我们看到需要数据库服务器地址</p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0pct202uj31180i9js4.jpg" alt=""></p>
+<p>那么我们就自己搭建一台数据库服务器。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0pe0y0lvj311y0kg3ze.jpg" alt=""></p>
+<p>继续下一步</p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0pfmxr5cj311b0ie40v.jpg" alt=""></p>
+<p>接下来我们可以重置后台管理员密码</p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0pgsaengj310s0i0mxs.jpg" alt=""></p>
+<p>重置管理员密码成功</p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0phw1i3wj311d0i6mxr.jpg" alt=""></p>
+<p>正如安装完成的提示所说，请删除【install】目录（可是大部分安全意识不强的站长并没有删除，啪啪啪，打脸了）。</p>
+<p>成功进入后台管理系统</p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fp0pjyv5kwj311g0i6gsy.jpg" alt=""></p>
+<p><code>phpweb `</code>cms` 添加文章上传存在经典的%00截断漏洞。</p>
+<p>截断的产生核心，就是<code>chr(0)</code>字符 。</p>
+<p>这个字符即不为空<code>(Null)</code>，也不是空字符<code>(&quot;&quot;)</code>，更不是空格！</p>
+<p>当程序在输出含有<code>chr(0)</code>变量时，<code>chr(0)</code>后面的数据会被停止，换句话说，就是误把它当成结束符，后面的数据直接忽略，这就导致漏洞产生的原因。</p>
+<p>在<code>php 5.3.4</code>中修复了<code>0</code>字符，但是在之前的版本中仍然危害巨大。</p>
+<p>简单测试一下 (<code>PHP</code> 版本<code>&lt;5.3.4</code>)</p>
+<blockquote>
+<p>&lt;?php</p>
+</blockquote>
+<blockquote>
+<p>$data = $_GET[“filename”]`;</p>
+</blockquote>
+<blockquote>
+<p>echo $data;</p>
+</blockquote>
+<blockquote>
+<p>?&gt;</p>
+</blockquote>
+<p><code>url</code>中输入<code>xx.php?filename=test.php%00.txt</code>，实际输出为<code>test.php</code>.</p>
+<p>常见利用方法：</p>
+<ul>
+<li>1.上传时路径可控，使用00截断</li>
+<li>2.文件下载时，00截断绕过白名单检查</li>
+<li>3.文件包含时，00截断后面限制(主要是本地包含时)</li>
+<li>4.其它与文件操作有关的地方都可能使用00截断</li>
+</ul>
+<p>下面请看实例</p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp0qcv8ydsj30a603jq2w.jpg" alt=""></p>
+<p>成功拿到webshell</p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fp0qgdv9rrj310q0h7t9r.jpg" alt=""></p>
+<p>总结： </p>
+<blockquote>
+<p>正如安装完成的提示所说，请删除【install】目录。</p>
+</blockquote>
+<blockquote>
+<p>及时升级php版本以便修复缺陷。</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/04/PHPWEB重装漏洞+00截断拿webshell/" data-id="cjkgwsacm000rswvkeoihrrqh" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/渗透测试/">渗透测试</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/04/从元宵节点灯想到数据备份的重要性/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          从元宵节点灯想到数据备份的重要性
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/17/Small target/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">small target</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">sky666sec&#39;s blog</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+          <a href="/atom.xml" title="rss">
+            <li>rss</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/24877695?s=460&amp;v=4">
+    <h2 class="author">sky666</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>41</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/sky666sec" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="https://exp10it.cn/about/" target="_blank" title="X1r0Z">
+          X1r0Z
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.sqlsec.com" target="_blank" title="国光">
+          国光
+        </a>
+      
+        <a class="hvr-bounce-in" href="http:www.ggsec.cn" target="_blank" title="Demon">
+          Demon
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.chabug.org" target="_blank" title="chabug">
+          chabug
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.dyboyw.cn" target="_blank" title="小东">
+          小东
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://scholar10.github.io/" target="_blank" title="书呆子">
+          书呆子
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2017 - 2018 sky666<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/about" title="" class="menuItem">关于</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

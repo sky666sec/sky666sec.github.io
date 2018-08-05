@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>subprocess模块+去除启动的黑色cmd窗口 | sky666sec&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="subprocess模块+去除启动的黑色cmd窗口">
+<meta property="og:url" content="http://yoursite.com/2018/02/08/subprocess模块+去除启动的黑色cmd窗口/index.html">
+<meta property="og:site_name" content="sky666sec&#39;s blog">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fo9d9sak0tj30lp05yaa1.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53ly1fo9d27zmykj30rl0ef3z2.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fo9d6x8ebpj30r406oaaf.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fo9d9sak0tj30lp05yaa1.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fo9dc29cubj30dl094jrq.jpg">
+<meta property="og:updated_time" content="2018-08-05T06:36:17.521Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="subprocess模块+去除启动的黑色cmd窗口">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fo9d9sak0tj30lp05yaa1.jpg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/24877695?s=460&amp;v=4">
+    <h2 class="author">sky666</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>41</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+          <a href="/atom.xml" title="rss">
+            <li>rss</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-subprocess模块+去除启动的黑色cmd窗口" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/08/subprocess模块+去除启动的黑色cmd窗口/" class="article-date">
+  <time class="post-time" datetime="2018-02-08T12:02:42.000Z" itemprop="datePublished">
+    <span class="post-month">2月</span><br/>
+    <span class="post-day">08</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      subprocess模块+去除启动的黑色cmd窗口
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo9d9sak0tj30lp05yaa1.jpg" alt=""></p>
+<a id="more"></a>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>今天xz跟我说了<code>subprocess</code>模块，正好我晚上就用了<code>subprocess</code>模块。</p>
+<p>我们能从<code>Python</code>官方文档里读到应该用<code>subprocess</code> 模块来运行系统命令<code>.subprocess</code>模块允许我们创建子进程,连接他们的输入/输出/错误管道，还有获得返回值。<br><code>subprocess</code>模块打算来替代几个过时的模块和函数，比如： <code>os.system</code>,<code>os.spawn*</code>, <code>os.popen*</code>, <code>popen2.*</code>命令。<br>让我们来看一下<code>subprocess</code>有哪些不同的函数.</p>
+<h3 id="subprocess-call"><a href="#subprocess-call" class="headerlink" title="subprocess.call()"></a>subprocess.call()</h3><p>执行由参数提供的命令.<br>我们可以用数组作为参数运行命令,也可以用字符串作为参数运行命令(通过设置参数<code>shell=True</code>)<br>注意,参数<code>shell</code>默认为<code>False</code><br>我们用<code>subprocess.call()</code>来做一个统计磁盘的例子:</p>
+<blockquote>
+<p>subprocess.call([‘df’, ‘-h’])</p>
+</blockquote>
+<p>下面的例子把<code>shell</code>设置为<code>True</code></p>
+<blockquote>
+<p>subprocess.call(‘du -hs $HOME’, shell=True)</p>
+</blockquote>
+<p>注意<code>python</code>官方文档里对参数<code>shell=True</code>陈述了一个警告:</p>
+<blockquote>
+<p>Invoking the system shell with shell=True can be a security hazard if combined<br>with untrusted input</p>
+</blockquote>
+<h4 id="Input-and-Output"><a href="#Input-and-Output" class="headerlink" title="Input and Output"></a>Input and Output</h4><p><code>subprocess</code> 模块能阻止输出,当你不关心标准输出的时候是非常方便的.<br>它也使你通过一种正确的方式管理输入/输出,有条理地整合<code>python</code>脚本中的的<code>shell</code>命令.</p>
+<h4 id="Return-Codes"><a href="#Return-Codes" class="headerlink" title="Return Codes"></a>Return Codes</h4><p>通过<code>subprocess.call</code>的返回值你能够判定命令是否执行成功.<br>每一个进程退出时都会返回一个状态码，你可以根据这个状态码写一些代码。</p>
+<h4 id="stdin-stdout-and-stderr"><a href="#stdin-stdout-and-stderr" class="headerlink" title="stdin, stdout and stderr"></a>stdin, stdout and stderr</h4><p>我在使用<code>subprocess</code> 时,有一个微妙的部分是怎么使用管道把命令连接起来.<br>管道表明一个新的子管道应该被创建.<br>默认的设置为<code>None,</code>意味着没有重定向发生<br>标准错误可以指向标准输出,表明子进程的错误信息会被捕获到和标准输出同一个文件.</p>
+<h3 id="subprocess-Popen"><a href="#subprocess-Popen" class="headerlink" title="subprocess.Popen()"></a>subprocess.Popen()</h3><p><code>subprocess</code>模块中基本的进程创建和管理由Popen 类来处理.<br><code>subprocess.popen</code>是用来替代<code>os.popen</code>的.<br>我们来做一些真实的例子,<code>subprocess.Popen</code>需要一个数组作为参数:</p>
+<blockquote>
+<p>import subprocess</p>
+</blockquote>
+<blockquote>
+<p>p = subprocess.Popen([“echo”, “hello world”], stdout=subprocess.PIPE)</p>
+</blockquote>
+<blockquote>
+<p>print p.communicate()</p>
+</blockquote>
+<blockquote>
+<p> &nbsp;&gt;&gt;&gt;(‘hello world<br>‘, None)</p>
+</blockquote>
+<p>注意,虽然你可以使用 “<code>shell=True</code>“,但并不推荐这样的方式.<br>如果你知道你只用几个有限的函数,比如<code>Popen</code>和<code>PIPE</code>,你可以单单指定这几个函数:</p>
+<blockquote>
+<p>from subprocess import Popen, PIPE</p>
+</blockquote>
+<blockquote>
+<p>p1 = Popen([“dmesg”], stdout=PIPE)</p>
+</blockquote>
+<blockquote>
+<p>print p1.communicate()</p>
+</blockquote>
+<h4 id="Popen-communicate"><a href="#Popen-communicate" class="headerlink" title="Popen.communicate()"></a>Popen.communicate()</h4><p><code>communicate()</code>函数返回一个<code>tuple</code>(标准输出和错误).<br><code>Popen.communicate()</code> 和进程沟通:发送数据到标准输入.从标准输出和错误读取数据直到遇到结束符.等待进程结束.<br>输入参数应该是一个字符串,以传递给子进程,如果没有数据的话应该是<code>None</code>.<br>基本上,当你用<code>communicate()函</code>数的时候意味着你要执行命令了.</p>
+<h3 id="用subprocess写Ping程序"><a href="#用subprocess写Ping程序" class="headerlink" title="用subprocess写Ping程序"></a>用subprocess写Ping程序</h3><p>我们先问用户地址,然后用<code>ping</code>请求这个地址.</p>
+<blockquote>
+<p>&nbsp;# Import the module</p>
+</blockquote>
+<blockquote>
+<p>&nbsp;import subprocess</p>
+</blockquote>
+<blockquote>
+<p>&nbsp;# Ask the user for input</p>
+</blockquote>
+<p>host = raw_input(“Enter a host to ping: “)    </p>
+<blockquote>
+<p>&nbsp;# Set up the echo command and direct the output to a pipe</p>
+</blockquote>
+<blockquote>
+<p>&nbsp;p1 = subprocess.Popen([‘ping’, ‘-c 2’, host], stdout=subprocess.PIPE)</p>
+</blockquote>
+<blockquote>
+<p>&nbsp;# Run the command</p>
+</blockquote>
+<blockquote>
+<p>output = p1.communicate()[0]</p>
+</blockquote>
+<blockquote>
+<p>print output</p>
+</blockquote>
+<h3 id="去除启动的黑色cmd窗口"><a href="#去除启动的黑色cmd窗口" class="headerlink" title="去除启动的黑色cmd窗口"></a>去除启动的黑色cmd窗口</h3><p>开始我用的<code>o</code>s模块的<code>os.system（）</code>，但是发现有一个<code>bug</code>。<br>就是启动之后会有黑色的<code>cmd</code>窗口这个<code>bug</code>，这个不是我们想要的。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fo9d27zmykj30rl0ef3z2.jpg" alt=""></p>
+<p>于是我查了查资料，看到了这个。<br><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo9d6x8ebpj30r406oaaf.jpg" alt=""></p>
+<p>原来我们可以使用<code>subprocess</code>模块的<code>subprocess.Popen()</code>来解决这个<code>bug</code>。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo9d9sak0tj30lp05yaa1.jpg" alt=""></p>
+<p>这下启动之后出现的黑色<code>cmd</code>窗口没有了，也达到我们的效果。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fo9dc29cubj30dl094jrq.jpg" alt=""></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li><p>了解了<code>subproess</code>模块</p>
+</li>
+<li><p>学会了用<code>subproess`</code>模块的subpross.Popen()<code>解决启动的黑色</code>cmd`窗口。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/02/08/subprocess模块+去除启动的黑色cmd窗口/" data-id="cjkgwsai7002eswvkzetdhdej" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/08/Python系统命令调用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Python系统命令调用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/08/Hardentools/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Hardentools</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">sky666sec&#39;s blog</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+          <a href="/atom.xml" title="rss">
+            <li>rss</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/24877695?s=460&amp;v=4">
+    <h2 class="author">sky666</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>41</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/sky666sec" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="https://exp10it.cn/about/" target="_blank" title="X1r0Z">
+          X1r0Z
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.sqlsec.com" target="_blank" title="国光">
+          国光
+        </a>
+      
+        <a class="hvr-bounce-in" href="http:www.ggsec.cn" target="_blank" title="Demon">
+          Demon
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.chabug.org" target="_blank" title="chabug">
+          chabug
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.dyboyw.cn" target="_blank" title="小东">
+          小东
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://scholar10.github.io/" target="_blank" title="书呆子">
+          书呆子
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2017 - 2018 sky666<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/about" title="" class="menuItem">关于</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

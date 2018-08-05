@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>kali2017.3安装搜狗输入法 | sky666sec&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="近期kali rolling更新了fcitx版本，如果有人和我一样喜欢天天更新的，会发现搜狗输入法莫名的就失效了。由于官方废弃了两个搜狗输入法需要的依赖包：fcitx-libs和fcitx-libs-qt，不需要这俩依赖就能运行。 解决方法：删掉这俩依赖重新打包，不会的可以下载下面我改好的deb包。">
+<meta name="keywords" content="Kali Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kali2017.3安装搜狗输入法">
+<meta property="og:url" content="http://yoursite.com/2017/12/13/kali2017-3安装搜狗输入法/index.html">
+<meta property="og:site_name" content="sky666sec&#39;s blog">
+<meta property="og:description" content="近期kali rolling更新了fcitx版本，如果有人和我一样喜欢天天更新的，会发现搜狗输入法莫名的就失效了。由于官方废弃了两个搜狗输入法需要的依赖包：fcitx-libs和fcitx-libs-qt，不需要这俩依赖就能运行。 解决方法：删掉这俩依赖重新打包，不会的可以下载下面我改好的deb包。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-05T06:36:17.517Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="kali2017.3安装搜狗输入法">
+<meta name="twitter:description" content="近期kali rolling更新了fcitx版本，如果有人和我一样喜欢天天更新的，会发现搜狗输入法莫名的就失效了。由于官方废弃了两个搜狗输入法需要的依赖包：fcitx-libs和fcitx-libs-qt，不需要这俩依赖就能运行。 解决方法：删掉这俩依赖重新打包，不会的可以下载下面我改好的deb包。">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/24877695?s=460&amp;v=4">
+    <h2 class="author">sky666</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>41</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+          <a href="/atom.xml" title="rss">
+            <li>rss</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-kali2017-3安装搜狗输入法" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/13/kali2017-3安装搜狗输入法/" class="article-date">
+  <time class="post-time" datetime="2017-12-13T11:28:18.000Z" itemprop="datePublished">
+    <span class="post-month">12月</span><br/>
+    <span class="post-day">13</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      kali2017.3安装搜狗输入法
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/kali/">kali</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>近期kali rolling更新了fcitx版本，如果有人和我一样喜欢天天更新的，会发现搜狗输入法莫名的就失效了。<br>由于官方废弃了两个搜狗输入法需要的依赖包：fcitx-libs和fcitx-libs-qt，不需要这俩依赖就能运行。</p>
+<p>解决方法：删掉这俩依赖重新打包，不会的可以下载下面我改好的deb包。</p>
+<a id="more"></a>
+<h4 id="安装步骤："><a href="#安装步骤：" class="headerlink" title="安装步骤："></a>安装步骤：</h4><h5 id="先下载原版搜狗拼音安装包"><a href="#先下载原版搜狗拼音安装包" class="headerlink" title="先下载原版搜狗拼音安装包"></a>先下载原版搜狗拼音安装包</h5><pre><code>wget -O sogoupinyin_2.1.0.0086_amd64.deb &quot;http://pinyin.sogou.com/linux/download.php?f=linux&amp;bit=64&quot;
+</code></pre><h5 id="创建软件包目录"><a href="#创建软件包目录" class="headerlink" title="创建软件包目录"></a>创建软件包目录</h5><pre><code>mkdir -p extract/DEBIAN
+</code></pre><h5 id="用dpkg解压"><a href="#用dpkg解压" class="headerlink" title="用dpkg解压"></a>用dpkg解压</h5><pre><code>dpkg-deb -x sogoupinyin_2.1.0.0086_amd64.deb extract/
+
+dpkg-deb -e sogoupinyin_2.1.0.0086_amd64.deb extract/DEBIAN
+</code></pre><p>然后用文本编辑器打开extract/DEBIAN/control<br>找到Depends行，删除fcitx-libs和fcitx-libs-qt这俩依赖，保存退出。</p>
+<pre><code>vi extract/DEBIAN/control
+</code></pre><h5 id="建立软件包生成目录"><a href="#建立软件包生成目录" class="headerlink" title="建立软件包生成目录"></a>建立软件包生成目录</h5><pre><code>mkdir build
+</code></pre><h5 id="重新打包"><a href="#重新打包" class="headerlink" title="重新打包"></a>重新打包</h5><pre><code>dpkg-deb -b extract/ build/
+</code></pre><p>在build目录下会看到新生成的包,安装这个新的包即可</p>
+<pre><code>dpkg -i build/sogoupinyin_2.1.0.0086_amd64.deb
+</code></pre><font color="red"><strong>这是改好的搜狗拼音安装包：</strong></font>
+
+
+<p>   链接：<code>http://pan.baidu.com/s/1eRDSLxg</code> 密码：<code>pu31</code></p>
+<h4 id="常规安装搜狗输入法步骤："><a href="#常规安装搜狗输入法步骤：" class="headerlink" title="常规安装搜狗输入法步骤："></a>常规安装搜狗输入法步骤：</h4><h5 id="更新系统"><a href="#更新系统" class="headerlink" title="更新系统"></a>更新系统</h5><pre><code>apt update
+
+apt dist-upgrade
+</code></pre><h5 id="安装fcitx"><a href="#安装fcitx" class="headerlink" title="安装fcitx"></a>安装fcitx</h5><pre><code>apt install fcitx
+</code></pre><h5 id="搜狗官网下载对应版本deb包"><a href="#搜狗官网下载对应版本deb包" class="headerlink" title="搜狗官网下载对应版本deb包"></a>搜狗官网下载对应版本deb包</h5><pre><code>http://pinyin.sogou.com/linux/
+</code></pre><p>下载的文件会在“/root/下载/”目录下</p>
+<h5 id="安装搜狗输入法"><a href="#安装搜狗输入法" class="headerlink" title="安装搜狗输入法"></a>安装搜狗输入法</h5><pre><code>dpkg -i /root/下载/sogoupinyin_2.1.0.0086_amd64.deb
+</code></pre><h5 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h5><pre><code>apt -f install
+</code></pre><p>当然我们也可以用gdebi安装，它会在安装过程中自动安装缺少的依赖。</p>
+<p><br><br><strong>这样就能完整安装好搜狗输入法了，记得重启机器才能在桌面左下角选择搜狗拼音。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/13/kali2017-3安装搜狗输入法/" data-id="cjkgwsadc0016swvkdhkex9oz" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kali-Linux/">Kali Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/12/14/kali安装谷歌浏览器/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Kali Linux 安装google-chrome浏览器
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/13/kali添加更新源/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">kali linux添加更新源</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">sky666sec&#39;s blog</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+          <a href="/atom.xml" title="rss">
+            <li>rss</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/24877695?s=460&amp;v=4">
+    <h2 class="author">sky666</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>41</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/sky666sec" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="https://exp10it.cn/about/" target="_blank" title="X1r0Z">
+          X1r0Z
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.sqlsec.com" target="_blank" title="国光">
+          国光
+        </a>
+      
+        <a class="hvr-bounce-in" href="http:www.ggsec.cn" target="_blank" title="Demon">
+          Demon
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.chabug.org" target="_blank" title="chabug">
+          chabug
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.dyboyw.cn" target="_blank" title="小东">
+          小东
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://scholar10.github.io/" target="_blank" title="书呆子">
+          书呆子
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2017 - 2018 sky666<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/about" title="" class="menuItem">关于</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>内网渗透之reDuh | sky666sec&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="keywords" content="渗透测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="内网渗透之reDuh">
+<meta property="og:url" content="http://yoursite.com/2018/01/28/内网渗透之reDuh/index.html">
+<meta property="og:site_name" content="sky666sec&#39;s blog">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwbl9mn08j30ic0hbmxk.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwawsjj4vj30gy09taaj.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwb20f3l3j30gt035mx1.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwb4ym17nj30fn0bb0sq.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwbakn8c8j30if0hagly.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwbl9mn08j30ic0hbmxk.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwbmcfy97j30fl0b93yo.jpg">
+<meta property="og:updated_time" content="2018-08-05T06:36:17.525Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="内网渗透之reDuh">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwbl9mn08j30ic0hbmxk.jpg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/24877695?s=460&amp;v=4">
+    <h2 class="author">sky666</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>41</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+          <a href="/atom.xml" title="rss">
+            <li>rss</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-内网渗透之reDuh" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/28/内网渗透之reDuh/" class="article-date">
+  <time class="post-time" datetime="2018-01-28T06:19:58.000Z" itemprop="datePublished">
+    <span class="post-month">1月</span><br/>
+    <span class="post-day">28</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      内网渗透之reDuh
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/渗透测试/">渗透测试</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwbl9mn08j30ic0hbmxk.jpg" alt=""></p>
+<a id="more"></a>
+<h3 id="reDuh原理介绍"><a href="#reDuh原理介绍" class="headerlink" title="reDuh原理介绍"></a>reDuh原理介绍</h3><p><code>reDuh</code>最开始是由<code>SensePost</code>在<code>BlackHat USA 2008</code>会议上发表的一个议题中的一部分。它的出现是针对当前Web安全渗透测试经常会面临的一个问题，同时也是<code>Web</code>服务器加固方面一个很重要的部分， 那就是<code>Web</code>服务器对外只开放一个<code>80</code>端口。<code>Web</code>服务器的安全防护可以是操作系统的端口定制或者是网管防火前的端口定制。这时渗透测试人员如果想进一步 测试内网的话必须先拿下目标服务器并拥有一定的控制权限。<code>reDuh GUI</code>是由诺赛科技从原有的JAVA语言上移植到C++语言的一个<code>Windows GUI</code>版本，具有如下一些特性：</p>
+<p>不需要<code>JAVA</code>运行环境<br>可视化操作<br>支持<code>HTTP/HTTPS</code><br>支持二级代理<br>以前渗透测试人员常用的一些方法是通过上传一些针对操作系统的可执行文件到目标服务器，并且必须要通过进程的方式执行该程序。这就存在两个问题：1、通过 渗透测试拿到的权限不一定允许执行进程；2、目标服务器的种类可能很多，比如<code>Windows、Linux、Solaris</code>等等，且对于库依赖性比较强，这 样就要求渗透测试人员必须维护一个不小的程序库以满足渗透测试的场景。<br>事实上，我们容易忽略的一点就是，其实脚本代码本身就支持<code>SOCKET</code>套接字的操作，它完全可以制作成为一个<code>SOCKET</code>中转代理（当然这也是有一定的限 制的，就比如在PHP中需要启用<code>SOCKET</code>模块）。那么这种代理是可以直接绕过防火墙进入到内网的。我们举个现实生活中比较常见的例子说明：<code>A</code>是一台<code>web</code>服务器，<code>B</code>是与<code>A</code>在同一内网一个文件服务器，由于工作需要及简化操作，<code>B</code>的文件访问是对内网公开的，也就是没有任何的认证要求。同时为了保证<code>B</code>服务 器的安全性，在网关防火墙上做了端口过滤：只允许外网访问<code>A</code>的<code>80</code>端口。这时我们如果想要从测试点访问<code>B</code>，传统的做法是控制<code>A</code>，上传执行文件，做一个程序 级的端口转发器。假设目标服务器根本就不允许从<code>web</code>上来的请求执行程序，换句话说是不允许执行进程，那么我们就没有办法拿到<code>B</code>的文件了吗？这里，我们就 可以想到<code>reDuh</code>了。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwawsjj4vj30gy09taaj.jpg" alt=""></p>
+<p>由图示上我们也可以看出，从<code>MSTSC</code>客户端到目标的<code>Terminal</code>服务器中间其实是走了一个这样的流程：<br><code>Mstsc</code>客户端–&gt;<code>reDuh</code>代理–&gt;<code>HTTP tunne</code>–&gt;<code>Web</code>服务器–&gt;<code>Terminal</code>服务器<br>当然，对于<code>MSTSC</code>客户端而言，这些过程都是透明的，我们只需要在<code>MSTSC</code>中指定连接的端口为本地<code>reDuh</code>监听的端口即可。</p>
+<h3 id="首先我们上传reDuh脚本"><a href="#首先我们上传reDuh脚本" class="headerlink" title="首先我们上传reDuh脚本"></a>首先我们上传reDuh脚本</h3><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwb20f3l3j30gt035mx1.jpg" alt=""></p>
+<p>文件可以访问，继续下一步。</p>
+<h3 id="然后我们配置好代理端"><a href="#然后我们配置好代理端" class="headerlink" title="然后我们配置好代理端"></a>然后我们配置好代理端</h3><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwb4ym17nj30fn0bb0sq.jpg" alt=""></p>
+<h3 id="最后我们开始通过reDuh转发进内网"><a href="#最后我们开始通过reDuh转发进内网" class="headerlink" title="最后我们开始通过reDuh转发进内网"></a>最后我们开始通过reDuh转发进内网</h3><p>可以看到，成功转发。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwbakn8c8j30if0hagly.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwbl9mn08j30ic0hbmxk.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnwbmcfy97j30fl0b93yo.jpg" alt=""></p>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ul>
+<li>还有很多姿势有待我们去挖掘</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/28/内网渗透之reDuh/" data-id="cjkgwsaj4002xswvkesakvv8d" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/渗透测试/">渗透测试</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/01/30/python学习之变量/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          python学习之变量
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/28/dirtyc0w-Linux提权/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">dirtyc0w_Linux提权</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">sky666sec&#39;s blog</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+          <a href="/atom.xml" title="rss">
+            <li>rss</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/24877695?s=460&amp;v=4">
+    <h2 class="author">sky666</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>41</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/sky666sec" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="https://exp10it.cn/about/" target="_blank" title="X1r0Z">
+          X1r0Z
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.sqlsec.com" target="_blank" title="国光">
+          国光
+        </a>
+      
+        <a class="hvr-bounce-in" href="http:www.ggsec.cn" target="_blank" title="Demon">
+          Demon
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.chabug.org" target="_blank" title="chabug">
+          chabug
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.dyboyw.cn" target="_blank" title="小东">
+          小东
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://scholar10.github.io/" target="_blank" title="书呆子">
+          书呆子
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2017 - 2018 sky666<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/about" title="" class="menuItem">关于</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>kali linux添加更新源 | sky666sec&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="keywords" content="Kali Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kali linux添加更新源">
+<meta property="og:url" content="http://yoursite.com/2017/12/13/kali添加更新源/index.html">
+<meta property="og:site_name" content="sky666sec&#39;s blog">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://github.com/sky666sec/sky666sec.github.io/blob/hexo/Figure%20Bed/006Y6f53gy1fnluhk27zwj30hv0de422.jpg?raw=true">
+<meta property="og:updated_time" content="2018-08-05T06:36:17.521Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="kali linux添加更新源">
+<meta name="twitter:image" content="https://github.com/sky666sec/sky666sec.github.io/blob/hexo/Figure%20Bed/006Y6f53gy1fnluhk27zwj30hv0de422.jpg?raw=true">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/24877695?s=460&amp;v=4">
+    <h2 class="author">sky666</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>41</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+          <a href="/atom.xml" title="rss">
+            <li>rss</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="kali-kali添加更新源" class="wow slideInRight article article-type-kali" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/13/kali添加更新源/" class="article-date">
+  <time class="post-time" datetime="2017-12-13T08:44:58.000Z" itemprop="datePublished">
+    <span class="post-month">12月</span><br/>
+    <span class="post-day">13</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      kali linux添加更新源
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/kali/">kali</a>
+  </div>
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://github.com/sky666sec/sky666sec.github.io/blob/hexo/Figure%20Bed/006Y6f53gy1fnluhk27zwj30hv0de422.jpg?raw=true" alt=""></p>
+<a id="more"></a>
+<p>推荐使用清华大学更新源，这个比较稳定。</p>
+<h3 id="添加步骤"><a href="#添加步骤" class="headerlink" title="添加步骤"></a>添加步骤</h3><h4 id="首先找到所需要添加的源的地址。"><a href="#首先找到所需要添加的源的地址。" class="headerlink" title="首先找到所需要添加的源的地址。"></a>首先找到所需要添加的源的地址。</h4><h5 id="清华大学"><a href="#清华大学" class="headerlink" title="清华大学:"></a>清华大学:</h5><pre><code>deb http://mirrors.tuna.tsinghua.edu.cn/kali/  kali-rolling contrib main non-free
+
+deb-src http://mirrors.tuna.tsinghua.edu.cn/kali/  kali-rolling contrib main non-free
+</code></pre><h5 id="阿里云"><a href="#阿里云" class="headerlink" title="阿里云:"></a>阿里云:</h5><pre><code>deb http://mirrors.aliyun.com/kali kali-rolling main non-free contrib
+
+deb-src http://mirrors.aliyun.com/kali kali-rolling main non-free contrib
+</code></pre><h5 id="中科大"><a href="#中科大" class="headerlink" title="中科大:"></a>中科大:</h5><pre><code>deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib
+
+deb-src http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib
+</code></pre><h5 id="官方源"><a href="#官方源" class="headerlink" title="官方源:"></a>官方源:</h5><pre><code>deb http://http.kali.org/kali kali-rolling main non-free contrib
+
+deb-src http://http.kali.org/kali kali-rolling main non-free contrib
+</code></pre><h4 id="然后终端输入：leafpad-etc-apt-sources-list"><a href="#然后终端输入：leafpad-etc-apt-sources-list" class="headerlink" title="然后终端输入：leafpad /etc/apt/sources.list"></a>然后终端输入：<code>leafpad /etc/apt/sources.list</code></h4><p>打开后把上面的源加进去，然后保存。</p>
+<h4 id="最后执行apt-get-update"><a href="#最后执行apt-get-update" class="headerlink" title="最后执行apt-get update"></a>最后执行<code>apt-get update</code></h4><blockquote>
+<p><code>apt clean</code>  这个命令会把安装的软件的备份也删除，但是这样不会影响软件的使用。</p>
+</blockquote>
+<blockquote>
+<p><code>apt autoclean</code>   定期运行这个命令来清除那些已卸载的软件包的.deb文档。通过这种方式，您能够释放大量的磁盘空间。</p>
+</blockquote>
+<blockquote>
+<p><code>apt update</code>在修改<code>/etc/apt/sources.list</code>或<code>/etc/apt/preferences</code>之后运行该命令。此外您需要定期运行这一命令以确保您的软件包列表是最新的。</p>
+</blockquote>
+<blockquote>
+<p><code>apt upgrade</code> 可以使用这条命令更新软件包，apt-get upgrade不仅可以从相同版本号的发布版中更新软件包，也可以从新版本号的发布版中更新软件包，尽管实现后一种更新的推荐命令为<code>apt-get dist-upgrade</code>。</p>
+</blockquote>
+<blockquote>
+<p><code>apt dist-upgrade</code> 将系统升级到新版本。</p>
+</blockquote>
+<blockquote>
+<p><code>apt autoremove</code>   删除为了满足其他软件包的依赖而安装的，但现在不再需要的软件包。</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/13/kali添加更新源/" data-id="cjkgwsae3001nswvk3hhpq0j9" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kali-Linux/">Kali Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/12/13/kali2017-3安装搜狗输入法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          kali2017.3安装搜狗输入法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/12/Hexo常见问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Hexo常见问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">sky666sec&#39;s blog</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+          <a href="/atom.xml" title="rss">
+            <li>rss</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/24877695?s=460&amp;v=4">
+    <h2 class="author">sky666</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>41</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/sky666sec" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="https://exp10it.cn/about/" target="_blank" title="X1r0Z">
+          X1r0Z
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.sqlsec.com" target="_blank" title="国光">
+          国光
+        </a>
+      
+        <a class="hvr-bounce-in" href="http:www.ggsec.cn" target="_blank" title="Demon">
+          Demon
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.chabug.org" target="_blank" title="chabug">
+          chabug
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.dyboyw.cn" target="_blank" title="小东">
+          小东
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://scholar10.github.io/" target="_blank" title="书呆子">
+          书呆子
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2017 - 2018 sky666<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/about" title="" class="menuItem">关于</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Metasploit基础命令新手指南 | sky666sec&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="keywords" content="Metasploit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Metasploit基础命令新手指南">
+<meta property="og:url" content="http://yoursite.com/2017/12/16/Metasploit基础命令新手指南/index.html">
+<meta property="og:site_name" content="sky666sec&#39;s blog">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fnlui409j3j30lr0kzt9v.jpg">
+<meta property="og:updated_time" content="2018-08-05T06:36:17.521Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Metasploit基础命令新手指南">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fnlui409j3j30lr0kzt9v.jpg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/24877695?s=460&amp;v=4">
+    <h2 class="author">sky666</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>41</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+          <a href="/atom.xml" title="rss">
+            <li>rss</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-Metasploit基础命令新手指南" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/16/Metasploit基础命令新手指南/" class="article-date">
+  <time class="post-time" datetime="2017-12-16T03:02:33.000Z" itemprop="datePublished">
+    <span class="post-month">12月</span><br/>
+    <span class="post-day">16</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Metasploit基础命令新手指南
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Metasploit/">Metasploit</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fnlui409j3j30lr0kzt9v.jpg" alt=""><br><a id="more"></a></p>
+<h4 id="基础命令概览："><a href="#基础命令概览：" class="headerlink" title="基础命令概览："></a>基础命令概览：</h4><p>back （返回）： 从目前的情况下向后移动<br>banner ：Display an awesome metasploit banner<br>cd： 改变当前的工作目录<br>color： 切换颜色<br>connect（远程连接）： 与主机通信</p>
+<!--more-->
+<p>edit （编辑）： 编辑与$ VISUAL或$ EDITOR当前模块的<br>exit （退出命令行）： 退出控制台<br>get （获取变量）： 获取特定上下文变量的值<br>getg （全局获取变量）： 获取一个全局变量的值<br>go_pro ： 启动Metasploit的网页图形用户界面</p>
+<p>grep： grep的另一个命令的输出<br>help（帮助） ： 帮助菜单<br>info（获取模块信息）： 关于一个或多个模块显示信息<br>irb： 进入irb脚本模式<br>jobs：显示和管理职位<br>kill（结束进程）： 结束一个进程<br>load （加载）： 加载一个框架插件<br>loadpath ： 搜索和负载从一个路径模块<br>makerc： 保存自开始进入到一个文件中的命令<br>popm： 弹出最新的模块从堆栈中并使其活跃</p>
+<p>previous ： 将以前加载模块作为当前模块<br>pushm ： 推主动或模块列表在模块栈<br>quit （退出控制台）： 退出控制台<br>reload_all Reloads ： 从所有定义的模块路径的所有模块<br>rename_job ： 重命名工作<br>resource ： 运行存储命令在文件<br>route ： 通过会话路由流量<br>save： 将数据存储主动<br>search（搜索exp等模块关键字）： 搜索模块的名称和说明<br>sessions（会话功能）： 转储会话列表和显示有关会话的信息</p>
+<p>set （设置参数）： 设置一个特定的上下文变量的值<br>setg（全局设置参数）： 设置一个全局变量的值<br>show （展示参数模块）： 给定类型的显示模块或所有模块<br>sleep ： 什么都不做对的指定秒数<br>spool ： 写控制台输出到一个文件以及屏幕<br>threads ： 查看和操作后台线程<br>unload （卸载某个插件）： 卸载一个框架插件<br>unset （删除某个设置参数）： 取消设置一个或多个特定的上下文变量<br>unsetg （取消全局某个设置参数）： 取消设置一个或多个全局变量的<br>use （使用某个模块）： 选择按名称模块<br>version（查看版本信息）： 显示的框架和控制台库版本号</p>
+<h4 id="命令作用详解："><a href="#命令作用详解：" class="headerlink" title="命令作用详解："></a>命令作用详解：</h4><h5 id="back："><a href="#back：" class="headerlink" title="back："></a>back：</h5><p>切换上下模块</p>
+<p>一旦你已经完成了工作与一个特定的模块,或者如果你无意中选择了错误的模块,你可以“恢复”命令将当前上下文。</p>
+<h5 id="check："><a href="#check：" class="headerlink" title="check："></a>check：</h5><p>检查exp是否有效，检查各项参数是否设置正确</p>
+<h5 id="connect："><a href="#connect：" class="headerlink" title="connect："></a>connect：</h5><p>通过发行“连接”命令有一个<code>ip</code>地址和端口号,你可以连接到一个远程主机从内部<code>msfconsole</code>一样你会<code>netcat</code>或<code>telnet</code>。</p>
+<h5 id="exit："><a href="#exit：" class="headerlink" title="exit："></a>exit：</h5><p>退出命令行</p>
+<h5 id="help："><a href="#help：" class="headerlink" title="help："></a>help：</h5><p>列出命令和帮助信息</p>
+<h5 id="info："><a href="#info：" class="headerlink" title="info："></a>info：</h5><p>info命令将提供关于一个特定模块的详细信息包括所有选项,目标,和其他信息。之前一定要总是读模块描述使用一些可能un-desired效果。</p>
+<h5 id="jobs："><a href="#jobs：" class="headerlink" title="jobs："></a>jobs：</h5><p>（查看已后台运行的模块，如会话等。）</p>
+<p>工作是在后台运行的模块。工作命令提供了列表和终止这些工作的能力。</p>
+<h5 id="kill："><a href="#kill：" class="headerlink" title="kill："></a>kill：</h5><p><code>kill</code>命令将结束任何运行时工作提供的id</p>
+<p><code>msf exploit(ms08_067_netapi) &gt; kill 0
+Stopping job: 0…</code></p>
+<p>[*] <code>Server stopped</code>.</p>
+<h5 id="load："><a href="#load：" class="headerlink" title="load："></a>load：</h5><p>从<code>Metasploit load</code>命令加载插件的插件目录。参数是作为关键= <code>val shell</code>传递。</p>
+<h5 id="loadpath"><a href="#loadpath" class="headerlink" title="loadpath"></a>loadpath</h5><p><code>loadpath</code>命令将可以跳转到第三方模块加载树的路径你可以点<code>Metasploit</code> <code>0-day</code>利用、编码器、载荷等。</p>
+<h5 id="unload："><a href="#unload：" class="headerlink" title="unload："></a>unload：</h5><p>卸载模块插件</p>
+<h5 id="route："><a href="#route：" class="headerlink" title="route："></a>route：</h5><p><code>Metasploit</code>的“路线”命令允许您通过一个会话路由套接字或“通讯”,提供基本的旋转功能。添加一个路线,你通过目标子网和网络掩码会话(通讯)数量紧随其后。</p>
+<p> meterpreter &gt; route</p>
+<h5 id="search："><a href="#search：" class="headerlink" title="search："></a>search：</h5><p>msfconsole包括一个广泛的基于正则表达式的搜索功能。如果你有一个总体的想法你正在寻找你可以通过“搜索”搜索。在下面的输出中,搜索是ms08-067。搜索功能将在模块定位这个字符串名称、描述、参考文献等。</p>
+<h5 id="help"><a href="#help" class="headerlink" title="help:"></a>help:</h5><p>搜索关键字</p>
+<h5 id="name："><a href="#name：" class="headerlink" title="name："></a>name：</h5><p>搜索名称</p>
+<h5 id="path："><a href="#path：" class="headerlink" title="path："></a>path：</h5><p>搜索路径</p>
+<h5 id="type："><a href="#type：" class="headerlink" title="type："></a>type：</h5><p>搜索模块类型</p>
+<h5 id="platform："><a href="#platform：" class="headerlink" title="platform："></a>platform：</h5><p>您可以使用“platform”来缩小你的搜索范围,影响特定平台的模块。</p>
+<h4 id="sessions"><a href="#sessions" class="headerlink" title="sessions"></a>sessions</h4><p>“会话”命令允许您列出,与交互,并杀死了会话。会话可以壳,<code>Meterpreter</code>会话,<code>VNC</code>,等等。</p>
+<h4 id="set"><a href="#set" class="headerlink" title="set:"></a>set:</h4><p>“设置”命令允许您配置框架选项和参数为当前模块处理。</p>
+<h4 id="unset"><a href="#unset" class="headerlink" title="unset:"></a>unset:</h4><p>取消设置</p>
+<h4 id="setg"><a href="#setg" class="headerlink" title="setg:"></a>setg:</h4><p>全局变量设置</p>
+<h4 id="auxiliary"><a href="#auxiliary" class="headerlink" title="auxiliary"></a>auxiliary</h4><p>执行“显示辅助”将显示清单<code>Metasploit</code>内所有可用的辅助模块。如前所述,辅助模块包括扫描仪、拒绝服务模块,<code>fuzz</code>等等。</p>
+<h4 id="exploits"><a href="#exploits" class="headerlink" title="exploits"></a>exploits</h4><p>自然,“展示利用”将命令你最感兴趣的运行以来的核心,<code>Metasploit</code>就是剥削。展示利用的运行以获得一个清单中包含的所有功绩的框架。也可以用<code>run</code>命令来代替，功能是一样的。</p>
+<h4 id="payloads：展示所有有效的攻击载荷"><a href="#payloads：展示所有有效的攻击载荷" class="headerlink" title="payloads：展示所有有效的攻击载荷"></a>payloads：展示所有有效的攻击载荷</h4><p>正如您可以看到的,有很多可用的有效载荷。幸运的是,当你在一个特定的背景下开发,运行显示有效载荷的只会显示特定的载荷,兼容利用。例如,如果它是一个<code>Windows</code>开发,你将不会显示<code>Linux</code>载荷。</p>
+<h4 id="options："><a href="#options：" class="headerlink" title="options："></a>options：</h4><p>是保证<code>metasploit</code>框架中的各个模块正确运行所需的各种设置</p>
+<h4 id="targets："><a href="#targets：" class="headerlink" title="targets："></a>targets：</h4><p>如果你不确定一个操作系统很容易受到特定的开发,运行显示目标的命令从一个开发模块的上下文中看到哪些目标是支持。</p>
+<h4 id="use"><a href="#use" class="headerlink" title="use:"></a>use:</h4><p>当你已经决定在一个特定的模块使用,使用的命令以选中它。使用的命令改变你的环境到一个特定的模块,将特定类型的命令。注意在下面的输出任何以前的全局变量设置已经配置</p>
+<p> 参考资料：<a href="https://www.offensive-security.com/metasploit-unleashed/msfconsole-commands/" target="_blank" rel="noopener">https://www.offensive-security.com/metasploit-unleashed/msfconsole-commands/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/16/Metasploit基础命令新手指南/" data-id="cjkgwsaby000kswvkro8ew58k" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Metasploit/">Metasploit</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/12/16/Ngrok加Metasploit实现内网穿透/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Ngrok加Metasploit实现内网穿透
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/15/关于信息安全的一些思考/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">关于信息安全的一些思考</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">sky666sec&#39;s blog</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+          <a href="/atom.xml" title="rss">
+            <li>rss</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/24877695?s=460&amp;v=4">
+    <h2 class="author">sky666</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>41</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/sky666sec" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="https://exp10it.cn/about/" target="_blank" title="X1r0Z">
+          X1r0Z
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.sqlsec.com" target="_blank" title="国光">
+          国光
+        </a>
+      
+        <a class="hvr-bounce-in" href="http:www.ggsec.cn" target="_blank" title="Demon">
+          Demon
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.chabug.org" target="_blank" title="chabug">
+          chabug
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.dyboyw.cn" target="_blank" title="小东">
+          小东
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://scholar10.github.io/" target="_blank" title="书呆子">
+          书呆子
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2017 - 2018 sky666<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/about" title="" class="menuItem">关于</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

