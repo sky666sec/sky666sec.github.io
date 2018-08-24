@@ -3,19 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: notes | sky666sec&#39;s blog</title>
+  <title>Apache解析漏洞 | sky666sec&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="想用黑客手段对抗黑客">
-<meta name="keywords" content="想用黑客手段对抗黑客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="sky666sec&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/notes/index.html">
+  <meta name="description" content="目前解析漏洞主要存在于三大WEB服务程序，分别是IIS、Nginx和Apache。">
+<meta name="keywords" content="notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Apache解析漏洞">
+<meta property="og:url" content="http://yoursite.com/2018/08/24/Apache解析漏洞/index.html">
 <meta property="og:site_name" content="sky666sec&#39;s blog">
-<meta property="og:description" content="想用黑客手段对抗黑客">
+<meta property="og:description" content="目前解析漏洞主要存在于三大WEB服务程序，分别是IIS、Nginx和Apache。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-24T11:05:22.867Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sky666sec&#39;s blog">
-<meta name="twitter:description" content="想用黑客手段对抗黑客">
+<meta name="twitter:title" content="Apache解析漏洞">
+<meta name="twitter:description" content="目前解析漏洞主要存在于三大WEB服务程序，分别是IIS、Nginx和Apache。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -74,245 +75,86 @@
   </div>
 </div>
 
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap animated rubberBand">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/08/24/Apache解析漏洞/" class="archive-article-date">
+        <section id="main"><article id="post-Apache解析漏洞" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/24/Apache解析漏洞/" class="article-date">
   <time class="post-time" datetime="2018-08-24T10:54:36.000Z" itemprop="datePublished">
     <span class="post-month">8月</span><br/>
     <span class="post-day">24</span>
   </time>
 </a>
-      
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/24/Apache解析漏洞/">Apache解析漏洞</a>
+    <h1 class="article-title" itemprop="name">
+      Apache解析漏洞
     </h1>
   
 
-    </header>
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/notes/">notes</a>
   </div>
-</article>
-  
+
+          
+              
+
+          
+        </div>
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/06/04/AliYunDun bypass/" class="archive-article-date">
-  <time class="post-time" datetime="2018-06-04T05:26:46.000Z" itemprop="datePublished">
-    <span class="post-month">6月</span><br/>
-    <span class="post-day">04</span>
-  </time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/04/AliYunDun bypass/">AliYunDun bypass</a>
-    </h1>
-  
+        <p>目前解析漏洞主要存在于三大WEB服务程序，分别是IIS、Nginx和Apache。</p>
+<a id="more"></a>
+<p>​      IIS6.0下主要是有两个解析漏洞，一个是目录解析，形如/xx.asp/xx.jpg，另一个就是文件解析，形如xx.asp;.jpg，可通过此漏洞上传shell，对服务器危害较大。</p>
+<p>​      著名的Nginx畸形解析漏洞。形如1.jpg/.php，真的是一张图片就要了你的命。</p>
+<p>​      Apache 是从右到左开始判断解析,如果为不可识别解析,就再往左判断。比如xxx.php.rar对apache来说rar是不可解析的，所以就会解析成xxx.php。 其实整个漏洞的关键就是apache的”合法后缀”到底是哪些，不是”合法后缀”的都可以被利用。</p>
+<p><strong>通过修改apache配置文件进行防御</strong></p>
+<p>​现在对apache的配置文件做适当修改，在文件中添加下面几行代码      </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;FilesMatch &quot;.(php.|php3.|php4.|php5.)&quot;&gt;</span><br><span class="line"></span><br><span class="line">       Order Deny,Allow</span><br><span class="line"></span><br><span class="line">       Deny from all</span><br><span class="line"></span><br><span class="line">     &lt;/FilesMatch&gt;</span><br></pre></td></tr></table></figure>
+<p>​      禁止<em>.php.</em>文件的访问权限</p>
+<p>​      保存并重启apache</p>
+<p>另外一点：</p>
+<p>  如果管理员设置不当，允许上传php4 php5 php7 phtml这些后缀的文件,也会被解析，进而getshell。（以Apache居多  ）</p>
+<p><strong>总结：</strong></p>
+<ul>
+<li>所以对于文件上传请严格遵守自动重命名和白名单策略，另外注意修复解析漏洞。</li>
+</ul>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/03/13/今天对于电话面试的总结/" class="archive-article-date">
-  <time class="post-time" datetime="2018-03-12T17:31:08.000Z" itemprop="datePublished">
-    <span class="post-month">3月</span><br/>
-    <span class="post-day">13</span>
-  </time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/13/今天对于电话面试的总结/">今天对于电话面试的总结</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/03/10/通过HTTP头伪造IP/" class="archive-article-date">
-  <time class="post-time" datetime="2018-03-10T10:27:05.000Z" itemprop="datePublished">
-    <span class="post-month">3月</span><br/>
-    <span class="post-day">10</span>
-  </time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/24/Apache解析漏洞/" data-id="cjl7vzgwf00036avk0cmnpkso" class="article-share-link">分享</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/10/通过HTTP头伪造IP/">通过HTTP头伪造IP</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/03/04/从元宵节点灯想到数据备份的重要性/" class="archive-article-date">
-  <time class="post-time" datetime="2018-03-04T05:53:46.000Z" itemprop="datePublished">
-    <span class="post-month">3月</span><br/>
-    <span class="post-day">04</span>
-  </time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/04/从元宵节点灯想到数据备份的重要性/">从元宵节点灯想到数据备份的重要性</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/">notes</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/08/06/实战阿里云bypass阿里云/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">实战阿里云bypass阿里云</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/02/17/Small target/" class="archive-article-date">
-  <time class="post-time" datetime="2018-02-17T01:48:33.000Z" itemprop="datePublished">
-    <span class="post-month">2月</span><br/>
-    <span class="post-day">17</span>
-  </time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/17/Small target/">small target</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/02/17/MarkdownPad2常用快捷键/" class="archive-article-date">
-  <time class="post-time" datetime="2018-02-17T01:47:48.000Z" itemprop="datePublished">
-    <span class="post-month">2月</span><br/>
-    <span class="post-day">17</span>
-  </time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/17/MarkdownPad2常用快捷键/">MarkdownPad2常用快捷键</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/01/27/记一次linux反弹shell/" class="archive-article-date">
-  <time class="post-time" datetime="2018-01-27T04:30:53.000Z" itemprop="datePublished">
-    <span class="post-month">1月</span><br/>
-    <span class="post-day">27</span>
-  </time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/27/记一次linux反弹shell/">记一次linux反弹shell</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/01/23/利用机器学习实施网络犯罪/" class="archive-article-date">
-  <time class="post-time" datetime="2018-01-23T07:29:56.000Z" itemprop="datePublished">
-    <span class="post-month">1月</span><br/>
-    <span class="post-day">23</span>
-  </time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/23/利用机器学习实施网络犯罪/">利用机器学习实施网络犯罪</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/01/10/2018-flag/" class="archive-article-date">
-  <time class="post-time" datetime="2018-01-10T09:37:57.000Z" itemprop="datePublished">
-    <span class="post-month">1月</span><br/>
-    <span class="post-day">10</span>
-  </time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/10/2018-flag/">2018给自己立个flag</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
 
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/tags/notes/page/2/">2</a><a class="extend next" rel="next" href="/tags/notes/page/2/">next &raquo;</a>
-  </nav>
+
 </section>
         
           <aside id="sidebar">

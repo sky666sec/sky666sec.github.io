@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-22T08:34:54.896Z</updated>
+  <updated>2018-08-24T11:05:22.867Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Apache解析漏洞</title>
+    <link href="http://yoursite.com/2018/08/24/Apache%E8%A7%A3%E6%9E%90%E6%BC%8F%E6%B4%9E/"/>
+    <id>http://yoursite.com/2018/08/24/Apache解析漏洞/</id>
+    <published>2018-08-24T10:54:36.000Z</published>
+    <updated>2018-08-24T11:05:22.867Z</updated>
+    
+    <content type="html"><![CDATA[<p>目前解析漏洞主要存在于三大WEB服务程序，分别是IIS、Nginx和Apache。</p><a id="more"></a><p>​      IIS6.0下主要是有两个解析漏洞，一个是目录解析，形如/xx.asp/xx.jpg，另一个就是文件解析，形如xx.asp;.jpg，可通过此漏洞上传shell，对服务器危害较大。</p><p>​      著名的Nginx畸形解析漏洞。形如1.jpg/.php，真的是一张图片就要了你的命。</p><p>​      Apache 是从右到左开始判断解析,如果为不可识别解析,就再往左判断。比如xxx.php.rar对apache来说rar是不可解析的，所以就会解析成xxx.php。 其实整个漏洞的关键就是apache的”合法后缀”到底是哪些，不是”合法后缀”的都可以被利用。</p><p><strong>通过修改apache配置文件进行防御</strong></p><p>​现在对apache的配置文件做适当修改，在文件中添加下面几行代码      </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;FilesMatch &quot;.(php.|php3.|php4.|php5.)&quot;&gt;</span><br><span class="line"></span><br><span class="line">       Order Deny,Allow</span><br><span class="line"></span><br><span class="line">       Deny from all</span><br><span class="line"></span><br><span class="line">     &lt;/FilesMatch&gt;</span><br></pre></td></tr></table></figure><p>​      禁止<em>.php.</em>文件的访问权限</p><p>​      保存并重启apache</p><p>另外一点：</p><p>  如果管理员设置不当，允许上传php4 php5 php7 phtml这些后缀的文件,也会被解析，进而getshell。（以Apache居多  ）</p><p><strong>总结：</strong></p><ul><li>所以对于文件上传请严格遵守自动重命名和白名单策略，另外注意修复解析漏洞。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;目前解析漏洞主要存在于三大WEB服务程序，分别是IIS、Nginx和Apache。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
+    
+    
+      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+  </entry>
   
   <entry>
     <title>实战阿里云bypass阿里云</title>
@@ -434,24 +456,6 @@
     
     
       <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>曾经的初心还在吗</title>
-    <link href="http://yoursite.com/2018/01/24/%E6%9B%BE%E7%BB%8F%E7%9A%84%E5%88%9D%E5%BF%83%E8%BF%98%E5%9C%A8%E5%90%97/"/>
-    <id>http://yoursite.com/2018/01/24/曾经的初心还在吗/</id>
-    <published>2018-01-23T17:09:15.000Z</published>
-    <updated>2018-08-05T06:36:17.521Z</updated>
-    
-    <content type="html"><![CDATA[<p>不好意思，这是篇水文，愿意看的可以点开看，不愿看的我不强求。</p><a id="more"></a><p>曾经的初心还在吗？</p><p>这个答案乌云在的时候告诉了我们，是在的。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnr1p9484hj30u01hcwl0.jpg" alt=""></p><p>我很认同乌云的理念，同时也觉得真正的白帽子是帮助修复漏洞，而不是去一味的索取利益，我本人在现实生活中是一个非常内向的人，也不喜欢去说话，和别人一起玩，所以上网成了我最大的乐趣，我无意中进入了乌云网，我查看申通快递的公开漏洞，但是我很惊讶，他们竟然没修复，这将导致所有看到此漏洞的人或者已经知道此漏洞的人都能随意进入他们的系统，查看或者窃取信息。这是非常不安全的。我心里就有种感觉，我想要帮助他们修复漏洞。</p><p>于是便开始了我的白帽之路，我不断提交漏洞，通宵达旦提交漏洞。到今天我都觉得这是自豪的，是有意义的。</p><p>等到三个月后，我成了普通白帽子，然后乌云也挂了。之前乌云开白帽大会，可惜我没去，我真应该去的，毕竟那应该算是最后一次了。<br><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnr20a31bkj30u01hc11t.jpg" alt=""></p><p>我要感谢乌云，在他挂了的前夕，有人找我买乌币，我记得很清楚，虽然那是一年多以前的事了，360元人民币，可能不是很多，但那是我挣的，完完全全没靠别人。</p><p>成也萧何败也萧何，乌云还在升级。</p><p>可是生活必须继续</p><p>今天我爸跟我说，你每天看这些东西有什么用，能有碗饭吃才是最重要的。</p><p>是的，我长大了，我该挣钱养家了。我现实了，没那么理想主义了。</p><p>纵使那些网站被黑了，跟我也没多大关系。因为现在有了网络安全法，人家可能不会感谢你，还可能会告你，既然这样的话，那是没有任何价值的。</p><p>乌云生于乱世，又在一种平静的乱世中默默升级。</p><p>现在可能不会多少人记得乌云了。但是我记得。它的理念，它带给整个信息安全行业的发展，时至今日，它的很多公开漏洞都还是有效，因为他们不会去修复，也没有乌云这样的漏洞提交平台去提醒他们了。</p><p>我从小就有个理想，以黑客手段对抗黑客。</p><p>你既然都知道黑客是用什么手段在攻击，那么防护也不是什么难事。</p><p>黑客用什么手段攻击你的，从哪里攻击你的，你都一清二楚了。防护还需要说啥。</p><p>古人云：知己知彼，方能百战不殆。</p><p>最后，我想说，曾经的初心一直在心中（昨天看见某网站被做了360ssp,心里很不爽，还是把它删了），只是默默守护，不再说出口了。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;不好意思，这是篇水文，愿意看的可以点开看，不愿看的我不强求。&lt;/p&gt;
-    
-    </summary>
-    
     
   </entry>
   
