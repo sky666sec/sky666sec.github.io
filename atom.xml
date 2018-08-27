@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2018-08-24T11:05:22.867Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="https://sky666sec.github.io/"/>
+  <updated>2018-08-24T11:06:01.785Z</updated>
+  <id>https://sky666sec.github.io/</id>
   
   <author>
     <name>sky666</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Apache解析漏洞</title>
-    <link href="http://yoursite.com/2018/08/24/Apache%E8%A7%A3%E6%9E%90%E6%BC%8F%E6%B4%9E/"/>
-    <id>http://yoursite.com/2018/08/24/Apache解析漏洞/</id>
+    <link href="https://sky666sec.github.io/2018/08/24/Apache%E8%A7%A3%E6%9E%90%E6%BC%8F%E6%B4%9E/"/>
+    <id>https://sky666sec.github.io/2018/08/24/Apache解析漏洞/</id>
     <published>2018-08-24T10:54:36.000Z</published>
-    <updated>2018-08-24T11:05:22.867Z</updated>
+    <updated>2018-08-24T11:06:01.785Z</updated>
     
     <content type="html"><![CDATA[<p>目前解析漏洞主要存在于三大WEB服务程序，分别是IIS、Nginx和Apache。</p><a id="more"></a><p>​      IIS6.0下主要是有两个解析漏洞，一个是目录解析，形如/xx.asp/xx.jpg，另一个就是文件解析，形如xx.asp;.jpg，可通过此漏洞上传shell，对服务器危害较大。</p><p>​      著名的Nginx畸形解析漏洞。形如1.jpg/.php，真的是一张图片就要了你的命。</p><p>​      Apache 是从右到左开始判断解析,如果为不可识别解析,就再往左判断。比如xxx.php.rar对apache来说rar是不可解析的，所以就会解析成xxx.php。 其实整个漏洞的关键就是apache的”合法后缀”到底是哪些，不是”合法后缀”的都可以被利用。</p><p><strong>通过修改apache配置文件进行防御</strong></p><p>​现在对apache的配置文件做适当修改，在文件中添加下面几行代码      </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;FilesMatch &quot;.(php.|php3.|php4.|php5.)&quot;&gt;</span><br><span class="line"></span><br><span class="line">       Order Deny,Allow</span><br><span class="line"></span><br><span class="line">       Deny from all</span><br><span class="line"></span><br><span class="line">     &lt;/FilesMatch&gt;</span><br></pre></td></tr></table></figure><p>​      禁止<em>.php.</em>文件的访问权限</p><p>​      保存并重启apache</p><p>另外一点：</p><p>  如果管理员设置不当，允许上传php4 php5 php7 phtml这些后缀的文件,也会被解析，进而getshell。（以Apache居多  ）</p><p><strong>总结：</strong></p><ul><li>所以对于文件上传请严格遵守自动重命名和白名单策略，另外注意修复解析漏洞。</li></ul>]]></content>
     
@@ -31,17 +31,17 @@
     
     </summary>
     
-      <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
+      <category term="notes" scheme="https://sky666sec.github.io/categories/notes/"/>
     
     
-      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+      <category term="notes" scheme="https://sky666sec.github.io/tags/notes/"/>
     
   </entry>
   
   <entry>
     <title>实战阿里云bypass阿里云</title>
-    <link href="http://yoursite.com/2018/08/06/%E5%AE%9E%E6%88%98%E9%98%BF%E9%87%8C%E4%BA%91bypass%E9%98%BF%E9%87%8C%E4%BA%91/"/>
-    <id>http://yoursite.com/2018/08/06/实战阿里云bypass阿里云/</id>
+    <link href="https://sky666sec.github.io/2018/08/06/%E5%AE%9E%E6%88%98%E9%98%BF%E9%87%8C%E4%BA%91bypass%E9%98%BF%E9%87%8C%E4%BA%91/"/>
+    <id>https://sky666sec.github.io/2018/08/06/实战阿里云bypass阿里云/</id>
     <published>2018-08-06T05:02:19.000Z</published>
     <updated>2018-08-22T08:34:54.896Z</updated>
     
@@ -54,17 +54,17 @@
     
     </summary>
     
-      <category term="渗透测试" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+      <category term="渗透测试" scheme="https://sky666sec.github.io/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="渗透测试" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+      <category term="渗透测试" scheme="https://sky666sec.github.io/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>AliYunDun bypass</title>
-    <link href="http://yoursite.com/2018/06/04/AliYunDun%20bypass/"/>
-    <id>http://yoursite.com/2018/06/04/AliYunDun bypass/</id>
+    <link href="https://sky666sec.github.io/2018/06/04/AliYunDun%20bypass/"/>
+    <id>https://sky666sec.github.io/2018/06/04/AliYunDun bypass/</id>
     <published>2018-06-04T05:26:46.000Z</published>
     <updated>2018-08-05T06:36:17.517Z</updated>
     
@@ -77,17 +77,17 @@
     
     </summary>
     
-      <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
+      <category term="notes" scheme="https://sky666sec.github.io/categories/notes/"/>
     
     
-      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+      <category term="notes" scheme="https://sky666sec.github.io/tags/notes/"/>
     
   </entry>
   
   <entry>
     <title>今天对于电话面试的总结</title>
-    <link href="http://yoursite.com/2018/03/13/%E4%BB%8A%E5%A4%A9%E5%AF%B9%E4%BA%8E%E7%94%B5%E8%AF%9D%E9%9D%A2%E8%AF%95%E7%9A%84%E6%80%BB%E7%BB%93/"/>
-    <id>http://yoursite.com/2018/03/13/今天对于电话面试的总结/</id>
+    <link href="https://sky666sec.github.io/2018/03/13/%E4%BB%8A%E5%A4%A9%E5%AF%B9%E4%BA%8E%E7%94%B5%E8%AF%9D%E9%9D%A2%E8%AF%95%E7%9A%84%E6%80%BB%E7%BB%93/"/>
+    <id>https://sky666sec.github.io/2018/03/13/今天对于电话面试的总结/</id>
     <published>2018-03-12T17:31:08.000Z</published>
     <updated>2018-08-22T08:48:45.486Z</updated>
     
@@ -99,17 +99,17 @@
     
     </summary>
     
-      <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
+      <category term="notes" scheme="https://sky666sec.github.io/categories/notes/"/>
     
     
-      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+      <category term="notes" scheme="https://sky666sec.github.io/tags/notes/"/>
     
   </entry>
   
   <entry>
     <title>利用mssql log备份得到webshell</title>
-    <link href="http://yoursite.com/2018/03/11/%E5%88%A9%E7%94%A8mssql%20log%E5%A4%87%E4%BB%BD%E5%BE%97%E5%88%B0webshell/"/>
-    <id>http://yoursite.com/2018/03/11/利用mssql log备份得到webshell/</id>
+    <link href="https://sky666sec.github.io/2018/03/11/%E5%88%A9%E7%94%A8mssql%20log%E5%A4%87%E4%BB%BD%E5%BE%97%E5%88%B0webshell/"/>
+    <id>https://sky666sec.github.io/2018/03/11/利用mssql log备份得到webshell/</id>
     <published>2018-03-11T05:20:00.000Z</published>
     <updated>2018-08-05T06:36:17.525Z</updated>
     
@@ -122,17 +122,17 @@
     
     </summary>
     
-      <category term="渗透测试" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+      <category term="渗透测试" scheme="https://sky666sec.github.io/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="渗透测试" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+      <category term="渗透测试" scheme="https://sky666sec.github.io/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>通过HTTP头伪造IP</title>
-    <link href="http://yoursite.com/2018/03/10/%E9%80%9A%E8%BF%87HTTP%E5%A4%B4%E4%BC%AA%E9%80%A0IP/"/>
-    <id>http://yoursite.com/2018/03/10/通过HTTP头伪造IP/</id>
+    <link href="https://sky666sec.github.io/2018/03/10/%E9%80%9A%E8%BF%87HTTP%E5%A4%B4%E4%BC%AA%E9%80%A0IP/"/>
+    <id>https://sky666sec.github.io/2018/03/10/通过HTTP头伪造IP/</id>
     <published>2018-03-10T10:27:05.000Z</published>
     <updated>2018-08-05T06:36:17.529Z</updated>
     
@@ -144,17 +144,17 @@
     
     </summary>
     
-      <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
+      <category term="notes" scheme="https://sky666sec.github.io/categories/notes/"/>
     
     
-      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+      <category term="notes" scheme="https://sky666sec.github.io/tags/notes/"/>
     
   </entry>
   
   <entry>
     <title>从元宵节点灯想到数据备份的重要性</title>
-    <link href="http://yoursite.com/2018/03/04/%E4%BB%8E%E5%85%83%E5%AE%B5%E8%8A%82%E7%82%B9%E7%81%AF%E6%83%B3%E5%88%B0%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/"/>
-    <id>http://yoursite.com/2018/03/04/从元宵节点灯想到数据备份的重要性/</id>
+    <link href="https://sky666sec.github.io/2018/03/04/%E4%BB%8E%E5%85%83%E5%AE%B5%E8%8A%82%E7%82%B9%E7%81%AF%E6%83%B3%E5%88%B0%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/"/>
+    <id>https://sky666sec.github.io/2018/03/04/从元宵节点灯想到数据备份的重要性/</id>
     <published>2018-03-04T05:53:46.000Z</published>
     <updated>2018-08-05T06:36:17.525Z</updated>
     
@@ -166,17 +166,17 @@
     
     </summary>
     
-      <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
+      <category term="notes" scheme="https://sky666sec.github.io/categories/notes/"/>
     
     
-      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+      <category term="notes" scheme="https://sky666sec.github.io/tags/notes/"/>
     
   </entry>
   
   <entry>
     <title>PHPWEB重装漏洞+%00截断拿webshell</title>
-    <link href="http://yoursite.com/2018/03/04/PHPWEB%E9%87%8D%E8%A3%85%E6%BC%8F%E6%B4%9E+00%E6%88%AA%E6%96%AD%E6%8B%BFwebshell/"/>
-    <id>http://yoursite.com/2018/03/04/PHPWEB重装漏洞+00截断拿webshell/</id>
+    <link href="https://sky666sec.github.io/2018/03/04/PHPWEB%E9%87%8D%E8%A3%85%E6%BC%8F%E6%B4%9E+00%E6%88%AA%E6%96%AD%E6%8B%BFwebshell/"/>
+    <id>https://sky666sec.github.io/2018/03/04/PHPWEB重装漏洞+00截断拿webshell/</id>
     <published>2018-03-04T05:02:19.000Z</published>
     <updated>2018-08-05T06:36:17.521Z</updated>
     
@@ -188,17 +188,17 @@
     
     </summary>
     
-      <category term="渗透测试" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+      <category term="渗透测试" scheme="https://sky666sec.github.io/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="渗透测试" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+      <category term="渗透测试" scheme="https://sky666sec.github.io/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>small target</title>
-    <link href="http://yoursite.com/2018/02/17/Small%20target/"/>
-    <id>http://yoursite.com/2018/02/17/Small target/</id>
+    <link href="https://sky666sec.github.io/2018/02/17/Small%20target/"/>
+    <id>https://sky666sec.github.io/2018/02/17/Small target/</id>
     <published>2018-02-17T01:48:33.000Z</published>
     <updated>2018-08-05T06:36:17.521Z</updated>
     
@@ -210,17 +210,17 @@
     
     </summary>
     
-      <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
+      <category term="notes" scheme="https://sky666sec.github.io/categories/notes/"/>
     
     
-      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+      <category term="notes" scheme="https://sky666sec.github.io/tags/notes/"/>
     
   </entry>
   
   <entry>
     <title>MarkdownPad2常用快捷键</title>
-    <link href="http://yoursite.com/2018/02/17/MarkdownPad2%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <id>http://yoursite.com/2018/02/17/MarkdownPad2常用快捷键/</id>
+    <link href="https://sky666sec.github.io/2018/02/17/MarkdownPad2%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>https://sky666sec.github.io/2018/02/17/MarkdownPad2常用快捷键/</id>
     <published>2018-02-17T01:47:48.000Z</published>
     <updated>2018-08-05T06:36:17.521Z</updated>
     
@@ -232,17 +232,17 @@
     
     </summary>
     
-      <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
+      <category term="notes" scheme="https://sky666sec.github.io/categories/notes/"/>
     
     
-      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+      <category term="notes" scheme="https://sky666sec.github.io/tags/notes/"/>
     
   </entry>
   
   <entry>
     <title>云梦微站通用漏洞之任意管理员密码重置</title>
-    <link href="http://yoursite.com/2018/02/12/%E4%BA%91%E6%A2%A6%E5%BE%AE%E7%AB%99%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E%E4%B9%8B%E4%BB%BB%E6%84%8F%E7%AE%A1%E7%90%86%E5%91%98%E5%AF%86%E7%A0%81%E9%87%8D%E7%BD%AE/"/>
-    <id>http://yoursite.com/2018/02/12/云梦微站通用漏洞之任意管理员密码重置/</id>
+    <link href="https://sky666sec.github.io/2018/02/12/%E4%BA%91%E6%A2%A6%E5%BE%AE%E7%AB%99%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E%E4%B9%8B%E4%BB%BB%E6%84%8F%E7%AE%A1%E7%90%86%E5%91%98%E5%AF%86%E7%A0%81%E9%87%8D%E7%BD%AE/"/>
+    <id>https://sky666sec.github.io/2018/02/12/云梦微站通用漏洞之任意管理员密码重置/</id>
     <published>2018-02-12T13:23:22.000Z</published>
     <updated>2018-08-05T06:36:17.529Z</updated>
     
@@ -254,17 +254,17 @@
     
     </summary>
     
-      <category term="渗透测试" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+      <category term="渗透测试" scheme="https://sky666sec.github.io/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="渗透测试" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+      <category term="渗透测试" scheme="https://sky666sec.github.io/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>Python系统命令调用</title>
-    <link href="http://yoursite.com/2018/02/08/Python%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E8%B0%83%E7%94%A8/"/>
-    <id>http://yoursite.com/2018/02/08/Python系统命令调用/</id>
+    <link href="https://sky666sec.github.io/2018/02/08/Python%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E8%B0%83%E7%94%A8/"/>
+    <id>https://sky666sec.github.io/2018/02/08/Python系统命令调用/</id>
     <published>2018-02-08T13:28:00.000Z</published>
     <updated>2018-08-05T06:36:17.521Z</updated>
     
@@ -276,17 +276,17 @@
     
     </summary>
     
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+      <category term="python" scheme="https://sky666sec.github.io/categories/python/"/>
     
     
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+      <category term="python" scheme="https://sky666sec.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>subprocess模块+去除启动的黑色cmd窗口</title>
-    <link href="http://yoursite.com/2018/02/08/subprocess%E6%A8%A1%E5%9D%97+%E5%8E%BB%E9%99%A4%E5%90%AF%E5%8A%A8%E7%9A%84%E9%BB%91%E8%89%B2cmd%E7%AA%97%E5%8F%A3/"/>
-    <id>http://yoursite.com/2018/02/08/subprocess模块+去除启动的黑色cmd窗口/</id>
+    <link href="https://sky666sec.github.io/2018/02/08/subprocess%E6%A8%A1%E5%9D%97+%E5%8E%BB%E9%99%A4%E5%90%AF%E5%8A%A8%E7%9A%84%E9%BB%91%E8%89%B2cmd%E7%AA%97%E5%8F%A3/"/>
+    <id>https://sky666sec.github.io/2018/02/08/subprocess模块+去除启动的黑色cmd窗口/</id>
     <published>2018-02-08T12:02:42.000Z</published>
     <updated>2018-08-05T06:36:17.521Z</updated>
     
@@ -298,17 +298,17 @@
     
     </summary>
     
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+      <category term="python" scheme="https://sky666sec.github.io/categories/python/"/>
     
     
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+      <category term="python" scheme="https://sky666sec.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>Hardentools</title>
-    <link href="http://yoursite.com/2018/02/08/Hardentools/"/>
-    <id>http://yoursite.com/2018/02/08/Hardentools/</id>
+    <link href="https://sky666sec.github.io/2018/02/08/Hardentools/"/>
+    <id>https://sky666sec.github.io/2018/02/08/Hardentools/</id>
     <published>2018-02-08T05:25:29.000Z</published>
     <updated>2018-08-05T06:36:17.517Z</updated>
     
@@ -320,17 +320,17 @@
     
     </summary>
     
-      <category term="tools" scheme="http://yoursite.com/categories/tools/"/>
+      <category term="tools" scheme="https://sky666sec.github.io/categories/tools/"/>
     
     
-      <category term="tools" scheme="http://yoursite.com/tags/tools/"/>
+      <category term="tools" scheme="https://sky666sec.github.io/tags/tools/"/>
     
   </entry>
   
   <entry>
     <title>Burp Suite Pro Loader&amp;Keygen By surferxyz 1.7.32</title>
-    <link href="http://yoursite.com/2018/02/06/Burp%20Suite%20Pro%20Loader&amp;Keygen%20By%20surferxyz%201.7.31/"/>
-    <id>http://yoursite.com/2018/02/06/Burp Suite Pro Loader&amp;Keygen By surferxyz 1.7.31/</id>
+    <link href="https://sky666sec.github.io/2018/02/06/Burp%20Suite%20Pro%20Loader&amp;Keygen%20By%20surferxyz%201.7.31/"/>
+    <id>https://sky666sec.github.io/2018/02/06/Burp Suite Pro Loader&amp;Keygen By surferxyz 1.7.31/</id>
     <published>2018-02-05T16:27:32.000Z</published>
     <updated>2018-08-05T06:36:17.517Z</updated>
     
@@ -342,17 +342,17 @@
     
     </summary>
     
-      <category term="tools" scheme="http://yoursite.com/categories/tools/"/>
+      <category term="tools" scheme="https://sky666sec.github.io/categories/tools/"/>
     
     
-      <category term="tools" scheme="http://yoursite.com/tags/tools/"/>
+      <category term="tools" scheme="https://sky666sec.github.io/tags/tools/"/>
     
   </entry>
   
   <entry>
     <title>reverse-shell</title>
-    <link href="http://yoursite.com/2018/02/03/reverse-shell/"/>
-    <id>http://yoursite.com/2018/02/03/reverse-shell/</id>
+    <link href="https://sky666sec.github.io/2018/02/03/reverse-shell/"/>
+    <id>https://sky666sec.github.io/2018/02/03/reverse-shell/</id>
     <published>2018-02-03T06:26:37.000Z</published>
     <updated>2018-08-05T06:36:17.521Z</updated>
     
@@ -364,17 +364,17 @@
     
     </summary>
     
-      <category term="tools" scheme="http://yoursite.com/categories/tools/"/>
+      <category term="tools" scheme="https://sky666sec.github.io/categories/tools/"/>
     
     
-      <category term="tools" scheme="http://yoursite.com/tags/tools/"/>
+      <category term="tools" scheme="https://sky666sec.github.io/tags/tools/"/>
     
   </entry>
   
   <entry>
     <title>python学习之变量</title>
-    <link href="http://yoursite.com/2018/01/30/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%8F%98%E9%87%8F/"/>
-    <id>http://yoursite.com/2018/01/30/python学习之变量/</id>
+    <link href="https://sky666sec.github.io/2018/01/30/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%8F%98%E9%87%8F/"/>
+    <id>https://sky666sec.github.io/2018/01/30/python学习之变量/</id>
     <published>2018-01-30T13:05:07.000Z</published>
     <updated>2018-08-05T06:36:17.521Z</updated>
     
@@ -386,17 +386,17 @@
     
     </summary>
     
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+      <category term="python" scheme="https://sky666sec.github.io/categories/python/"/>
     
     
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+      <category term="python" scheme="https://sky666sec.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>内网渗透之reDuh</title>
-    <link href="http://yoursite.com/2018/01/28/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E4%B9%8BreDuh/"/>
-    <id>http://yoursite.com/2018/01/28/内网渗透之reDuh/</id>
+    <link href="https://sky666sec.github.io/2018/01/28/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E4%B9%8BreDuh/"/>
+    <id>https://sky666sec.github.io/2018/01/28/内网渗透之reDuh/</id>
     <published>2018-01-28T06:19:58.000Z</published>
     <updated>2018-08-05T06:36:17.525Z</updated>
     
@@ -408,17 +408,17 @@
     
     </summary>
     
-      <category term="渗透测试" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+      <category term="渗透测试" scheme="https://sky666sec.github.io/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="渗透测试" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+      <category term="渗透测试" scheme="https://sky666sec.github.io/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>dirtyc0w_Linux提权</title>
-    <link href="http://yoursite.com/2018/01/28/dirtyc0w-Linux%E6%8F%90%E6%9D%83/"/>
-    <id>http://yoursite.com/2018/01/28/dirtyc0w-Linux提权/</id>
+    <link href="https://sky666sec.github.io/2018/01/28/dirtyc0w-Linux%E6%8F%90%E6%9D%83/"/>
+    <id>https://sky666sec.github.io/2018/01/28/dirtyc0w-Linux提权/</id>
     <published>2018-01-28T05:50:05.000Z</published>
     <updated>2018-08-05T06:36:17.517Z</updated>
     
@@ -430,17 +430,17 @@
     
     </summary>
     
-      <category term="渗透测试" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+      <category term="渗透测试" scheme="https://sky666sec.github.io/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="渗透测试" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+      <category term="渗透测试" scheme="https://sky666sec.github.io/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>记一次linux反弹shell</title>
-    <link href="http://yoursite.com/2018/01/27/%E8%AE%B0%E4%B8%80%E6%AC%A1linux%E5%8F%8D%E5%BC%B9shell/"/>
-    <id>http://yoursite.com/2018/01/27/记一次linux反弹shell/</id>
+    <link href="https://sky666sec.github.io/2018/01/27/%E8%AE%B0%E4%B8%80%E6%AC%A1linux%E5%8F%8D%E5%BC%B9shell/"/>
+    <id>https://sky666sec.github.io/2018/01/27/记一次linux反弹shell/</id>
     <published>2018-01-27T04:30:53.000Z</published>
     <updated>2018-08-05T06:36:17.525Z</updated>
     
@@ -452,10 +452,10 @@
     
     </summary>
     
-      <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
+      <category term="notes" scheme="https://sky666sec.github.io/categories/notes/"/>
     
     
-      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+      <category term="notes" scheme="https://sky666sec.github.io/tags/notes/"/>
     
   </entry>
   
